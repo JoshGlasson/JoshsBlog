@@ -26,11 +26,21 @@
 		so we have to use the :global(...) modifier to target
 		all elements inside .content
 	*/
-	.content :global(h2) {
-		font-size: 1.4em;
+	.postTitle h1 {
+		font-size: 5em;
 		font-weight: 500;
 	}
 
+	.postTitle h2 {
+		font-size: 2em;
+		font-weight: 300;
+		padding-bottom: 1em;
+	}
+
+	.content :global(p) {
+		font-size: 1.2em;
+		font-weight: 300;
+	}
 	.content :global(pre) {
 		background-color: #f9f9f9;
 		box-shadow: inset 1px 1px 5px rgba(0,0,0,0.05);
@@ -53,9 +63,32 @@
 	}
 
 	.content :global(img) {
+		width: auto; 
+		width: 100%; 
+	}
+
+	.content :global(#imageDiv) {
+		text-align: center;
+		width: auto;
+	}
+
+	.content :global(figure) {
 		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
+		max-width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
+		display: inline-block;
+	}
+
+	.content :global(figcaption) {
+		color: lightslategray;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	.content :global(#codeSnippet) {
+		background-color: inherit;
+		margin: 2em 0 2em 0;
 	}
 </style>
 
@@ -63,7 +96,11 @@
 	<title>{post.title}</title>
 </svelte:head>
 
-<h1>{post.title}</h1>
+<div class='postTitle'>
+	<h1>{post.title}</h1>
+	<h2><strong>{post.headline}</strong></h2>
+</div>
+
 
 <div class='content'>
 	{@html post.html}
