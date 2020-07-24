@@ -4,7 +4,6 @@
   "description": "My personal blog",
   "version": "0.0.1",
   "scripts": {
-    "predeploy": "npx sapper export",
     "dev": "sapper dev",
     "build": "sapper build --legacy",
     "start": "node __sapper__/build",
