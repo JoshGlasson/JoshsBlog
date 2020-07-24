@@ -27,18 +27,18 @@
 	div img {
 		display: block;
 		float: left;
-		width: 100%;
 		max-width: 150px;
+		max-height: 150px;
 		margin: 0 1em 0 0;
 	}
 
-	div h1{
+	div h1 {
 		vertical-align: middle;
+		display: block;
 	}
 
 	div h3{
 		vertical-align: middle;
-		position: relative;
 	}
 </style>
 
