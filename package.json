@@ -1,18 +1,18 @@
 {
-  "homepage": "https://joshglasson.github.io/JoshsBlog",
-  "name": "TODO",
-  "description": "TODO",
+  "homepage": "https://joshglasson.github.io/JoshsBlog/",
+  "name": "JoshsBlog",
+  "description": "My personal blog",
   "version": "0.0.1",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d __sapper__/build",
+    "predeploy": "npx sapper export",
     "dev": "sapper dev",
     "build": "sapper build --legacy",
-    "export": "sapper export --legacy",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
-    "test": "run-p --race dev cy:run"
+    "test": "run-p --race dev cy:run",
+    "export": "sapper export --basepath JoshsBlog --legacy",
+    "deploy": "npm run export && node ./scripts/gh-pages.js"
   },
   "dependencies": {
     "compression": "^1.7.1",
