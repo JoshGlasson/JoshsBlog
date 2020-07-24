@@ -53,7 +53,7 @@
 			the user hovers over the link or taps it, instead of
 			waiting for the 'click' event -->
 	<div>
-		<img src={post.image} alt="Post Display"/>
+		<a href='blog/{post.slug}'><img src={post.image} alt="Post Display"/></a>
 		<a rel='prefetch' href='blog/{post.slug}'><h1>{post.title}</h1></a>
 		<h3>{post.headline}</h3>
 	</div>
