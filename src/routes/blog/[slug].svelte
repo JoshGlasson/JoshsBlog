@@ -1,4 +1,6 @@
 <script context="module">
+	import Signature from '../../components/Signature.svelte';
+
 	export async function preload({ params, query }) {
 		// the `slug` parameter is available because
 		// this file is called [slug].svelte
@@ -105,3 +107,5 @@
 <div class='content'>
 	{@html post.html}
 </div>
+
+<Signature />

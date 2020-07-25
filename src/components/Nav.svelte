@@ -20,6 +20,7 @@
 	
 	onMount(async () => {
 		dark_toggle = localStorage.getItem('dark_mode_toggle')
+		dark_toggle === null ? dark_toggle = 'false' : dark_toggle = dark_toggle
 		console.log("From Storage: " + dark_toggle)
 		if (dark_toggle === 'true') {
 			window.document.body.classList.add('dark-mode')
