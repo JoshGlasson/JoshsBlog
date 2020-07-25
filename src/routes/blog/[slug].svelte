@@ -32,18 +32,55 @@
 		for (var i = 0; i < img.length; i++) {
 			img[i].addEventListener('click', function(event){
 				event.preventDefault()
+				document.body.style.top = `-${window.scrollY}px`;
 				modal.style.display = "block";
 				modalImg.src = this.src;
 				captionText.innerHTML = this.alt;
+				document.body.style.position = 'fixed';
 			});
 		}; 
 
 		// Get the <span> element that closes the modal
 		var span = document.getElementsByClassName("close")[0];
 
+		var touchstartY = 0;
+		var touchendY = 0;
+		window.addEventListener('touchstart', function(event) {
+			if ((event.target === modal || event.target === modalImg) && (modal.style.display === 'block')) {
+				touchstartY = event.changedTouches[0].screenY;
+			}
+		}, false);
+
+		window.addEventListener('touchend', function(event) {
+			if ((event.target === modal || event.target === modalImg) && (modal.style.display === 'block')) {
+				touchendY = event.changedTouches[0].screenY;
+				handleGesure();
+			}
+		}, false); 
+
+		function closeModal() {
+			modal.style.display = 'none';
+			const scrollY = document.body.style.top;
+			document.body.style.position = '';
+			document.body.style.top = '';
+			window.scrollTo(0, parseInt(scrollY || '0') * -1);
+			document.body.style.left = ''
+			document.body.style.transform = ''
+		}
+
+		function handleGesure() {
+			var swiped = 'swiped: ';
+			var dif = Math.abs(touchstartY - touchendY);
+			var h = window.innerHeight/3;
+
+			if (dif > h) {
+				closeModal()
+			}
+		}
+
 		// When the user clicks on <span> (x), close the modal
 		span.onclick = function() { 
-			modal.style.display = "none";
+			closeModal()
 		}
 	});
 
@@ -125,73 +162,73 @@
 
 	/* The Modal (background) */
 	.modal {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	padding-top: 100px; /* Location of the box */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+		display: none; /* Hidden by default */
+		position: fixed; /* Stay in place */
+		z-index: 1; /* Sit on top */
+		padding-top: 100px; /* Location of the box */
+		left: 0;
+		top: 0;
+		width: 100%; /* Full width */
+		height: 100%; /* Full height */
+		overflow: auto; /* Enable scroll if needed */
+		background-color: rgb(0,0,0); /* Fallback color */
+		background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 	}
 
 	/* Modal Content (Image) */
 	.modal-content {
-	margin: auto;
-	display: block;
-	width: 80%;
-	max-width: 700px;
+		margin: auto;
+		display: block;
+		width: 80%;
+		max-width: 700px;
 	}
 
 	/* Caption of Modal Image (Image Text) - Same Width as the Image */
 	#caption {
-	margin: auto;
-	display: block;
-	width: 80%;
-	max-width: 700px;
-	text-align: center;
-	color: #ccc;
-	padding: 10px 0;
-	height: 150px;
+		margin: auto;
+		display: block;
+		width: 80%;
+		max-width: 700px;
+		text-align: center;
+		color: #ccc;
+		padding: 10px 0;
+		height: 150px;
 	}
 
 	/* Add Animation - Zoom in the Modal */
 	.modal-content, #caption {
-	animation-name: zoom;
-	animation-duration: 0.6s;
+		animation-name: zoom;
+		animation-duration: 0.6s;
 	}
 
 	@keyframes zoom {
-	from {transform:scale(0)}
-	to {transform:scale(1)}
+		from {transform:scale(0)}
+		to {transform:scale(1)}
 	}
 
 	/* The Close Button */
 	.close {
-	position: absolute;
-	top: 15px;
-	right: 35px;
-	color: #f1f1f1;
-	font-size: 40px;
-	font-weight: bold;
-	transition: 0.3s;
+		position: absolute;
+		top: 15px;
+		right: 35px;
+		color: #f1f1f1;
+		font-size: 40px;
+		font-weight: bold;
+		transition: 0.3s;
 	}
 
 	.close:hover,
 	.close:focus {
-	color: #bbb;
-	text-decoration: none;
-	cursor: pointer;
+		color: #bbb;
+		text-decoration: none;
+		cursor: pointer;
 	}
 
 	/* 100% Image Width on Smaller Screens */
 	@media only screen and (max-width: 700px){
-	.modal-content {
-		width: 100%;
-	}
+		.modal-content {
+			width: 100%;
+		}
 	}
 </style>
 
