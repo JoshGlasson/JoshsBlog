@@ -19,11 +19,11 @@ Now I had a solid baseline to start with, I started to think about what I would 
 
 <div id="imageDiv">
   <figure>
-    <img src="./images/2020-07-24 creating-the-blog/darkmode_app.png" style="width:50%;"/>
+    <img class="myImg" src="./images/2020-07-24 creating-the-blog/darkmode_app.png" style="width:50%;" alt="An App with a Button to toggle a dark mode"/>
     <figcaption>An App with a Button to toggle a dark mode</figcaption>
   </figure>
   <figure>
-    <img src="./images/2020-07-24 creating-the-blog/darkmode_button.png" style="width:50%;"/>
+    <img class="myImg" src="./images/2020-07-24 creating-the-blog/darkmode_button.png" style="width:50%;" alt="Code for the Dark Mode Button"/>
     <figcaption>Code for the Button</figcaption></a>
   </figure>
 </div>
@@ -78,7 +78,7 @@ So `on:click={toggle}` means it will activate the `toggle()` function when click
 
 <div id="imageDiv">
   <figure>
-    <img src="https://joshlearningtocode.files.wordpress.com/2020/07/blog_dark_mode.gif" alt="A gif of my blog switching themes"/>
+    <img class="myImg" src="https://joshlearningtocode.files.wordpress.com/2020/07/blog_dark_mode.gif" alt="A gif of my blog switching themes"/>
   </figure>
 </div>
 
@@ -151,7 +151,7 @@ The end result was this:
 
 <div id="imageDiv">
   <figure>
-    <img src="./images/2020-07-24 creating-the-blog/recent_posts.png" alt="The upgraded recent posts page" />
+    <img class="myImg" src="./images/2020-07-24 creating-the-blog/recent_posts.png" alt="The improved recent posts page" />
     <figcaption>The improved recent posts page, you must have seen it to get here though!</figcaption>
   </figure>
 </div>
@@ -171,50 +171,51 @@ I pretty much followed it to the word here, my only addition was adding this to 
 
 This meant that before trying to deploy the app it would always rebuild and export it.
 
-I got this working and up on my GitHub Pages pretty quickly, but I would have to run `npm run deploy` everytime I wanted to deploy any changes. I decided this was too much work, and looked into using GitHub Actions to deploy it for me!
+I got this working and up on my GitHub Pages pretty quickly, so I can deploy with a simple `npm run reploy`.
 
-I looked in the Actions tab of my repo and selected one of the ones using `npm` to work as a template. I deleted everything that wasn't relevant, and ended up with the below file in `.github/workflows/node.js.yml`:
+I realised that the posts were in chronological order, as in oldest at the top. That doesn't make much sense for a blog, so I flipped it round by editing the function used to retrieve the posts:
 
 <div id="codeSnippet">
 
-```yaml
-name: Svelte GitHub Pagese CI/CD
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x]
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm run deploy
+```javascript
+export function preload({ params, query }) {
+  return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
+    posts.sort().reverse()
+    return { posts };
+  });
+}
 ```
 </div>
 
-This meant that any time I pushed or merged to master, it would kick of this action, which will build and deploy my project into my gh-pages branch, where GitHub Pages reads the data from.
+The last thing I wanted was for images to expand when clicked, to make it easier to view them. I started following a guide on <a href="https://www.w3schools.com/howto/howto_css_modal_images.asp" target="_blank">using modals by w3schools</a> which was a helpful starting point. However there was a couple of problems. The first was that `document` did not exist straight away for me, so it would throw an error, the second was their example only worked for one image, to have more than one you would have to specify every single image id.
 
-<div id="imageDiv">
-  <figure>
-    <img src="./images/2020-07-24 creating-the-blog/github_actions.png" alt="GitHub Actions running my deploy script" />
-    <figcaption>GitHub Actions running my deploy script after each merge</figcaption>
-  </figure>
+To solve the first problem, I used onMount to wait for the page to load before triggering the script, so document definitely existed before I tried accessing it.
+To solve the second problem I had to change a little more. Instead of getting a single element by id, I gave all my images a class name of "myImg", and got that instead.
+<div id="codeSnippet">
+
+```javascript
+var img = document.getElementsByClassName("myImg");
+```
 </div>
+
+Now I had an array of all my image elements. Next instead of attaching an `onclick` to a single element, I looped through my array and attached event listener to each image.
+
+<div id="codeSnippet">
+
+```javascript
+for (var i = 0; i < img.length; i++) {
+  img[i].addEventListener('click', function(event){
+    event.preventDefault()
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  });
+}; 
+```
+</div>
+
+This worked exactly as intended!
+
 
 The end result of all this is the blog you are currently reading! It is hosted here:
 <a href="https://joshglasson.github.io/JoshsBlog/" target="_blank">https://joshglasson.github.io/JoshsBlog/</a>

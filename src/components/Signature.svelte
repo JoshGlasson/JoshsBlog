@@ -1,6 +1,6 @@
 <style>
 	div {
-		margin: 0 0 1em 1em;
+		margin: 0 0 1em 0;
 		width: 100%;
 		padding-top: 0.5em;
 		padding-bottom: 0.5em;
@@ -26,7 +26,6 @@
 		vertical-align: middle;
 	}
 </style>
-
 
 <div>
 	<a href='about'><img src="./images/Small Profile Pic.jpg" alt="Me"/></a>
