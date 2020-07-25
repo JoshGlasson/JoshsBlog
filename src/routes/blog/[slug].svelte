@@ -31,7 +31,7 @@
 		
 		for (var i = 0; i < img.length; i++) {
 			img[i].addEventListener('click', function(event){
-				event.preventDefault()
+				event.preventDefault();
 				document.body.style.top = `-${window.scrollY}px`;
 				modal.style.display = "block";
 				modalImg.src = this.src;
@@ -46,13 +46,16 @@
 		var touchstartY = 0;
 		var touchendY = 0;
 		window.addEventListener('touchstart', function(event) {
-			if ((event.target === modal || event.target === modalImg) && (modal.style.display === 'block')) {
+			if (modal.style.display === 'block') {
+				console.log('touchstart');
+				console.log(event);
 				touchstartY = event.changedTouches[0].screenY;
 			}
 		}, false);
 
 		window.addEventListener('touchend', function(event) {
-			if ((event.target === modal || event.target === modalImg) && (modal.style.display === 'block')) {
+			if (modal.style.display === 'block') {
+				console.log('touchend');
 				touchendY = event.changedTouches[0].screenY;
 				handleGesure();
 			}
@@ -70,9 +73,10 @@
 
 		function handleGesure() {
 			var swiped = 'swiped: ';
+			
 			var dif = Math.abs(touchstartY - touchendY);
 			var h = window.innerHeight/3;
-
+			console.log(dif)
 			if (dif > h) {
 				closeModal()
 			}
