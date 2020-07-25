@@ -145,6 +145,14 @@
 		width: auto;
 	}
 
+	.content :global(#videoDiv) {
+		text-align: center;
+	}
+
+	.content :global(iframe) {
+		max-width: 100%;
+	}
+
 	.content :global(figure) {
 		width: 100%;
 		max-width: 1000px;
