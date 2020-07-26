@@ -15,6 +15,7 @@
 	onMount(() => { 
 		var searchbar = document.getElementById("search");
 		searchbar[0].value = "";
+		searchbar[1].checked = false;
 		searchbar.addEventListener('input', function(event){
 			filterPosts();
 		});
@@ -22,8 +23,17 @@
 		function filterPosts() {
 			filteredPosts = [];
 			for (var i = 0; i < posts.length; i++) {
-				if (posts[i].title.includes(searchbar[0].value)) {
-					filteredPosts.push(posts[i]);
+				var post = posts[i]
+				var search = searchbar[0].value.toLowerCase();
+				var advanced = searchbar[1].checked;
+				if (advanced) {
+					if (post.title.toLowerCase().includes(search) || post.headline.toLowerCase().includes(search)) {
+						filteredPosts.push(posts[i]);
+					};
+				} else {
+					if (post.title.toLowerCase().includes(search)) {
+						filteredPosts.push(posts[i]);
+					};
 				};
 			};
 		};
@@ -103,11 +113,13 @@
 </svelte:head>
 
 <div class="top">
-<h1 id="pageTitle">Recent posts</h1>
+	<h1 id="pageTitle">Recent posts</h1>
 
-<form id="search">
-	<input type="text" placeholder="Search Posts">
-</form>
+	<form id="search">
+		<input type="text" placeholder="Search Posts">
+		<input type="checkbox" name="checkbox" id="checkbox_id" value="value">
+		<label for="checkbox_id">advanced search</label>
+	</form>
 </div>
 
 {#each filteredPosts as post}
