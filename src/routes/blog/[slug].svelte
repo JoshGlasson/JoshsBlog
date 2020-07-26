@@ -107,7 +107,14 @@
 	.postTitle h2 {
 		font-size: 2em;
 		font-weight: 300;
+		padding-bottom: 0.5em;
+	}
+
+	.date h3 {
+		font-size: 1em;
+		font-weight: 200;
 		padding-bottom: 1em;
+		color: lightslategray;
 	}
 
 	.content :global(p) {
@@ -253,6 +260,9 @@
 	<h2><strong>{post.headline}</strong></h2>
 </div>
 
+<div class="date">
+	<h3><i>Originally posted on {post.date}</i></h3>
+</div>
 
 <div class='content'>
 	{@html post.html}
