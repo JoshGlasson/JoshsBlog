@@ -32,10 +32,6 @@
 </script>
 
 <style>
-	#pageTitle {
-		margin: 0 0 2em 0;
-	}
-
 	#thumb {
 		display: inline-block;
 		height: 100%;
@@ -96,8 +92,9 @@
 		}
 	}
 
-	#search {
-		float: right;
+	.top {
+		display: block;
+		margin: 0 0 2em 0;
 	}
 </style>
 
@@ -105,11 +102,13 @@
 	<title>Blog</title>
 </svelte:head>
 
+<div class="top">
 <h1 id="pageTitle">Recent posts</h1>
 
 <form id="search">
 	<input type="text" placeholder="Search Posts">
 </form>
+</div>
 
 {#each filteredPosts as post}
 	<!-- we're using the non-standard `rel=prefetch` attribute to
