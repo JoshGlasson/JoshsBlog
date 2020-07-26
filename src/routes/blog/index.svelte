@@ -8,7 +8,27 @@
 </script>
 
 <script>
+	import { onMount } from 'svelte';
 	export let posts;
+	export let filteredPosts = posts;
+
+	onMount(() => { 
+		var searchbar = document.getElementById("search");
+		searchbar[0].value = "";
+		searchbar.addEventListener('input', function(event){
+			filterPosts();
+		});
+
+		function filterPosts() {
+			filteredPosts = [];
+			for (var i = 0; i < posts.length; i++) {
+				if (posts[i].title.includes(searchbar[0].value)) {
+					filteredPosts.push(posts[i]);
+				};
+			};
+		};
+	});
+
 </script>
 
 <style>
@@ -65,15 +85,19 @@
 		object-fit: contain;
 		align-self: flex-start;
 		border-bottom: none;
+		}
+		#text {
+			display: inline-block;
+			width: 75%;
+			height: 100%;
+			flex: 1 1 auto;
+			border-bottom: none;
+			vertical-align: middle;
+		}
 	}
-	#text {
-		display: inline-block;
-		width: 75%;
-		height: 100%;
-		flex: 1 1 auto;
-		border-bottom: none;
-		vertical-align: middle;
-	}
+
+	#search {
+		float: right;
 	}
 </style>
 
@@ -83,7 +107,11 @@
 
 <h1 id="pageTitle">Recent posts</h1>
 
-{#each posts as post}
+<form id="search">
+	<input type="text" placeholder="Search Posts">
+</form>
+
+{#each filteredPosts as post}
 	<!-- we're using the non-standard `rel=prefetch` attribute to
 			tell Sapper to load the data for the page as soon as
 			the user hovers over the link or taps it, instead of
