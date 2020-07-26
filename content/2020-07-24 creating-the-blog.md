@@ -243,7 +243,7 @@ var img = document.getElementsByTagName("IMG");
 ```
 </div>
 
-Now that I had an array of all my image elements, instead of attaching an `onclick` to a single element, I looped through my array and attached event listener to each image.
+Now that I had an array of all my image elements, instead of attaching an `onclick` to a single element, I looped through my array and an attached event listener to each image.
 
 <div id="codeSnippet">
 
@@ -327,9 +327,9 @@ for (var i = 0; i < img.length; i++) {
 ```
 </div>
 
-`document.body.style.top = '-${window.scrollY}px'` records the current scroll position on the screen. This had to go before the opening of the modal otherwise the window would change from referring to the body to referring to the modal. `document.body.style.position = 'fixed';` Stops the screen from scrolling.
+`document.body.style.top = '-${window.scrollY}px'` records the current scroll position on the screen. This had to go before the opening of the modal otherwise the window would change from referring to the body to referring to the modal. `document.body.style.position = 'fixed';` stops the screen from scrolling.
 
-The following in the `closeModal()` function reset these values back to normal upon closing the modal:
+The following in the `closeModal()` function resets these values back to normal upon closing the modal:
 
 <div id="codeSnippet">
 
