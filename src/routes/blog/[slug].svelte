@@ -25,7 +25,7 @@
 
 
 		// Get the image and insert it inside the modal - use its "alt" text as a caption
-		var img = document.getElementsByClassName("myImg");
+		var img = document.getElementsByTagName("IMG")
 		var modalImg = document.getElementById("img01");
 		var captionText = document.getElementById("caption");
 		
@@ -120,6 +120,7 @@
 	.content :global(p) {
 		font-size: 1.2em;
 		font-weight: 300;
+		word-wrap: break-word;
 	}
 	.content :global(pre) {
 		background-color: #f9f9f9;
