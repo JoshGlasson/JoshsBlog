@@ -9,9 +9,11 @@ jobs:
       - uses: actions/checkout@master
       - name: Build Sapper
         uses: truewebartisans/actions-sapper@master
+        with:
+            args: "--basepath JoshsBlog --legacy"
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: __sapper__/export
+          publish_dir: __sapper__/export/JoshsBlog/
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
