@@ -30,15 +30,17 @@
 		var captionText = document.getElementById("caption");
 		
 		for (var i = 0; i < img.length; i++) {
-			img[i].addEventListener('click', function(event){
-				event.preventDefault();
-				document.body.style.top = `-${window.scrollY}px`;
-				modal.style.display = "block";
-				modalImg.src = this.src;
-				captionText.innerHTML = this.alt;
-				document.body.style.position = 'fixed';
-			});
-		}; 
+			if (!img[i].alt.includes("FILTER OUT")) {
+				img[i].addEventListener('click', function(event){
+					event.preventDefault();
+					document.body.style.top = `-${window.scrollY}px`;
+					modal.style.display = "block";
+					modalImg.src = this.src;
+					captionText.innerHTML = this.alt;
+					document.body.style.position = 'fixed';
+				});
+			}; 
+		};
 
 		// Get the <span> element that closes the modal
 		var span = document.getElementsByClassName("close")[0];
@@ -276,7 +278,7 @@
 	<span class="close">&times;</span>
 
 	<!-- Modal Content (The Image) -->
-	<img class="modal-content" id="img01" alt="modal">
+	<img class="modal-content" id="img01" alt="FILTER OUT modal">
 
 	<!-- Modal Caption (Image Text) -->
 	<div id="caption"></div>
