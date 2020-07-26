@@ -157,7 +157,7 @@ The end result was this:
   </figure>
 </div>
 
-The final part was to host the blog somewhere. Up to now I had been checking how it looked using `npm run dev` to run the app on `localhost:3000`. It was helpful as it would automatically update after I saved any files. But I know wanted to deploy it somewhere. I decided to use GitHub Pages as it is free and integrated directly with my repository.
+Nexy I wanted to host the blog somewhere. Up to now I had been viewing the blog locally using `npm run dev` to run the app on `localhost:3000`. It was helpful as it would automatically update after I saved any files, but I was now ready to deploy it somewhere actually visible to the world. I decided to use GitHub Pages as it is free and integrated directly with my repository.
 
 I found another blog post which was helpful in getting this working:
 <a href="https://dev.to/pixeline/how-to-deploy-a-sapper-pwa-on-github-pages-47lc" target="_blank">https://dev.to/pixeline/how-to-deploy-a-sapper-pwa-on-github-pages-47lc</a>
@@ -204,7 +204,7 @@ jobs:
 ```
 </div>
 
-This meant that any time I pushed or merged to master, it would kick of this action, which will build and deploy my project into my gh-pages branch, where GitHub Pages reads the data from.
+This meant that any time I pushed or merged to master, it would kick off this action, which will build and deploy my project into my gh-pages branch, where GitHub Pages reads the data from.
 
 <div id="imageDiv">
   <figure>
@@ -214,7 +214,11 @@ This meant that any time I pushed or merged to master, it would kick of this act
 </div>
 
 
-I realised that the posts were in chronological order, as in oldest at the top. That doesn't make much sense for a blog, so I flipped it round by editing the function used to retrieve the posts:
+The end result of all this is the blog you are currently reading! It is hosted here:
+<a href="https://joshglasson.github.io/JoshsBlog/" target="_blank">https://joshglasson.github.io/JoshsBlog/</a>
+
+
+After seeing it live I realised that the posts were in chronological order, as in oldest at the top. That doesn't make much sense for a blog, so I flipped it round by editing the function used to retrieve the posts:
 
 <div id="codeSnippet">
 
@@ -228,9 +232,9 @@ export function preload({ params, query }) {
 ```
 </div>
 
-The last thing I wanted was for images to expand when clicked, to make it easier to view them. I started following a guide on <a href="https://www.w3schools.com/howto/howto_css_modal_images.asp" target="_blank">using modals by w3schools</a> which was a helpful starting point. However there was a couple of problems. The first was that `document` did not exist straight away for me, so it would throw an error, the second was their example only worked for one image, to have more than one you would have to specify every single image id.
+I then viewed it on my phone and felt some of the images were a bit too small, so I wanted the images to expand when clicked. I started following a guide on <a href="https://www.w3schools.com/howto/howto_css_modal_images.asp" target="_blank">using modals by w3schools</a> which was a helpful starting point. However there was a couple of problems. The first was that `document` did not exist straight away for me, so it would throw an error, the second was their example only worked for one image, to have more than one you would have to specify every single image id.
 
-To solve the first problem, I used onMount to wait for the page to load before triggering the script, so document definitely existed before I tried accessing it.
+To solve the first problem, I used `onMount` to wait for the page to load before triggering the script, so `document` definitely existed before I tried accessing it.
 To solve the second problem I had to change a little more. Instead of getting a single element by id, I got all elements that had the `img` tag.
 <div id="codeSnippet">
 
@@ -239,7 +243,7 @@ var img = document.getElementsByTagName("IMG");
 ```
 </div>
 
-Now I had an array of all my image elements. Next instead of attaching an `onclick` to a single element, I looped through my array and attached event listener to each image.
+Now that I had an array of all my image elements, instead of attaching an `onclick` to a single element, I looped through my array and attached event listener to each image.
 
 <div id="codeSnippet">
 
@@ -257,9 +261,87 @@ for (var i = 0; i < img.length; i++) {
 
 This worked exactly as intended!
 
+I wanted to be able to swipe to close the images when viewing on mobile too, so I added some more functions to handle this:
 
-The end result of all this is the blog you are currently reading! It is hosted here:
-<a href="https://joshglasson.github.io/JoshsBlog/" target="_blank">https://joshglasson.github.io/JoshsBlog/</a>
+<div id="codeSnippet">
 
-Hope this was interesting and helpful!
+```js
+var touchstartY = 0;
+var touchendY = 0;
+window.addEventListener('touchstart', function(event) {
+  if (modal.style.display === 'block') {
+    console.log('touchstart');
+    console.log(event);
+    touchstartY = event.changedTouches[0].screenY;
+  }
+}, false);
+
+window.addEventListener('touchend', function(event) {
+  if (modal.style.display === 'block') {
+    console.log('touchend');
+    touchendY = event.changedTouches[0].screenY;
+    handleGesure();
+  }
+}, false);
+
+function handleGesure() {
+  var swiped = 'swiped: ';
+  
+  var dif = Math.abs(touchstartY - touchendY);
+  var h = window.innerHeight/3;
+  console.log(dif)
+  if (dif > h) {
+    closeModal()
+  }
+}
+
+function closeModal() {
+  modal.style.display = 'none';
+  const scrollY = document.body.style.top;
+  document.body.style.position = '';
+  document.body.style.top = '';
+  window.scrollTo(0, parseInt(scrollY || '0') * -1);
+  document.body.style.left = ''
+  document.body.style.transform = ''
+}
+```
+</div>
+
+Basically this code listens for touches on the screen whilst the modal is open. It records the start and end position for the touches on the y axis (so only swipes up or down). It calculates the difference between the two to see how far the user swiped, then compares that to the height of the screen. If the distance swiped is over a third of the screen size it will trigger the method to close the modal.
+
+I also had to add some styling here to ensure that swiping didn't change the position on the body behind the modal, as at first it would scroll the page. I updated the event listener that opened the modal: 
+
+<div id="codeSnippet">
+
+```javascript
+for (var i = 0; i < img.length; i++) {
+  img[i].addEventListener('click', function(event){
+    event.preventDefault();
+    document.body.style.top = `-${window.scrollY}px`;
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+    document.body.style.position = 'fixed';
+  });
+}; 
+```
+</div>
+
+`document.body.style.top = '-${window.scrollY}px'` records the current scroll position on the screen. This had to go before the opening of the modal otherwise the window would change from referring to the body to referring to the modal. `document.body.style.position = 'fixed';` Stops the screen from scrolling.
+
+The following in the `closeModal()` function reset these values back to normal upon closing the modal:
+
+<div id="codeSnippet">
+
+```javascript
+const scrollY = document.body.style.top;
+document.body.style.position = '';
+document.body.style.top = '';
+window.scrollTo(0, parseInt(scrollY || '0') * -1);
+document.body.style.left = ''
+document.body.style.transform = ''
+```
+</div>
+
+I hope this was interesting and helpful to anyone else trying to build a website with Svelte and Sapper!
 
