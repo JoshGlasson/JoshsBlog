@@ -169,9 +169,49 @@ I pretty much followed it to the word here, my only addition was adding this to 
 ```
 </div>
 
-This meant that before trying to deploy the app it would always rebuild and export it.
+This meant that before trying to deploy the app it would always rebuild and export it. I got this working and up on my GitHub Pages pretty quickly, so I can deploy with a simple `npm run reploy`. However running that command every time would be a bit annoying, so I added a GitHub Action to deploy it automatically. 
 
-I got this working and up on my GitHub Pages pretty quickly, so I can deploy with a simple `npm run reploy`.
+I found this post which helped me set up a `sapper_build.yml` file:
+<a href="https://github.com/marketplace/actions/sapper-action" target="_blank">https://github.com/marketplace/actions/sapper-action</a>
+
+<div id="codeSnippets">
+
+```yml
+name: Build Sapper and Deploy to GitHub Pages
+
+on:
+    push:
+        branches: [ master ]
+    pull_request:
+        branches: [ master ]
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build Sapper
+        uses: truewebartisans/actions-sapper@master
+        with:
+            args: "--basepath JoshsBlog --legacy"
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: __sapper__/export/JoshsBlog/
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+```
+</div>
+
+This meant that any time I pushed or merged to master, it would kick of this action, which will build and deploy my project into my gh-pages branch, where GitHub Pages reads the data from.
+
+<div id="imageDiv">
+  <figure>
+    <img src="./images/2020-07-24 creating-the-blog/github_actions.png" alt="GitHub Actions running my deploy script" />
+    <figcaption>GitHub Actions running my deploy script after each merge</figcaption>
+  </figure>
+</div>
+
 
 I realised that the posts were in chronological order, as in oldest at the top. That doesn't make much sense for a blog, so I flipped it round by editing the function used to retrieve the posts:
 
