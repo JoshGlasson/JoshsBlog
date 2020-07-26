@@ -16,29 +16,64 @@
 		margin: 0 0 2em 0;
 	}
 
+	#thumb {
+		display: inline-block;
+		height: 100%;
+		width: 15%;
+		object-fit: contain;
+		align-self: flex-start;
+		border-bottom: none;
+	}
+	#text {
+		display: inline-block;
+		width: 85%;
+		height: 100%;
+		flex: 1 1 auto;
+		border-bottom: none;
+		vertical-align: middle;
+	}
+
 	div {
 		margin: 0 0 1em 1em;
 		width: 100%;
-		padding-bottom: 0.5em;
+		height: 25%;
 		border-bottom: 1px solid lightgray;
-		overflow-x: auto;
+		padding-bottom: 0.5em;
+		display: flex;
 	}
 
-	div img {
-		display: block;
-		float: left;
-		max-width: 150px;
-		max-height: 150px;
+	#thumb img {
+		width: 100%;
+		height: 100%;
 		margin: 0 1em 0 0;
 	}
 
-	div h1 {
+	#text h1 {
 		vertical-align: middle;
 		display: block;
 	}
 
-	div h3{
+	#text h2{
 		vertical-align: middle;
+	}
+
+	@media only screen and (max-width: 700px){
+		#thumb {
+		display: inline-block;
+		height: 100%;
+		width: 25%;
+		object-fit: contain;
+		align-self: flex-start;
+		border-bottom: none;
+	}
+	#text {
+		display: inline-block;
+		width: 75%;
+		height: 100%;
+		flex: 1 1 auto;
+		border-bottom: none;
+		vertical-align: middle;
+	}
 	}
 </style>
 
@@ -54,8 +89,12 @@
 			the user hovers over the link or taps it, instead of
 			waiting for the 'click' event -->
 	<div>
-		<a href='blog/{post.slug}'><img src={post.image} alt="Post Display"/></a>
-		<a rel='prefetch' href='blog/{post.slug}'><h1>{post.title}</h1></a>
-		<h3>{post.headline}</h3>
+		<div id="thumb">
+			<a href='blog/{post.slug}'><img src={post.image} alt="Thumbnail"/></a>
+		</div>
+		<div id="text">
+			<a rel='prefetch' href='blog/{post.slug}'><h1>{post.title}</h1></a>
+			<h2>{post.headline}</h2>
+		</div>
 	</div>
 {/each}
