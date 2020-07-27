@@ -9,8 +9,17 @@
 
 <script>
 	import { onMount } from 'svelte';
+
 	export let posts;
 	export let filteredPosts = posts;
+	export let tags = [];
+
+	function getTags() {
+		for (var i = 0; i < posts.length; i++) {
+			tags = tags.concat(posts[i].tags.filter((item) => tags.indexOf(item) < 0));
+		};
+		tags = tags.sort();
+	};
 
 	onMount(() => { 
 		var searchbar = document.getElementById("search");
@@ -19,6 +28,9 @@
 		searchbar.addEventListener('input', function(event){
 			filterPosts();
 		});
+
+		getTags();
+		console.log(tags);
 
 		function filterPosts() {
 			filteredPosts = [];
