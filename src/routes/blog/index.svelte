@@ -31,6 +31,14 @@
 			filterByTags();
 		});
 
+		searchbar.onkeypress = function(e) {
+			var key = e.charCode || e.keyCode || 0;     
+			if (key == 13) {
+				e.preventDefault();
+			};
+		};
+
+
 		function filterPosts() {
 			if(searchbar[0].value !== "") {
 				filteredPosts = [];
