@@ -28,7 +28,7 @@
 </style>
 
 <div>
-	<a href='about'><img src="./images/Small Profile Pic.jpg" alt="Me"/></a>
+	<a href='about'><img src="./images/Small Profile Pic.jpg" alt="Me" class="signature-image"/></a>
 	<h3>Post by</h3>
 	<a href='about'><h1>Josh Glasson</h1></a>
 	<h3>Software Developer. Creator and owner of this blog.</h3>

@@ -23,14 +23,13 @@
 		// Get the modal
 		var modal = document.getElementById("myModal");
 
-
 		// Get the image and insert it inside the modal - use its "alt" text as a caption
 		var img = document.getElementsByTagName("IMG")
 		var modalImg = document.getElementById("img01");
 		var captionText = document.getElementById("caption");
 		
 		for (var i = 0; i < img.length; i++) {
-			if (!img[i].alt.includes("FILTER OUT")) {
+			if (!img[i].className.includes("modal-content") && !img[i].className.includes("signature-image")) {
 				img[i].addEventListener('click', function(event){
 					event.preventDefault();
 					document.body.style.top = `-${window.scrollY}px`;
@@ -278,7 +277,7 @@
 	<span class="close">&times;</span>
 
 	<!-- Modal Content (The Image) -->
-	<img class="modal-content" id="img01" alt="FILTER OUT modal">
+	<img class="modal-content" id="img01" alt="modal for image">
 
 	<!-- Modal Caption (Image Text) -->
 	<div id="caption"></div>
