@@ -95,6 +95,7 @@
 
 				form.appendChild(input);
 				form.appendChild(label);
+				form.appendChild(document.createElement("br"));
 			};
 			addInputEventListeners();
 		};
@@ -224,6 +225,7 @@
 		overflow: auto;
 		transition: max-height 0.2s ease-out;
 		border-bottom: none;
+		display: block;
 	}
 </style>
 
