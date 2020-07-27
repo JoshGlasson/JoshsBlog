@@ -88,10 +88,14 @@
 				var name = tag[0].toUpperCase() + tag.slice(1);
 
 				input.type = "checkbox";
-				input.id = tag;
-				input.className = "filter-input"
-				label.for = tag;
+				input.name = tag;
+				input.id = tag+"_id";
+				input.value = "value";
+				input.className = "filter-input";
+				label.htmlFor = tag+"_id";
 				label.textContent = name;
+
+				console.log(label)
 
 				form.appendChild(input);
 				form.appendChild(label);
@@ -121,10 +125,10 @@
 				var filterInput = filterInputs[i];
 				filterInput.addEventListener("change", function(event) {
 					if (this.checked) {
-						tagsToFilter.push(event.target.id)
+						tagsToFilter.push(event.target.name)
 						filterByTags();
 					} else {
-						const index = tagsToFilter.indexOf(event.target.id);
+						const index = tagsToFilter.indexOf(event.target.name);
 						if (index > -1) {
 							tagsToFilter.splice(index, 1);
 						};
@@ -214,6 +218,10 @@
 		border-bottom: none;
 	}
 
+	#tag_filter_checkbox_id {
+		display: inline-block;
+	}
+
 	.active, .collapsible:hover {
 		border-bottom: none;
 	}
@@ -247,6 +255,7 @@
 		<form id="filter-form">
 		</form>
 	</div>
+	
 </div>
 
 {#each filteredPosts as post}
