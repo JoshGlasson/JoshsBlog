@@ -240,7 +240,7 @@
 		<label for="checkbox_id">advanced search</label>
 	</form>
 
-	<button class="collapsible">Filter Posts</button>
+	<button class="collapsible">View Posts by Tags</button>
 	<div class="filters">
 		<form id="filter-form">
 		</form>
