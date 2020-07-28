@@ -4,7 +4,7 @@ title: 'Creating This Blog.'
 headline: 'How to create a blog using Svelte'
 image: "./images/2020-07-24 creating-the-blog/svelte_logo.png"
 date: "24th July 2020"
-tags: ['software development' , 'svelte', 'html', 'css', 'javascript', 'blog']
+tags: ['Software Development' , 'Svelte', 'HTML, CSS & JavaScript', 'Blog']
 ---
 
 I have talked about the reasons for me writing this blog on the sites <a href="about"><strong>about</strong></a> page, so here is <strong><i>how</i></strong>.

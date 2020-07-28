@@ -92,7 +92,6 @@
 				var input = document.createElement("INPUT");
 				var label = document.createElement("LABEL");
 				var tag = tags[i];
-				var name = tag[0].toUpperCase() + tag.slice(1);
 
 				input.type = "checkbox";
 				input.name = tag;
@@ -100,7 +99,7 @@
 				input.value = "value";
 				input.className = "filter-input";
 				label.htmlFor = tag+"_id";
-				label.textContent = name;
+				label.textContent = tag;
 
 				console.log(label)
 
