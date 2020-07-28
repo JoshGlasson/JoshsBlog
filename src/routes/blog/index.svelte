@@ -15,6 +15,7 @@
 	export let tagFilteredPosts;
 	export let tags = [];
 	export let tagsToFilter = [];
+	export let filterByAnyTags = true;
 
 	function getTags() {
 		for (var i = 0; i < posts.length; i++) {
@@ -68,8 +69,14 @@
 					var z = post.tags.filter(function(val) {
 						return tagsToFilter.indexOf(val) != -1
 					});
-					if(z.length > 0) {
-						tagFilteredPosts.push(post);
+					if(filterByAnyTags) {
+						if(z.length > 0) {
+							tagFilteredPosts.push(post);
+						};
+					} else {
+						if(z.length == tagsToFilter.length) {
+							tagFilteredPosts.push(post);
+						};
 					};
 				};
 			};
@@ -110,7 +117,7 @@
 		for (var i = 0; i < coll.length; i++) {
 			coll[i].addEventListener("click", function() {
 				this.classList.toggle("active");
-				var content = this.nextElementSibling;
+				var content = document.getElementById('filter-form-div')
 				if (content.style.maxHeight) {
 					content.style.maxHeight = null;
 				} else {
@@ -137,6 +144,17 @@
 				});
 			};
 		};
+
+		var slider = document.getElementById('any_all_slider')
+		slider.addEventListener("change", function(event) {
+			if (this.checked) {
+				filterByAnyTags = false;
+				filterByTags();
+			} else {
+				filterByAnyTags = true;
+				filterByTags();
+			};
+		});
 	});
 
 </script>
@@ -235,6 +253,69 @@
 		border-bottom: none;
 		display: block;
 	}
+
+	 /* The switch - the box around the slider */
+	.switch {
+		position: relative;
+		display: inline-block;
+		width: 40px;
+		height: 23px;
+	}
+
+	/* Hide default HTML checkbox */
+	.switch input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+
+	/* The slider */
+	.slider {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #ccc;
+		-webkit-transition: .4s;
+		transition: .4s;
+	}
+
+	.slider:before {
+		position: absolute;
+		content: "";
+		height: 16px;
+		width: 16px;
+		left: 4px;
+		bottom: 4px;
+		background-color: white;
+		-webkit-transition: .4s;
+		transition: .4s;
+	}
+
+	input:checked + .slider {
+		background-color: #2196F3;
+	}
+
+	input:focus + .slider {
+		box-shadow: 0 0 1px #2196F3;
+	}
+
+	input:checked + .slider:before {
+		-webkit-transform: translateX(16px);
+		-ms-transform: translateX(16px);
+		transform: translateX(16px);
+	}
+
+	/* Rounded sliders */
+	.slider.round {
+		border-radius: 34px;
+	}
+
+	.slider.round:before {
+		border-radius: 50%;
+	} 
 </style>
 
 <svelte:head>
@@ -251,10 +332,16 @@
 	</form>
 
 	<button class="collapsible">View Posts by Tags</button>
-	<div class="filters">
+	<div class="filters" id="filter-form-div">
+		<label class="switch" for="any_all_slider">
+			<input type="checkbox" id="any_all_slider">
+			<span class="slider round"></span>
+		</label>
+		<p style="display: inline-block;">Find Posts with {filterByAnyTags ? "Any" : "All"} Tags</p>
 		<form id="filter-form">
 		</form>
 	</div>
+	
 	
 </div>
 
