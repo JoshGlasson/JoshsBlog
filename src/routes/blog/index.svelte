@@ -146,6 +146,7 @@
 		};
 
 		var slider = document.getElementById('any_all_slider')
+		slider.checked = false;
 		slider.addEventListener("change", function(event) {
 			if (this.checked) {
 				filterByAnyTags = false;
