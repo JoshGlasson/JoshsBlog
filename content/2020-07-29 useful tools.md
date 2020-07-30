@@ -17,16 +17,16 @@ I do my work on a Mac, so most of this will be Mac specific, although most tools
 <h2>Productivity</h2>
 
 - <a href="https://www.notion.so/" target="_blank">Notion</a> - The note taking app that I use currently. Probably the most feature rich and nicest looking app I have used to take notes. Also has a mobile app to keep notes on the go. The free plan is more than enough for personal notes.
-- <a href="https://notable.app/" target="_blank">Notable</a> - The note taking app I used to use. I liked it because you could write all of your notes in markdown, making version control via git very easy. Markdown does however have limitations, and there was also no mobile app. It is also free and open source.
-- <a href="https://github.com/rxhanson/Rectangle" target="_blank">Rectangle</a> - Rectangle is a Mac application that lets you easily resize windows using keyboard shortcuts. I use <kbd>Cmd</kbd> + <kbd>Optn</kbd> + <kbd>F</kbd> to make a window full screen so often. Again it is free and open source.
-- <a href="https://getkap.co/" target="_blank">Kap</a> - Kap is a screen recording app which I use to make videos and gifs of my work. It is free and open source.
 
 <div id="imageDiv">
     <figure>
-        <img src="https://joshlearningtocode.files.wordpress.com/2020/07/rectangle.gif" alt="Using Rectangle to re-size my DBeaver window, recorded with Kap">
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/07/notion.gif" alt="Notion in action">
     </figure>
 </div>
 
+- <a href="https://notable.app/" target="_blank">Notable</a> - The note taking app I used to use. I liked it because you could write all of your notes in markdown, making version control via git very easy. Markdown does however have limitations, and there was also no mobile app. It is also free and open source.
+- <a href="https://github.com/rxhanson/Rectangle" target="_blank">Rectangle</a> - Rectangle is a Mac application that lets you easily resize windows using keyboard shortcuts. I use <kbd>Cmd</kbd> + <kbd>Optn</kbd> + <kbd>F</kbd> to make a window full screen so often. Again it is free and open source.
+- <a href="https://getkap.co/" target="_blank">Kap</a> - Kap is a screen recording app which I use to make videos and gifs of my work. It is free and open source.
 - <a href="https://1password.com/" target="_blank">1Password</a> - 1Password is a password manager which I use to store and generate passwords. 1Password is my favourite password manager, as you can also store one time passwords on it. Also it is available on all devices, so you can access your passwords anywhere. 1Password is not free however, you do have to pay an annual or monthly subscription.
 - <a href="https://www.expressvpn.com/" target="_blank">Express VPN</a> - Express VPN is a vpn service which gives you very fast connections to lots of locations around the world. Express VPN also requires a monthly subscription fee.
 
@@ -37,7 +37,8 @@ I do my work on a Mac, so most of this will be Mac specific, although most tools
 
 <div id="imageDiv">
     <figure>
-        <img src="https://code.visualstudio.com/assets/updates/1_37/icons.gif" alt="VS Code in Action">
+        <img src="./images/2020-07-29 useful tools/vscode.png" alt="Me Using VS Code">
+        <figcaption>Me using VS Code for this blog!</figcaption>
     </figure>
 </div>
 
