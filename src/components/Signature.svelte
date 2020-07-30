@@ -18,7 +18,6 @@
 	}
 
 	div h1 {
-		vertical-align: middle;
 		display: block;
 	}
 

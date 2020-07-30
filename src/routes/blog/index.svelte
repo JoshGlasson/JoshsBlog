@@ -193,7 +193,6 @@
 	}
 
 	#text h1 {
-		vertical-align: middle;
 		display: block;
 	}
 
@@ -233,14 +232,6 @@
 		text-align: left;
 		outline: none;
 		font-size: 15px;
-		border-bottom: none;
-	}
-
-	#tag_filter_checkbox_id {
-		display: inline-block;
-	}
-
-	.active, .collapsible:hover {
 		border-bottom: none;
 	}
 
