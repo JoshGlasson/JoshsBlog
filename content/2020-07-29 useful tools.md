@@ -8,7 +8,7 @@ originaldate: "2020-07-30"
 tags: ['Software Development']
 ---
 
-I wanted to create a place where I could talk about the different tools I use whilst doing my job and in my personal life which I really like. They may be to do with software development, productivity or just cool things!
+I wanted to create a place where I could talk about the different tools I use whilst doing my job and in my personal life which I like. They may be to do with software development, productivity or just cool things!
 
 I got the idea from <a href="https://github.com/kmikiy/awesome-mac" target="_blank">kmikiy</a>, the author of SpotMenu, which appears on my list.
 
@@ -33,7 +33,7 @@ I do my work on a Mac, so most of this will be Mac specific, although most tools
 
 <h2>Software Development</h2>
 
-- <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> - VS Code is my editor of choice for pretty much everything that isn't Java. I use it for editing scripts, taking quick text notes, viewing json and so on. It has lots of really great plugins, and because it's from Microsoft it has lots of integration with Azure. I also write my blog posts in markdown in VS Code, as well as all the code for the blog.
+- <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> - VS Code is my editor of choice for pretty much everything that isn't Java. I use it for editing scripts, taking quick text notes, viewing json and so on. It has lots of brilliant plugins, and because it's from Microsoft it has lots of integration with Azure. I also write my blog posts in markdown in VS Code, as well as all the code for the blog.
 
 <div id="imageDiv">
     <figure>
@@ -41,15 +41,15 @@ I do my work on a Mac, so most of this will be Mac specific, although most tools
     </figure>
 </div>
 
-- <a href="https://www.jetbrains.com/idea/" target="_target">IntelliJ</a> - IntelliJ is the main IDE I use at work. It is great for Java, and also has lots of really great plugins. It is a very powerful IDE, and has really great version control built in. I use IntelliJ's built in tools to check and commit my code, as it is really clear and helpful.
-- <a href="https://www.iterm2.com/" target="_blank">iTerm</a> - iTerm is a terminal emulator for Mac which has some really great features that I definitely do not make the most of!
-- <a href="https://www.postman.com/" target="_blank">Postman</a> - Postman is a really helpful application that lets you make calls to APIs. You can save variables to make quick successive calls and add tests for the responses. Postman also has automated testing where you can run whole journeys and assert on what you expect in response. I use Postman extensively at work and also used it a lot for my apprenticeship final project.
+- <a href="https://www.jetbrains.com/idea/" target="_target">IntelliJ</a> - IntelliJ is the main IDE I use at work. It is great for Java, and also has lots of useful plugins. It is a very powerful IDE, and has amazing version control built in. I use IntelliJ's built in tools to check and commit my code, as it is really clear and helpful.
+- <a href="https://www.iterm2.com/" target="_blank">iTerm</a> - iTerm is a terminal emulator for Mac which has some good features that I definitely do not make the most of!
+- <a href="https://www.postman.com/" target="_blank">Postman</a> - Postman is a helpful application that lets you make calls to APIs. You can save variables to make quick successive calls and add tests for the responses. Postman also has automated testing where you can run whole journeys and assert on what you expect in response. I use Postman extensively at work and also used it a lot for my apprenticeship final project.
 - <a href="https://github.com/ohmyzsh/ohmyzsh" target="_blank">Oh My Zsh</a> - OMZ is an open source framework for ZSH. ZSH is what has replaced bash on newer macOSs.  Oh My ZSH lets you use loads of plugins and themes to make the command line even better. Personally I have the git plugin which tells you which branch you are in and if you have made any changes. I also use features like auto suggestions on commands and their custom profile to create shortcuts. I wrote a <a href="https://joshlearningto.code.blog/2020/01/21/zsh-plugins/" target="_blank">blog post</a> about zsh plugins previously which you can check out for more info.
 
 <h3>Databases</h3>
 
-- <a href="https://dbeaver.io/" target="_blank">DBeaver</a> - DBeaver is a really powerful database tool. It can handle pretty much all popular databases. I just recently started using it.
-- <a href="https://tableplus.com/" target="_blank">TablePlus</a> - TablePlus is a really good database tool, I really like the look of it and the features. It would be my go to tool, if it wasn't limited in the free version. With free alternatives like DBeaver I can't bring myself to pay for the full version.
+- <a href="https://dbeaver.io/" target="_blank">DBeaver</a> - DBeaver is a powerful database tool. It can handle pretty much all popular databases. I just recently started using it.
+- <a href="https://tableplus.com/" target="_blank">TablePlus</a> - TablePlus is another good database tool, I like the look of it and the features it has. It would be my go to tool, if it wasn't limited in the free version. With free alternatives like DBeaver I can't bring myself to pay for the full version.
 
 <div id="imageDiv">
     <figure>
@@ -62,7 +62,7 @@ I do my work on a Mac, so most of this will be Mac specific, although most tools
 
 <h2>Fun</h2>
 
-- <a href="https://github.com/kmikiy/SpotMenu" target="_blank">SpotMenu</a> - SpotMenu is a really cool bit of software for macOS. It connects to spotify and shows you the current playing song in the tool bar at the top of the screen. Clicking on it reveals controls and the album art. I love listening to music, especially while writing code, so this one is a must for me. 
+- <a href="https://github.com/kmikiy/SpotMenu" target="_blank">SpotMenu</a> - SpotMenu is a super cool bit of software for macOS. It connects to spotify and shows you the current playing song in the tool bar at the top of the screen. Clicking on it reveals controls and the album art. I love listening to music, especially while writing code, so this one is a must for me. 
 
 <div id="imageDiv">
     <figure>
@@ -71,6 +71,6 @@ I do my work on a Mac, so most of this will be Mac specific, although most tools
 </div>
 
 - <a href="https://openemu.org/" target="_blank">OpenEmu</a> - OpenEmu is a free, open source video game emulator for macOS. It uses downloadable cores to emulate lots of consoles whilst still being fairly lightweight. Connecting controllers is easy, I play using my PS4 controller!
-- <a href="https://onecast.me" target="_blank">OneCast</a> - OneCast is a bit of software that lets you stream your Xbox to different platforms, a feature that is usually restricted to Windows PC. They have a free 14 day trial, after which you have to pay for a licence. I used it for the 14 days and found it worked really well with minimal lag.
+- <a href="https://onecast.me" target="_blank">OneCast</a> - OneCast is a bit of software that lets you stream your Xbox to different platforms, a feature that is usually restricted to Windows PC. They have a free 14 day trial, after which you have to pay for a licence. I used it for the 14 days and found it worked very well with minimal lag.
 
 I will keep this list updated as I find more interesting and useful tools.
