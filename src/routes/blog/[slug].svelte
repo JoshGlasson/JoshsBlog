@@ -19,6 +19,10 @@
 	import { onMount } from 'svelte';
 	export let post;
 
+	let epochPostDate = new Date(post.originaldate);
+	let date = epochPostDate.toDateString();
+
+
 	onMount(() => { 
 		// Get the modal
 		var modal = document.getElementById("myModal");
@@ -263,7 +267,7 @@
 </div>
 
 <div class="date">
-	<h3><i>Originally posted on {post.date}</i></h3>
+	<h3><i>Originally posted on {date}</i></h3>
 </div>
 
 <div class='content'>
@@ -277,7 +281,7 @@
 	<span class="close">&times;</span>
 
 	<!-- Modal Content (The Image) -->
-	<img class="modal-content" id="img01" alt="modal for image">
+	<img class="modal-content" id="img01" alt="modal generated">
 
 	<!-- Modal Caption (Image Text) -->
 	<div id="caption"></div>

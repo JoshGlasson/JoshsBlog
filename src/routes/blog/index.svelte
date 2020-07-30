@@ -1,7 +1,7 @@
 <script context="module">
 	export function preload({ params, query }) {
 		return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
-			posts.sort().reverse()
+			posts.sort((a,b) => (Date.parse(a.sortdate) > Date.parse(b.sortdate)) ? 1 : ((Date.parse(b.sortdate) > Date.parse(a.sortdate)) ? -1 : 0)).reverse()
 			return { posts };
 		});
 	}
