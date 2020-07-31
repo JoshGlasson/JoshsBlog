@@ -17,6 +17,7 @@
 	export let tagsToFilter = [];
 	export let filterByAnyTags = true;
 
+	// Gets the tags across all posts and filters out dupes.
 	function getTags() {
 		for (var i = 0; i < posts.length; i++) {
 			tags = tags.concat(posts[i].tags.filter((item) => tags.indexOf(item) < 0));
@@ -25,6 +26,7 @@
 	};
 
 	onMount(() => { 
+		// Getting the search bar and listening for changes
 		var searchbar = document.getElementById("search");
 		searchbar[0].value = "";
 		searchbar[1].checked = false;
@@ -32,6 +34,7 @@
 			filterByTags();
 		});
 
+		// Disables enter submitting the search bar as a form
 		searchbar.onkeypress = function(e) {
 			var key = e.charCode || e.keyCode || 0;     
 			if (key == 13) {
@@ -39,7 +42,7 @@
 			};
 		};
 
-
+		// Filters the posts based on the search bar value. Normally looks at titles only, in advanced mode it looks at the headline too.
 		function filterPosts() {
 			if(searchbar[0].value !== "") {
 				filteredPosts = [];
@@ -60,6 +63,7 @@
 			};
 		};
 
+		// Filters by the selected tags. Can filter for posts with all of the tags or any of the tags depending on if the slider is active.
 		function filterByTags() {
 			tagFilteredPosts = posts;
 			if (tagsToFilter.length > 0) {
@@ -84,8 +88,8 @@
 			filterPosts();
 		};
 
+		// The list of tags used to filter is dynamic, this method creates each checkbox.
 		var form = document.getElementById("filter-form")
-
 		function populateFilterForm() {
 			getTags()
 			for (var i = 0; i < tags.length; i++) {
@@ -112,6 +116,7 @@
 
 		populateFilterForm()
 
+		// The filters are hidden in a collapsible element activated by clicking the button.
 		var coll = document.getElementsByClassName("collapsible");
 		for (var i = 0; i < coll.length; i++) {
 			coll[i].addEventListener("click", function() {
@@ -125,6 +130,7 @@
 			});
 		};
 
+		// Updates the list of tags to use for filtering when the checkboxes are ticked or unticked.
 		function addInputEventListeners() {
 			var filterInputs = document.getElementsByClassName("filter-input")
 			for (var i = 0; i < filterInputs.length; i++) {
@@ -144,6 +150,7 @@
 			};
 		};
 
+		// This adds an event listener to the slider to change the tag filtering style.
 		var slider = document.getElementById('any_all_slider')
 		slider.checked = false;
 		slider.addEventListener("change", function(event) {

@@ -35,6 +35,6 @@
 <h1>Welcome to Josh's Blog!</h1>
 
 <figure>
-	<img alt='Me' src='./images/JoshCoverImage.jpg'>
+	<img alt='Me' src='./images/about/JoshCoverImage.jpg'>
 	<figcaption>A place for me to talk about Software Development and my hobbies!</figcaption>
 </figure>

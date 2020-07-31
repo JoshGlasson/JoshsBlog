@@ -29,10 +29,10 @@
 
 <div>
 	<div id="imageDiv">
-		<a href='https://twitter.com/joshglasson' target="_blank"><img src="./images/twitter_logo.png" alt="Link to my twitter"/></a>
-		<a href='https://github.com/JoshGlasson' target="_blank"><img src="./images/github_logo.png" alt="Link to my GitHub"/></a>
-		<a href='https://www.linkedin.com/in/josh-glasson/' target="_blank"><img src="./images/linkedin_logo.png" alt="Link to my LinkedIn"/></a>
-		<a href='https://joshlearningto.code.blog' target="_blank"><img src="./images/wordpress_logo.png" alt="Link to my Wordpress Blog"/></a>
-		<a href='https://www.youtube.com/channel/UCHAoyUMbbat4m-HWdEivCEw' target="_blank"><img src="./images/youtube_logo.png" alt="Link to my Youtube Channel"/></a>
+		<a href='https://twitter.com/joshglasson' target="_blank"><img src="./images/about/twitter_logo.png" alt="Link to my twitter"/></a>
+		<a href='https://github.com/JoshGlasson' target="_blank"><img src="./images/about/github_logo.png" alt="Link to my GitHub"/></a>
+		<a href='https://www.linkedin.com/in/josh-glasson/' target="_blank"><img src="./images/about/linkedin_logo.png" alt="Link to my LinkedIn"/></a>
+		<a href='https://joshlearningto.code.blog' target="_blank"><img src="./images/about/wordpress_logo.png" alt="Link to my Wordpress Blog"/></a>
+		<a href='https://www.youtube.com/channel/UCHAoyUMbbat4m-HWdEivCEw' target="_blank"><img src="./images/about/youtube_logo.png" alt="Link to my Youtube Channel"/></a>
 	</div>
 </div>

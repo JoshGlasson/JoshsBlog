@@ -33,6 +33,7 @@
 		var modalImg = document.getElementById("img01");
 		var captionText = document.getElementById("caption");
 		
+		// Adding click event listeners to every image on the page, which will open a modal when fired. Checks that the image is not a modal first.
 		for (var i = 0; i < img.length; i++) {
 			if (!img[i].className.includes("modal-content") && !img[i].className.includes("signature-image")) {
 				img[i].addEventListener('click', function(event){
@@ -49,6 +50,7 @@
 		// Get the <span> element that closes the modal
 		var span = document.getElementsByClassName("close")[0];
 
+		// Event listeners to track the user swiping on the screen
 		var touchstartY = 0;
 		var touchendY = 0;
 		window.addEventListener('touchstart', function(event) {
@@ -67,6 +69,7 @@
 			}
 		}, false); 
 
+		// Resets all of the styling that was changed for the modal
 		function closeModal() {
 			modal.style.display = 'none';
 			const scrollY = document.body.style.top;
@@ -77,6 +80,7 @@
 			document.body.style.transform = ''
 		}
 
+		// Checks if the user has swiped up or down more than one third of the screen. If so it closes the modal.
 		function handleGesure() {
 			var swiped = 'swiped: ';
 			
@@ -93,7 +97,7 @@
 			closeModal()
 		}
 
-
+		// Checks sort date vs post date to see if theres been an update, displays updated date under original if so.
 		if(epochPostDate.getTime() != epochUpdateDate.getTime()) {	
 			var datediv = document.getElementsByClassName("date")[0]
 			var updatedate = document.createElement("h3");
