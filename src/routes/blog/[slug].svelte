@@ -20,6 +20,7 @@
 	export let post;
 
 	let epochPostDate = new Date(post.originaldate);
+	let epochUpdateDate = new Date(post.sortdate);
 	let date = epochPostDate.toDateString();
 
 
@@ -91,6 +92,19 @@
 		span.onclick = function() { 
 			closeModal()
 		}
+
+
+		if(epochPostDate.getTime() != epochUpdateDate.getTime()) {	
+			var datediv = document.getElementsByClassName("date")[0]
+			var updatedate = document.createElement("h3");
+			var italic = document.createElement("i");
+
+			italic.textContent = "Updated on " + epochUpdateDate.toDateString();
+			
+			updatedate.appendChild(italic);
+			datediv.appendChild(updatedate);
+		};
+
 	});
 
 </script>
@@ -115,8 +129,8 @@
 		padding-bottom: 0.5em;
 	}
 
-	.date h3 {
-		font-size: 1em;
+	.date {
+		font-size: 0.8em;
 		font-weight: 200;
 		padding-bottom: 1em;
 		color: lightslategray;

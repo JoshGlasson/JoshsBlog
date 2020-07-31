@@ -3,7 +3,7 @@ slug: '2020-07-29 useful tools'
 title: 'Useful Tools.'
 headline: 'Tools I find useful as a Software Dev'
 image: "./images/2020-07-29 useful tools/tools.png"
-sortdate: "2020-07-30"
+sortdate: "2020-07-31"
 originaldate: "2020-07-30"
 tags: ['Software Development']
 ---
@@ -29,7 +29,7 @@ I do my work on a Mac, so most of this will be Mac specific, although most tools
 - <a href="https://getkap.co/" target="_blank">Kap</a> - Kap is a screen recording app which I use to make videos and gifs of my work. It is free and open source.
 - <a href="https://1password.com/" target="_blank">1Password</a> - 1Password is a password manager which I use to store and generate passwords. 1Password is my favourite password manager, as you can also store one time passwords on it. Also it is available on all devices, so you can access your passwords anywhere. 1Password is not free however, you do have to pay an annual or monthly subscription.
 - <a href="https://www.expressvpn.com/" target="_blank">Express VPN</a> - Express VPN is a vpn service which gives you very fast connections to lots of locations around the world. Express VPN also requires a monthly subscription fee.
-
+- <a href="https://github.com/iglance/iGlance" target="_blank">iGlance</a> - iGlance is a system monitoring tool which lets you see your Macs current stats in the menu bar at the top. 
 
 <h2>Software Development</h2>
 
@@ -71,6 +71,7 @@ I do my work on a Mac, so most of this will be Mac specific, although most tools
     </figure>
 </div>
 
+- <a href="https://pixlr.com/" target="_blank">Pixlr</a> - Pixlr is a free online picture editing tool. It has many of the same features as photoshop, but runs entirely in the browser. They have <a href="https://pixlr.com/x/" target="_blank">Pixlr X</a> for casual editing and <a href="https://pixlr.com/e/" target="_blank">Pixlr E</a> for more advanced use.
 - <a href="https://openemu.org/" target="_blank">OpenEmu</a> - OpenEmu is a free, open source video game emulator for macOS. It uses downloadable cores to emulate lots of consoles whilst still being fairly lightweight. Connecting controllers is easy, I play using my PS4 controller!
 - <a href="https://onecast.me" target="_blank">OneCast</a> - OneCast is a bit of software that lets you stream your Xbox to different platforms, a feature that is usually restricted to Windows PC. They have a free 14 day trial, after which you have to pay for a licence. I used it for the 14 days and found it worked very well with minimal lag.
 
