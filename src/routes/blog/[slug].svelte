@@ -55,17 +55,14 @@
 		var touchendY = 0;
 		window.addEventListener('touchstart', function(event) {
 			if (modal.style.display === 'block') {
-				console.log('touchstart');
-				console.log(event);
 				touchstartY = event.changedTouches[0].screenY;
 			}
 		}, false);
 
 		window.addEventListener('touchend', function(event) {
 			if (modal.style.display === 'block') {
-				console.log('touchend');
 				touchendY = event.changedTouches[0].screenY;
-				handleGesure();
+				handleGesture();
 			}
 		}, false); 
 
@@ -81,12 +78,9 @@
 		}
 
 		// Checks if the user has swiped up or down more than one third of the screen. If so it closes the modal.
-		function handleGesure() {
-			var swiped = 'swiped: ';
-			
+		function handleGesture() {
 			var dif = Math.abs(touchstartY - touchendY);
 			var h = window.innerHeight/3;
-			console.log(dif)
 			if (dif > h) {
 				closeModal()
 			}
@@ -109,6 +103,23 @@
 			datediv.appendChild(updatedate);
 		};
 
+		// Get the modals
+		var modals = document.getElementsByClassName("modal-content")
+		var zoomed = false;
+		
+		// Adding double click event listeners to every modal to enable zooming.
+		for (var i = 0; i < modals.length; i++) {
+			var modalImage = modals[i];
+			modalImage.addEventListener('dblclick', function(){
+				if (zoomed) {
+					modalImage.style.transform = "scale(1)"
+					zoomed = false;
+				} else {
+					modalImage.style.transform = "scale(1.5)"
+					zoomed = true;
+				};
+			});
+		};
 	});
 
 </script>
