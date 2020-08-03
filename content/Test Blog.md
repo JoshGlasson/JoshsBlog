@@ -1,0 +1,42 @@
+---
+slug: 'Test Blog'
+title: 'Test Blog.'
+headline: 'Testing out the blog and some features'
+image: "./logo.png"
+sortdate: "2020-07-23"
+originaldate: "2020-07-23"
+tags: []
+---
+
+If you are seeing this post then you must have found my blog very early on, or you have scrolled right to the end, either way Hello There!
+
+<div id="imageDiv">
+  <figure>
+    <img src="./images/2020-07-23 test-blog/hello_there.gif" alt="Obi Wan Kenobi Says Hello There"/>
+    <figcaption>General Kenobi!</figcaption>
+  </figure>
+</div>
+
+
+This post is here for me to test writing a blog in this format and to make sure everything works. Special shout out to Dan, my first official reader.
+
+As a special treat, here is a picture of my parents new puppy, Stan.
+<div id="imageDiv">
+  <figure>
+    <img src="./images/2020-07-23 test-blog/Stan.jpg" alt="A cute tiny German Shepherd puppy"/>
+    <figcaption>I call him Staniel</figcaption>
+  </figure>
+</div>
+
+
+The blog is all written in Markdown, so I can embed images and format my text easily.
+
+```java
+  System.out.println("I can also add code snippets!")
+```
+
+Plus it is automatically converted to html, so I can also add things which wouldn't usually be possible in pure Markdown, like `iframe` tags, which allow me to do things like embed youtube videos:
+
+<div id="videoDiv">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/bdvxNF2jCa4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>

@@ -32,6 +32,7 @@
 		var img = document.getElementsByTagName("IMG")
 		var modalImg = document.getElementById("img01");
 		var captionText = document.getElementById("caption");
+		var navbar = document.getElementById("navbar");
 		
 		// Adding click event listeners to every image on the page, which will open a modal when fired. Checks that the image is not a modal first.
 		for (var i = 0; i < img.length; i++) {
@@ -40,6 +41,7 @@
 					event.preventDefault();
 					document.body.style.top = `-${window.scrollY}px`;
 					modal.style.display = "block";
+					navbar.hidden = true;
 					modalImg.src = this.src;
 					captionText.innerHTML = this.alt;
 					document.body.style.position = 'fixed';
@@ -75,6 +77,7 @@
 			window.scrollTo(0, parseInt(scrollY || '0') * -1);
 			document.body.style.left = ''
 			document.body.style.transform = ''
+			navbar.hidden = false;
 		}
 
 		// Checks if the user has swiped up or down more than one third of the screen. If so it closes the modal.
@@ -263,7 +266,7 @@
 	/* The Close Button */
 	.close {
 		position: absolute;
-		top: 15px;
+		top: 40px;
 		right: 35px;
 		color: #f1f1f1;
 		font-size: 40px;

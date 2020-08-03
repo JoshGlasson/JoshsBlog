@@ -6,11 +6,14 @@
 
 <style>
 	main {
+		margin-top: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: auto;
 		position: relative;
 		max-width: 56em;
 		background-color: inherit;
 		padding: 2em;
-		margin: 0 auto;
 		box-sizing: border-box;
 	}
 </style>

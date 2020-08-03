@@ -8,10 +8,12 @@
 		console.log("Start toggle: " + dark_toggle)
 		if (dark_toggle === 'false') {
 			window.document.body.classList.add('dark-mode')
+			window.document.getElementById("navbar").classList.add('dark-mode')
 			localStorage.setItem('dark_mode_toggle', 'true')
 			dark_toggle = 'true'
 		} else {
 			window.document.body.classList.remove('dark-mode')
+			window.document.getElementById("navbar").classList.remove('dark-mode')
 			localStorage.setItem('dark_mode_toggle', 'false')
 			dark_toggle = 'false'
 		}
@@ -24,6 +26,7 @@
 		console.log("From Storage: " + dark_toggle)
 		if (dark_toggle === 'true') {
 			window.document.body.classList.add('dark-mode')
+			window.document.getElementById("navbar").classList.add('dark-mode')
 		}
 	});
 
@@ -34,6 +37,10 @@
 		border-bottom: 1px solid rgba(255,62,0,0.1);
 		font-weight: 300;
 		padding: 0 1em;
+		z-index: 9999;
+		width: 100%;
+		top: 0;
+		position: fixed;
 	}
 
 	ul {
@@ -78,11 +85,11 @@
 		cursor: pointer;
 	}
 
-	:global(body) {
+	:global(body, nav) {
 		background-color: white;
 		transition: background-color 0.3s
 	}
-	:global(body.dark-mode) {
+	:global(body.dark-mode, nav.dark-mode) {
 		background-color: black;
 		color: white
 	}
@@ -90,7 +97,7 @@
 </style>
 
 
-<nav>
+<nav id="navbar">
 	<ul>
 		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
 		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a></li>
