@@ -22,7 +22,8 @@
 	let epochPostDate = new Date(post.originaldate);
 	let epochUpdateDate = new Date(post.sortdate);
 	let date = epochPostDate.toDateString();
-	let url = encodeURI(post.title)
+	let posturl = "https://joshglasson.github.io/JoshsBlog/blog/" + encodeURI(post.title)
+	let imageurl = "https://joshglasson.github.io/JoshsBlog" + encodeURI(post.image.substring(1))
 
 
 	onMount(() => { 
@@ -306,9 +307,9 @@
 <svelte:head>
 	<title>{post.title}</title>
 	<meta property="og:title" content={post.title}>
-	<meta property="og:image" content={post.image}>
+	<meta property="og:image" content={imageurl}>
 	<meta property="og:description" content={post.headline}>
-	<meta property="og:url" content="https://joshglasson.github.io/JoshsBlog/blog/{url}">
+	<meta property="og:url" content="https://joshglasson.github.io/JoshsBlog/blog/{posturl}">
 </svelte:head>
 
 <div class='postTitle'>
