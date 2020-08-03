@@ -5,7 +5,6 @@
 	export let dark_toggle;
 
 	function toggle() {
-		console.log("Start toggle: " + dark_toggle)
 		if (dark_toggle === 'false') {
 			window.document.body.classList.add('dark-mode')
 			window.document.getElementById("navbar").classList.add('dark-mode')
@@ -17,13 +16,11 @@
 			localStorage.setItem('dark_mode_toggle', 'false')
 			dark_toggle = 'false'
 		}
-		console.log("End toggle: " + dark_toggle)
 	}
 	
 	onMount(async () => {
 		dark_toggle = localStorage.getItem('dark_mode_toggle')
 		dark_toggle === null ? dark_toggle = 'false' : dark_toggle = dark_toggle
-		console.log("From Storage: " + dark_toggle)
 		if (dark_toggle === 'true') {
 			window.document.body.classList.add('dark-mode')
 			window.document.getElementById("navbar").classList.add('dark-mode')

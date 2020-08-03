@@ -105,8 +105,6 @@
 				label.htmlFor = tag+"_id";
 				label.textContent = tag;
 
-				console.log(label)
-
 				form.appendChild(input);
 				form.appendChild(label);
 				form.appendChild(document.createElement("br"));
