@@ -4,17 +4,35 @@
 	export let segment;
 	export let dark_toggle;
 
+	function setDark() {
+		window.document.body.classList.add('dark-mode')
+		window.document.getElementById("navbar").classList.add('dark-mode')
+		localStorage.setItem('dark_mode_toggle', 'true')
+		dark_toggle = 'true'
+		let tweets = window.document.getElementsByClassName("twitter-tweet");
+		for (var i = 0; i < tweets.length; i++) {
+			var tweet = tweets[i];
+			tweet.dataset.theme = "dark";
+		};
+	};
+
+	function setLight() {
+		window.document.body.classList.remove('dark-mode')
+		window.document.getElementById("navbar").classList.remove('dark-mode')
+		localStorage.setItem('dark_mode_toggle', 'false')
+		dark_toggle = 'false'
+		let tweets = window.document.getElementsByClassName("twitter-tweet");
+		for (var i = 0; i < tweets.length; i++) {
+			var tweet = tweets[i];
+			tweet.dataset.theme = "";
+		};
+	};
+
 	function toggle() {
 		if (dark_toggle === 'false') {
-			window.document.body.classList.add('dark-mode')
-			window.document.getElementById("navbar").classList.add('dark-mode')
-			localStorage.setItem('dark_mode_toggle', 'true')
-			dark_toggle = 'true'
+			setDark();
 		} else {
-			window.document.body.classList.remove('dark-mode')
-			window.document.getElementById("navbar").classList.remove('dark-mode')
-			localStorage.setItem('dark_mode_toggle', 'false')
-			dark_toggle = 'false'
+			setLight();
 		}
 	}
 	
@@ -22,8 +40,7 @@
 		dark_toggle = localStorage.getItem('dark_mode_toggle')
 		dark_toggle === null ? dark_toggle = 'false' : dark_toggle = dark_toggle
 		if (dark_toggle === 'true') {
-			window.document.body.classList.add('dark-mode')
-			window.document.getElementById("navbar").classList.add('dark-mode')
+			setDark();
 		}
 	});
 
