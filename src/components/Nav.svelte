@@ -9,11 +9,6 @@
 		window.document.getElementById("navbar").classList.add('dark-mode')
 		localStorage.setItem('dark_mode_toggle', 'true')
 		dark_toggle = 'true'
-		let tweets = window.document.getElementsByClassName("twitter-tweet");
-		for (var i = 0; i < tweets.length; i++) {
-			var tweet = tweets[i];
-			tweet.dataset.theme = "dark";
-		};
 	};
 
 	function setLight() {
@@ -21,11 +16,6 @@
 		window.document.getElementById("navbar").classList.remove('dark-mode')
 		localStorage.setItem('dark_mode_toggle', 'false')
 		dark_toggle = 'false'
-		let tweets = window.document.getElementsByClassName("twitter-tweet");
-		for (var i = 0; i < tweets.length; i++) {
-			var tweet = tweets[i];
-			tweet.dataset.theme = "";
-		};
 	};
 
 	function toggle() {
