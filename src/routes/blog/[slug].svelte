@@ -309,7 +309,7 @@
 	<meta property="og:title" content={post.title}>
 	<meta property="og:image" content={imageurl}>
 	<meta property="og:description" content={post.headline}>
-	<meta property="og:url" content="https://joshglasson.github.io/JoshsBlog/blog/{posturl}">
+	<meta property="og:url" content={posturl}>
 </svelte:head>
 
 <div class='postTitle'>
