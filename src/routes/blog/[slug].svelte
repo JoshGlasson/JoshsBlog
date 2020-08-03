@@ -22,7 +22,7 @@
 	let epochPostDate = new Date(post.originaldate);
 	let epochUpdateDate = new Date(post.sortdate);
 	let date = epochPostDate.toDateString();
-	let posturl = "https://joshglasson.github.io/JoshsBlog/blog/" + encodeURI(post.title)
+	let posturl = "https://joshglasson.github.io/JoshsBlog/blog/" + encodeURI(post.slug)
 	let imageurl = "https://joshglasson.github.io/JoshsBlog" + encodeURI(post.image.substring(1))
 
 
