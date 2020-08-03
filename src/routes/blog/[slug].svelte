@@ -286,6 +286,19 @@
 		.modal-content {
 			width: 100%;
 		}
+
+		.postTitle h1 {
+			font-size: 4em;
+			font-weight: 400;
+			word-wrap: break-word;
+		}
+
+		.postTitle h2 {
+			font-size: 1.5em;
+			font-weight: 250;
+			padding-bottom: 0.5em;
+			word-wrap: break-word;
+		}
 	}
 </style>
 
