@@ -1,7 +1,7 @@
 ---
 slug: 'F1 2020 - Silverstone'
 title: 'F1 Recap - Silverstone 2020.'
-headline: 'Hamilton hangs onto victory.'
+headline: 'Hamilton hangs on to victory'
 image: "./images/2020-08-03 F1 2020 - Silverstone/f1 logo.png"
 sortdate: "2020-08-03"
 originaldate: "2020-08-03"
