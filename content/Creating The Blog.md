@@ -2,7 +2,7 @@
 slug: 'Creating The Blog'
 title: 'Creating This Blog.'
 headline: 'How to create a blog using Svelte'
-image: "./images/2020-07-24 creating-the-blog/svelte_logo.png"
+image: "./images/icons/svelte_logo.png"
 sortdate: "2020-07-24"
 originaldate: "2020-07-24"
 tags: ['Software Development' , 'Svelte', 'HTML, CSS & JavaScript']
@@ -22,11 +22,11 @@ Now I had a solid baseline to start with, I started to think about what I would 
 
 <div id="imageDiv">
   <figure>
-    <img src="./images/2020-07-24 creating-the-blog/darkmode_app.png" style="width:50%;" alt="An App with a Button to toggle a dark mode"/>
+    <img src="https://joshlearningtocode.files.wordpress.com/2020/08/darkmode_app.png" style="width:50%;" alt="An App with a Button to toggle a dark mode"/>
     <figcaption>An App with a Button to toggle a dark mode</figcaption>
   </figure>
   <figure>
-    <img src="./images/2020-07-24 creating-the-blog/darkmode_button.png" style="width:50%;" alt="Code for the Dark Mode Button"/>
+    <img src="https://joshlearningtocode.files.wordpress.com/2020/08/darkmode_button.png" style="width:50%;" alt="Code for the Dark Mode Button"/>
     <figcaption>Code for the Button</figcaption></a>
   </figure>
 </div>
@@ -154,7 +154,7 @@ The end result was this:
 
 <div id="imageDiv">
   <figure>
-    <img src="./images/2020-07-24 creating-the-blog/recent_posts.png" alt="The improved recent posts page" />
+    <img src="https://joshlearningtocode.files.wordpress.com/2020/08/recent_posts.png" alt="The improved recent posts page" />
     <figcaption>The improved recent posts page, you must have seen it to get here though!</figcaption>
   </figure>
 </div>
@@ -210,7 +210,7 @@ This meant that any time I pushed or merged to master, it would kick off this ac
 
 <div id="imageDiv">
   <figure>
-    <img src="./images/2020-07-24 creating-the-blog/github_actions.png" alt="GitHub Actions running my deploy script" />
+    <img src="https://joshlearningtocode.files.wordpress.com/2020/08/github_actions.png" alt="GitHub Actions running my deploy script" />
     <figcaption>GitHub Actions running my deploy script after each merge</figcaption>
   </figure>
 </div>

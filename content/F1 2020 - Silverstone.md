@@ -2,7 +2,7 @@
 slug: 'F1 2020 - Silverstone'
 title: 'F1 Recap - Silverstone 2020.'
 headline: 'Hamilton hangs on to victory'
-image: "./images/2020-08-03 F1 2020 - Silverstone/f1 logo.png"
+image: "./images/icons/f1 logo 2020.png"
 sortdate: "2020-08-03"
 originaldate: "2020-08-03"
 tags: ['Formula 1']
@@ -14,7 +14,7 @@ The first 50 laps were not uneventful, with two big crashes leading to safety ca
 
 <div id="imageDiv">
     <figure>
-        <img src="./images/2020-08-03 F1 2020 - Silverstone/magnussen crash.png" alt="Kevin Magnussen's Haas Post Crash">
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/magnussen-crash.png" alt="Kevin Magnussen's Haas Post Crash">
         <figcaption>Kevin Magnussen's Haas Post Crash</figcaption>
         <figcaption>Source: <a href="https://www.youtube.com/watch?v=HmEsqWosuS8" target="_blank">Formula 1 YouTube Race Highlights</a></figcaption>
     </figure>
@@ -26,7 +26,7 @@ The second safety car was on lap 13, when the rear right tyre of Daniil Kvyat's 
 
 <div id="imageDiv">
     <figure>
-        <img src="./images/2020-08-03 F1 2020 - Silverstone/kvyat crash.png" alt="Daniil Kvyat's AlphaTauri Post Crash">
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/kvyat-crash.png" alt="Daniil Kvyat's AlphaTauri Post Crash">
         <figcaption>Daniil Kvyat's AlphaTauri Post Crash</figcaption>
         <figcaption>Source: <a href="https://www.youtube.com/watch?v=HmEsqWosuS8" target="_blank">Formula 1 YouTube Race Highlights</a></figcaption>
     </figure>
@@ -36,7 +36,7 @@ On lap 50 however Valtteri Bottas' Mercedes front left wheel was punctured, drop
 
 <div id="imageDiv">
     <figure>
-        <img src="./images/2020-08-03 F1 2020 - Silverstone/bottas tyre.png" alt="Valterri Bottas' Tyre Puncture">
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/bottas-tyre.png" alt="Valterri Bottas' Tyre Puncture">
         <figcaption>Valterri Bottas' Tyre Puncture</figcaption>
         <figcaption>Source: <a href="https://www.youtube.com/watch?v=HmEsqWosuS8" target="_blank">Formula 1 YouTube Race Highlights</a></figcaption>
     </figure>
@@ -46,7 +46,7 @@ Shortly after, Carlos Sainz suffered a puncture to the front left tyre of the Mc
 
 <div id="imageDiv">
     <figure>
-        <img src="./images/2020-08-03 F1 2020 - Silverstone/sainz tyre.png" alt="Carlos Sainz' Tyre Puncture">
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/sainz-tyre.png" alt="Carlos Sainz' Tyre Puncture">
         <figcaption>Carlos Sainz' Tyre Puncture</figcaption>
         <figcaption>Source: <a href="https://www.youtube.com/watch?v=HmEsqWosuS8" target="_blank">Formula 1 YouTube Race Highlights</a></figcaption>
     </figure>
@@ -56,7 +56,7 @@ Around the same time, 6 corners into the final lap, Hamilton suffered a puncture
 
 <div id="imageDiv">
     <figure>
-        <img src="./images/2020-08-03 F1 2020 - Silverstone/hamilton finish.png" alt="Lewis Hamilton Finishing the Race on 3 Tyres">
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/hamilton-finish.png" alt="Lewis Hamilton Finishing the Race on 3 Tyres">
         <figcaption>Lewis Hamilton Finishing the Race on 3 Tyres</figcaption>
         <figcaption>Source: <a href="https://www.youtube.com/watch?v=HmEsqWosuS8" target="_blank">Formula 1 YouTube Race Highlights</a></figcaption>
     </figure>
@@ -66,7 +66,7 @@ The first place for Lewis meant he got his 7th win at his home race, surpassing 
 
 <div id="imageDiv">
     <figure>
-        <img src="./images/2020-08-03 F1 2020 - Silverstone/hamilton record.png" alt="Hamilton Breaks Another Record">
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/hamilton-record.png" alt="Hamilton Breaks Another Record">
         <figcaption>Hamilton Breaks Another Record</figcaption>
         <figcaption>Source: <a href="https://twitter.com/F1" target="_blank">Official F1 Twitter</a></figcaption>
     </figure>
@@ -86,7 +86,7 @@ Here are all the points scorers from Silverstone this week:
 
 <div id="imageDiv">
     <figure>
-        <img src="./images/2020-08-03 F1 2020 - Silverstone/silverstone results.jpg" alt="Silverstone Top 10">
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/silverstone-results.jpg" alt="Silverstone Top 10">
         <figcaption>Silverstone Top 10</figcaption>
         <figcaption>Source: <a href="https://twitter.com/F1" target="_blank">Official F1 Twitter</a></figcaption>
     </figure>
@@ -96,7 +96,7 @@ As Bottas dropped to 11th after his tyre troubles and scored no points, Hamilton
 
 <div id="imageDiv">
     <figure>
-        <img src="./images/2020-08-03 F1 2020 - Silverstone/driver standings.png" alt="Current F1 Driver Standings">
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/driver-standings.png" alt="Current F1 Driver Standings">
         <figcaption>Current F1 Driver Standings</figcaption>
         <figcaption>Source: <a href="https://twitter.com/F1" target="_blank">Official F1 Twitter</a></figcaption>
     </figure>

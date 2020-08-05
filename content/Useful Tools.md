@@ -2,7 +2,7 @@
 slug: 'Useful Tools'
 title: 'Useful Tools.'
 headline: 'Tools I find useful as a Software Dev'
-image: "./images/2020-07-29 useful tools/tools.png"
+image: "./images/icons/tools.png"
 sortdate: "2020-07-31"
 originaldate: "2020-07-30"
 tags: ['Software Development']
@@ -37,7 +37,7 @@ I do my work on a Mac, so most of this will be Mac specific, although most tools
 
 <div id="imageDiv">
     <figure>
-        <img src="./images/2020-07-29 useful tools/vscode.png" alt="Me Using VS Code">
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/vscode.png" alt="Me Using VS Code">
         <figcaption>Me using VS Code for this blog!</figcaption>
     </figure>
 </div>
@@ -54,7 +54,7 @@ I do my work on a Mac, so most of this will be Mac specific, although most tools
 
 <div id="imageDiv">
     <figure>
-        <img src="./images/2020-07-29 useful tools/tableplus.png" alt="Table Plus">
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/tableplus.png" alt="Table Plus">
         <figcaption>Table Plus</figcaption>
     </figure>
 </div>
