@@ -205,7 +205,20 @@ Either way Kanye West will no doubt take his place at the top of my most played 
 
 <br>
 
-## Special Mention. Yandhi
+## Special Mention. Kanye West Presents Good Music Cruel Summer
+
+<div id="imageDiv">
+    <figure>
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/kwpgmcs.png" alt="Kanye West Presents Good Music Cruel Summer">
+        <figcaption>Kanye West Presents Good Music Cruel Summer</figcaption>
+    </figure>
+</div>
+
+Cruel Summer is a compilation album of music from artists who were signed to Kanye's GOOD Music label. Kanye features or has produced most of the songs on the album, but it is not really a Kanye album, hence it's exclusion from the list. I did want to mention it though because I don't hear much about it, and it has some really good music (see what I did there) on it.
+
+<br>
+
+## Special Mention 2. Yandhi
 
 I recently started listening to the Yandhi leaks. Yandhi was meant to drop before JIK, going as far Kanye tweeting a release data and album cover. 
 
