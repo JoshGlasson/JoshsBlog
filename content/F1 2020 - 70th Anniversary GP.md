@@ -3,8 +3,8 @@ slug: 'F1 2020 - 70th Anniversary GP'
 title: 'F1 Recap - 70th Anniversary Grand Prix.'
 headline: 'Brilliant strategy leads to Red Bull win'
 image: "./images/icons/f1 logo 2020.png"
-sortdate: "2020-08-10"
-originaldate: "2020-08-10"
+sortdate: "2020-08-09"
+originaldate: "2020-08-09"
 tags: ['Formula 1']
 ---
 
