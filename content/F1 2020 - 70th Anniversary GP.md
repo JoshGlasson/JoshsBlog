@@ -1,6 +1,6 @@
 ---
 slug: 'F1 2020 - 70th Anniversary GP'
-title: 'F1 Recap - 70th Anniversary Grand Prix.'
+title: 'F1 Recap - 70th Anniversary Grand Prix 2020.'
 headline: 'Brilliant strategy leads to Red Bull win'
 image: "./images/icons/f1 logo 2020.png"
 sortdate: "2020-08-09"
@@ -48,7 +48,7 @@ Verstappen started the race on the hard compound tyres, and was quickly able to 
 Verstappen was actually told on lap 11 to ease off to maintain his tyres, but he disagreed with the team orders sensing an opportunity to catch the Mercedes, an opportunity that doesn't come up often. In his words, he didn't want to drive like a "grandma".
 
 <div id="imageDiv">
-    <blockquote class="twitter-tweet tw-align-center" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">LAP 11/52<br><br>Red Bull radio Verstappen asking him to look after the tyres and hold back a little - but he&#39;s having none of it! <br><br>Max 📻 &quot;Mate, this is the only chance I&#39;m getting to be close to the Mercedes - I&#39;m not just sitting behind like a grandma&quot; <a href="https://twitter.com/hashtag/F170?src=hash&amp;ref_src=twsrc%5Etfw">#F170</a> 🇬🇧 <a href="https://twitter.com/hashtag/F1?src=hash&amp;ref_src=twsrc%5Etfw">#F1</a> <a href="https://t.co/N9szKy1med">pic.twitter.com/N9szKy1med</a></p>&mdash; Formula 1 (@F1) <a href="https://twitter.com/F1/status/1292454039188393984?ref_src=twsrc%5Etfw">August 9, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+    <blockquote class="twitter-tweet tw-align-center" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">Max&#39;s grandma is probably pretty fast though, right?!? 👵 🚀<a href="https://twitter.com/hashtag/F170?src=hash&amp;ref_src=twsrc%5Etfw">#F170</a> 🇬🇧 <a href="https://twitter.com/hashtag/F1?src=hash&amp;ref_src=twsrc%5Etfw">#F1</a> <a href="https://t.co/c0CpuE3iGE">pic.twitter.com/c0CpuE3iGE</a></p>&mdash; Formula 1 (@F1) <a href="https://twitter.com/F1/status/1292573366981816320?ref_src=twsrc%5Etfw">August 9, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 </div>
 
 Verstappen did pit on lap 26 for mediums, which lead to a little battle with Bottas, however he was able to maintain 1st place. On lap 32 they both pitted again for fresh hard tyres.
