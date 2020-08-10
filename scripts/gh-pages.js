@@ -3,7 +3,7 @@ var ghpages = require('gh-pages');
 ghpages.publish(
     '__sapper__/export/JoshsBlog',
     {
-        branch: 'gh-pages',
+        branch: 'custom-domain',
         repo: 'https://github.com/JoshGlasson/JoshsBlog',
         user: {
             name: 'Josh Glasson',
