@@ -1,16 +1,16 @@
 {
-  "homepage": "https://joshglasson.github.io/JoshsBlog/",
+  "homepage": "https://joshglasson.com/",
   "name": "JoshsBlog",
   "description": "My personal blog",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
-    "build": "sapper build --legacy",
+    "build": "sapper build",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run",
-    "export": "sapper export --basepath JoshsBlog --legacy",
+    "export": "sapper export",
     "deploy": "npm run export && node ./scripts/gh-pages.js"
   },
   "dependencies": {

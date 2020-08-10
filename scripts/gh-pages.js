@@ -1,9 +1,9 @@
 var ghpages = require('gh-pages');
 
 ghpages.publish(
-    '__sapper__/export/JoshsBlog',
+    '__sapper__/export',
     {
-        branch: 'gh-pages',
+        branch: 'deploy-custom-domain',
         repo: 'https://github.com/JoshGlasson/JoshsBlog',
         user: {
             name: 'Josh Glasson',
