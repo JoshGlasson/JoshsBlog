@@ -10,7 +10,7 @@
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run",
-    "export": "sapper export --basepath JoshsBlog --legacy",
+    "export": "sapper export",
     "deploy": "npm run export && node ./scripts/gh-pages.js"
   },
   "dependencies": {
