@@ -2,6 +2,13 @@
 	import Nav from '../components/Nav.svelte';
 
 	export let segment;
+
+	import { onMount } from 'svelte';
+	onMount(async () => {
+		window.addEventListener('error', function(e) {
+			console.log(e);
+		}, true);
+	});
 </script>
 
 <style>
