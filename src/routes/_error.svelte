@@ -34,6 +34,7 @@
 
 <svelte:head>
 	<title>{status}</title>
+	<meta http-equiv="refresh" content="0;URL=/404">
 </svelte:head>
 
 <h1>{status}</h1>
