@@ -1,5 +1,5 @@
 ---
-slug: 'F1 2020 - Silverstone'
+slug: 'f1_2020_silverstone'
 title: 'F1 Recap - Silverstone 2020.'
 headline: 'Hamilton hangs on to victory'
 image: "./images/icons/f1 logo 2020.png"

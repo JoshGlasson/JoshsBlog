@@ -1,5 +1,5 @@
 ---
-slug: 'F1 2020 - 70th Anniversary GP'
+slug: 'f1_2020_70th_anniversary_gp'
 title: 'F1 Recap - 70th Anniversary Grand Prix 2020.'
 headline: 'Brilliant strategy leads to Red Bull win'
 image: "./images/icons/f1 logo 2020.png"

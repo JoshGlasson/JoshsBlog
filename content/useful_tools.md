@@ -1,5 +1,5 @@
 ---
-slug: 'Useful Tools'
+slug: 'useful_tools'
 title: 'Useful Tools.'
 headline: 'Tools I find useful as a Software Dev'
 image: "./images/icons/tools.png"

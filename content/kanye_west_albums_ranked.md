@@ -1,5 +1,5 @@
 ---
-slug: "Kanye West Albums Ranked"
+slug: "kanye_west_albums_ranked"
 title: "Ranking Every Kanye West Album."
 headline: "My ranking of all of Kanye West's released albums"
 image: "./images/icons/kanye bear.png"

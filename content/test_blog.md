@@ -1,5 +1,5 @@
 ---
-slug: 'Test Blog'
+slug: 'test_blog'
 title: 'Test Blog.'
 headline: 'Testing out the blog and some features'
 image: "./logo.png"
