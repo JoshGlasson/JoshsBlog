@@ -1,22 +1,22 @@
-name: Build Sapper and Deploy to GitHub Pages
+# name: Build Sapper and Deploy to GitHub Pages
 
-on:
-    push:
-        branches: [ master ]
-    pull_request:
-        branches: [ master ]
+# on:
+#     push:
+#         branches: [ master ]
+#     pull_request:
+#         branches: [ master ]
 
-jobs:
-  build_deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Build Sapper
-        uses: truewebartisans/actions-sapper@master
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          publish_dir: __sapper__/export/
-          publish_branch: deploy-custom-domain
-          cname: joshglasson.com
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+# jobs:
+#   build_deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@master
+#       - name: Build Sapper
+#         uses: truewebartisans/actions-sapper@master
+#       - name: Deploy to GitHub Pages
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#           publish_dir: __sapper__/export/
+#           publish_branch: deploy-custom-domain
+#           cname: joshglasson.com
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
