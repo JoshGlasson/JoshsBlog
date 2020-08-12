@@ -17,15 +17,17 @@
 	export let tagsToFilter = [];
 	export let filterByAnyTags = true;
 
-	// Gets the tags across all posts and filters out dupes.
-	function getTags() {
-		for (var i = 0; i < posts.length; i++) {
-			tags = tags.concat(posts[i].tags.filter((item) => tags.indexOf(item) < 0));
-		};
-		tags = tags.sort();
-	};
+	posts == undefined ? posts = [] : posts = posts;
 
 	onMount(() => { 
+		// Gets the tags across all posts and filters out dupes.
+		function getTags() {
+			for (var i = 0; i < posts.length; i++) {
+				tags = tags.concat(posts[i].tags.filter((item) => tags.indexOf(item) < 0));
+			};
+			tags = tags.sort();
+		};
+
 		// Getting the search bar and listening for changes
 		var searchbar = document.getElementById("search");
 		searchbar[0].value = "";
