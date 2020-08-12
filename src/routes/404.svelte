@@ -1,9 +1,4 @@
 <style>
-	h3 {
-		text-align: center;
-		margin: 0 auto;
-	}
-
 	h1 {
 		font-size: 2.8em;
 		text-transform: uppercase;
@@ -11,10 +6,14 @@
 		margin: 0 0 0.5em 0;
 	}
 
-	
+	h3 {
+		text-align: center;
+		margin: 0 auto;
+	}
+
 	@media (min-width: 480px) {
 		h1 {
-			font-size: 4em;
+			font-size: 2em;
 		}
 	}
 </style>
