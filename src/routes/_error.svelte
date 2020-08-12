@@ -2,6 +2,11 @@
 	export let status;
 	export let error;
 
+	import { onMount } from 'svelte';
+	onMount(async () => {
+		window.location.replace("/404");
+	});
+
 	const dev = process.env.NODE_ENV === 'development';
 </script>
 
