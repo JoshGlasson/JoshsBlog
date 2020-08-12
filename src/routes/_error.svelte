@@ -30,7 +30,7 @@
 <svelte:head>
 	<title>{status}</title>
 	<noscript><meta http-equiv="refresh" content="2; url=/404" /></noscript>
-	<!-- <meta http-equiv="refresh" content="2; url=/404" /> -->
+	<meta http-equiv="refresh" content="2; url=/404" />
 </svelte:head>
 
 <h1>{status}</h1>
