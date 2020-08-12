@@ -11,15 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@v2-beta
-        with:
-          node-version: '12'
-      - name: npx version
-        run: npx -v
       - name: Build Sapper
-        run: npx sapper export --entry '/ /404'
-      - name: Post Export
-        run: mv __sapper__/export/404/index.html __sapper__/export/404.html && rmdir __sapper__/export/404
+        uses: truewebartisans/actions-sapper@master
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
