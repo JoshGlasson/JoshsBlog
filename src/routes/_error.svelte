@@ -29,12 +29,14 @@
 
 <svelte:head>
 	<title>{status}</title>
-	<meta http-equiv="refresh" content="0;URL=/404">
+	<noscript><meta http-equiv="refresh" content="2; url=/404" /></noscript>
 </svelte:head>
 
 <h1>{status}</h1>
 
 <p>{error.message}</p>
+
+<p>Redirecting...</p>
 
 {#if dev && error.stack}
 	<pre>{error.stack}</pre>

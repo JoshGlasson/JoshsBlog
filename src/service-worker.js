@@ -70,10 +70,6 @@ self.addEventListener('fetch', event => {
 				try {
 					var response = await fetch(event.request);
 					cache.put(event.request, response.clone());
-					if (response.status === 404) {
-						await window.opener;
-						return window.location.reload("/404")
-					};
 					return response;
 				} catch(err) {
 					const response = await cache.match(event.request);
