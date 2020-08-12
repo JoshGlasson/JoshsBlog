@@ -40,6 +40,8 @@ export function get(req, res, next) {
 		"Content-Type": "application/json"
 		});
 
+		window.location.replace("/404")
+
 		res.end(
 		JSON.stringify({
 			message: `Not found`

@@ -3,6 +3,11 @@
 	export let error;
 
 	const dev = process.env.NODE_ENV === 'development';
+
+	import { onMount } from 'svelte';
+	onMount(async () => {
+		window.location.replace("/404");
+	});
 </script>
 
 <style>
