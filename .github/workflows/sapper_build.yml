@@ -13,6 +13,11 @@ jobs:
       - uses: actions/checkout@master
       - name: Build Sapper
         uses: truewebartisans/actions-sapper@master
+        with:
+          build_mode: "export"
+          args: "--entry '/ /404'"
+          build_mode: "postexport"
+          args: "mv __sapper__/export/404/index.html __sapper__/export/404.html && rmdir __sapper__/export/404"
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
