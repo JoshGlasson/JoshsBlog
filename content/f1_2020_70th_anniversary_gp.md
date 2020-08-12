@@ -48,7 +48,7 @@ Verstappen started the race on the hard compound tyres, and was quickly able to 
 Verstappen was actually told on lap 11 to ease off to maintain his tyres, but he disagreed with the team orders sensing an opportunity to catch the Mercedes, an opportunity that doesn't come up often. In his words, he didn't want to drive like a "grandma".
 
 <div id="imageDiv">
-    <p class="tweetToEmbed">1292573366981816320</p>
+    <p class="tweetToEmbed" style="display: none;">1292573366981816320</p>
 </div>
 
 Verstappen did pit on lap 26 for mediums, which lead to a little battle with Bottas, however he was able to maintain 1st place. On lap 32 they both pitted again for fresh hard tyres.
@@ -82,7 +82,7 @@ Verstappen's Red Bull teammate Alex Albon had a really good race to get 5th plac
 Nico Hulkenberg actually managed to race this week, but may be dissapointed to have finished 7th behind teammate Lance Stroll after such a strong qualifying performance, which saw him start 3rd on the grid. He reported strange vibrations in the back of the car, and the team decided he needed to pit. They say it is unlikely he would have finished the race otherwise, so 7th is better than nothing.
 
 <div id="imageDiv">
-    <p class="tweetToEmbed">1292472874217897986</p>
+    <p class="tweetToEmbed" style="display: none;">1292472874217897986</p>
 </div>
 
 Here are the results from this week:

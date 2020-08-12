@@ -126,22 +126,11 @@
 			});
 		};
 
-		// window.twttr = (function(d, s, id) {
-		// 	var js, fjs = d.getElementsByTagName(s)[0],
-		// 		t = window.twttr || {};
-		// 	if (d.getElementById(id)) return t;
-		// 	js = d.createElement(s);
-		// 	js.id = id;
-		// 	js.src = "https://platform.twitter.com/widgets.js";
-		// 	fjs.parentNode.insertBefore(js, fjs);
-
-		// 	t._e = [];
-		// 	t.ready = function(f) {
-		// 		t._e.push(f);
-		// 	};
-
-		// 	return t;
-		// } (document, "script", "twitter-wjs")).then(createTweets());
+		var codeSnippets = document.getElementsByTagName("code");
+		for (var i = 0; i < codeSnippets.length; i++) {
+			var snippet = codeSnippets[i];
+			snippet.style.whiteSpace = 'pre-wrap';
+		};
 
 		var body = document.body;
 		const mutationObserver = new MutationObserver(callback)
@@ -170,7 +159,6 @@
 			var tweets = document.getElementsByClassName('tweetToEmbed');
 			for (var i = 0; i < tweets.length; i++) {
 				var tweet = tweets[i];
-				tweet.style.display = 'none';
 				var parent = tweet.parentElement;
 				window.twttr.widgets.createTweet(
 					tweet.innerText,
@@ -191,7 +179,6 @@
 				tweets[0].parentNode.removeChild(tweets[0]);
 			};
 		};
-
 	});
 </script>
 

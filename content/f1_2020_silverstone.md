@@ -75,7 +75,7 @@ The first place for Lewis meant he got his 7th win at his home race, surpassing 
 **So what caused all these tyre issues?** Well it isn't known at the moment, Pirelli are investigating to try and figure out the cause themselves. We do know the Silverstone is a tough track on the tyres, especially the front left due to all of the right turns. There may also have been debris on the track from the two crashes, and another incident where Kimi Räikkönen's front wing came off (which also punctured his front left tyre). The tyres had also been on for almost 40 laps at the time of failure, which is a long time, although within the number of laps they are rated for. The likely answer is a combination of all of these was the cause of the punctures. 
 
 <div id="imageDiv">
-    <p class="tweetToEmbed">1290198468204605441</p>
+    <p class="tweetToEmbed" style="display: none;">1290198468204605441</p>
 </div>
 
 Outside of this drama, Leclerc managed 3rd place after holding on to 4th for most of the race (until Bottas' crash). After that there was an interesting battle between Daniel Ricciardo in the Renault and the McLarens of Sainz and Lando Norris. Romain Grosjean did his best in the Haas to get involved in this battle, however he got into trouble as he didn't stop after the Safety Car and was handed a black-and-white flag for his defensive manoeuvres, and ended the race in 16th. Sebastian Vettel in the other Ferrari was nowhere to be seen in the battles, despite his teammate doing so well. Also Lance Stroll in the Racing Point did not have his best day, finishing 9th after qualifying in 6th.
