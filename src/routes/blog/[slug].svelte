@@ -26,7 +26,7 @@
 	let imageurl = "https://joshglasson.com" + encodeURI(post.image.substring(1))
 
 
-	onMount(() => { 
+	onMount( async () => { 
 		// Get the modal
 		var modal = document.getElementById("myModal");
 
@@ -125,8 +125,74 @@
 				};
 			});
 		};
-	});
 
+		// window.twttr = (function(d, s, id) {
+		// 	var js, fjs = d.getElementsByTagName(s)[0],
+		// 		t = window.twttr || {};
+		// 	if (d.getElementById(id)) return t;
+		// 	js = d.createElement(s);
+		// 	js.id = id;
+		// 	js.src = "https://platform.twitter.com/widgets.js";
+		// 	fjs.parentNode.insertBefore(js, fjs);
+
+		// 	t._e = [];
+		// 	t.ready = function(f) {
+		// 		t._e.push(f);
+		// 	};
+
+		// 	return t;
+		// } (document, "script", "twitter-wjs")).then(createTweets());
+
+		var body = document.body;
+		const mutationObserver = new MutationObserver(callback)
+		mutationObserver.observe(body, { attributes: true })
+		function callback(mutationsList, observer) {
+			mutationsList.forEach(mutation => {
+				if (mutation.attributeName === 'class') {
+					createTweets(checkTheme());
+				};
+			});
+		};
+
+		function checkTheme() {
+			var dark_toggle = localStorage.getItem('dark_mode_toggle');
+			if (dark_toggle === 'false') {
+				return 'light';
+			} else {
+				return 'dark';
+			};
+		};
+
+
+		createTweets(checkTheme());
+		function createTweets(theme) {
+			cleanupTweets();
+			var tweets = document.getElementsByClassName('tweetToEmbed');
+			for (var i = 0; i < tweets.length; i++) {
+				var tweet = tweets[i];
+				tweet.style.display = 'none';
+				var parent = tweet.parentElement;
+				window.twttr.widgets.createTweet(
+					tweet.innerText,
+					parent,
+					{
+						align: 'center',
+						theme: theme,
+						dnt: 'true'
+					}
+				);
+			};
+		}
+
+
+		function cleanupTweets() {
+			var tweets = document.getElementsByClassName('twitter-tweet twitter-tweet-rendered');
+			while(tweets.length > 0){
+				tweets[0].parentNode.removeChild(tweets[0]);
+			};
+		};
+
+	});
 </script>
 
 <style>

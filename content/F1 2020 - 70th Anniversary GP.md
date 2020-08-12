@@ -48,7 +48,7 @@ Verstappen started the race on the hard compound tyres, and was quickly able to 
 Verstappen was actually told on lap 11 to ease off to maintain his tyres, but he disagreed with the team orders sensing an opportunity to catch the Mercedes, an opportunity that doesn't come up often. In his words, he didn't want to drive like a "grandma".
 
 <div id="imageDiv">
-    <blockquote class="twitter-tweet tw-align-center" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">Max&#39;s grandma is probably pretty fast though, right?!? 👵 🚀<a href="https://twitter.com/hashtag/F170?src=hash&amp;ref_src=twsrc%5Etfw">#F170</a> 🇬🇧 <a href="https://twitter.com/hashtag/F1?src=hash&amp;ref_src=twsrc%5Etfw">#F1</a> <a href="https://t.co/c0CpuE3iGE">pic.twitter.com/c0CpuE3iGE</a></p>&mdash; Formula 1 (@F1) <a href="https://twitter.com/F1/status/1292573366981816320?ref_src=twsrc%5Etfw">August 9, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+    <p class="tweetToEmbed">1292573366981816320</p>
 </div>
 
 Verstappen did pit on lap 26 for mediums, which lead to a little battle with Bottas, however he was able to maintain 1st place. On lap 32 they both pitted again for fresh hard tyres.
@@ -82,7 +82,7 @@ Verstappen's Red Bull teammate Alex Albon had a really good race to get 5th plac
 Nico Hulkenberg actually managed to race this week, but may be dissapointed to have finished 7th behind teammate Lance Stroll after such a strong qualifying performance, which saw him start 3rd on the grid. He reported strange vibrations in the back of the car, and the team decided he needed to pit. They say it is unlikely he would have finished the race otherwise, so 7th is better than nothing.
 
 <div id="imageDiv">
-    <blockquote class="twitter-tweet tw-align-center" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">UPDATE: <a href="https://twitter.com/HulkHulkenberg?ref_src=twsrc%5Etfw">@HulkHulkenberg</a> reported a significant vibration towards the end of the race, hence the call to pit him a third time. Unlikely to have made the flag without it. <a href="https://twitter.com/hashtag/F170?src=hash&amp;ref_src=twsrc%5Etfw">#F170</a> <a href="https://twitter.com/hashtag/F1?src=hash&amp;ref_src=twsrc%5Etfw">#F1</a> <a href="https://t.co/arNMihnO3C">pic.twitter.com/arNMihnO3C</a></p>&mdash; BWT Racing Point F1 Team (@RacingPointF1) <a href="https://twitter.com/RacingPointF1/status/1292472874217897986?ref_src=twsrc%5Etfw">August 9, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+    <p class="tweetToEmbed">1292472874217897986</p>
 </div>
 
 Here are the results from this week:

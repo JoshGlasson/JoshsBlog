@@ -18,6 +18,10 @@
 	}
 </style>
 
+<svelte:head>
+	<script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script>
+</svelte:head>
+
 <Nav {segment}/>
 
 <main>
