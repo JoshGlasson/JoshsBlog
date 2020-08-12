@@ -4,7 +4,16 @@
 
 	import { onMount } from 'svelte';
 	onMount(async () => {
-		window.location.replace("/404");
+		function sleep(ms) {
+			return new Promise(resolve => setTimeout(resolve, ms));
+		}
+
+		redirect();
+
+		async function redirect() {
+			await sleep(2000);
+			window.location.replace("/404");
+		}
 	});
 
 	const dev = process.env.NODE_ENV === 'development';
@@ -35,7 +44,6 @@
 <svelte:head>
 	<title>{status}</title>
 	<noscript><meta http-equiv="refresh" content="2; url=/404" /></noscript>
-	<meta http-equiv="refresh" content="2; url=/404" />
 </svelte:head>
 
 <h1>{status}</h1>
