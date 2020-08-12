@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v2-beta
-         with:
-           node-version: '12'
+        with:
+          node-version: '12'
       - name: Build Sapper
         run: npx sapper export --entry '/ /404'
       - name: Post Export
