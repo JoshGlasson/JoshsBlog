@@ -18,6 +18,7 @@
 <script>
 	import { onMount } from 'svelte';
 	export let post;
+	import jQuery from 'jquery';
 
 	let epochPostDate = new Date(post.originaldate);
 	let epochUpdateDate = new Date(post.sortdate);
@@ -27,6 +28,15 @@
 
 
 	onMount( async () => { 
+		window.jQuery = jQuery;
+		window.addEventListener('popstate', function(event) {
+			if (event.explicitOriginalTarget.nodeName != "IMG") {
+				if (modal.style.display === 'block') {
+					closeModal();
+				};
+			};
+		});
+
 		// Get the modal
 		var modal = document.getElementById("myModal");
 
@@ -35,18 +45,23 @@
 		var modalImg = document.getElementById("img01");
 		var captionText = document.getElementById("caption");
 		var navbar = document.getElementById("navbar");
+
+		var scrollY = 0;
 		
 		// Adding click event listeners to every image on the page, which will open a modal when fired. Checks that the image is not a modal first.
 		for (var i = 0; i < img.length; i++) {
 			if (!img[i].className.includes("modal-content") && !img[i].className.includes("signature-image")) {
 				img[i].addEventListener('click', function(event){
 					event.preventDefault();
-					document.body.style.top = `-${window.scrollY}px`;
+					scrollY = window.scrollY;
+					document.body.style.top = `-${scrollY}px`;
+					document.body.style.position = 'fixed';
+					document.body.style.left = '20%';
 					modal.style.display = "block";
 					navbar.hidden = true;
 					modalImg.src = this.src;
 					captionText.innerHTML = this.alt;
-					document.body.style.position = 'fixed';
+					window.location.hash = "#image"
 				});
 			}; 
 		};
@@ -73,13 +88,20 @@
 		// Resets all of the styling that was changed for the modal
 		function closeModal() {
 			modal.style.display = 'none';
-			const scrollY = document.body.style.top;
 			document.body.style.position = '';
 			document.body.style.top = '';
-			window.scrollTo(0, parseInt(scrollY || '0') * -1);
 			document.body.style.left = ''
 			document.body.style.transform = ''
 			navbar.hidden = false;
+			scrollPage();
+		}
+
+		function goBack() {
+			window.history.back();
+		};
+
+		function scrollPage(){
+			jQuery("html,body").animate({scrollTop: scrollY}, 1000);
 		}
 
 		// Checks if the user has swiped up or down more than one third of the screen. If so it closes the modal.
@@ -88,13 +110,15 @@
 			var h = window.innerHeight/3;
 			if (dif > h) {
 				closeModal()
+				goBack();
 			}
 		}
 
 		// When the user clicks on <span> (x), close the modal
 		span.onclick = function() { 
-			closeModal()
-		}
+			closeModal();
+			goBack();
+		};
 
 		// Checks sort date vs post date to see if theres been an update, displays updated date under original if so.
 		if(epochPostDate.getTime() != epochUpdateDate.getTime()) {	
@@ -183,14 +207,6 @@
 </script>
 
 <style>
-	/*
-		By default, CSS is locally scoped to the component,
-		and any unused styles are dead-code-eliminated.
-		In this page, Svelte can't know which elements are
-		going to appear inside the {{{post.html}}} block,
-		so we have to use the :global(...) modifier to target
-		all elements inside .content
-	*/
 	.postTitle h1 {
 		font-size: 5em;
 		font-weight: 500;
