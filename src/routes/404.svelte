@@ -1,3 +1,15 @@
+<script>
+	import { onMount } from 'svelte';
+
+	onMount( async () => { 
+		const fourOhFour = "/404";
+		var pathname = window.location.pathname;
+		if (pathname != fourOhFour) {
+			window.location.replace(fourOhFour);
+		};
+	})
+</script>
+
 <style>
 	h1 {
 		font-size: 2.8em;
