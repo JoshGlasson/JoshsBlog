@@ -29,6 +29,7 @@
 
 	onMount( async () => { 
 		window.jQuery = jQuery;
+		
 		jQuery(window).bind('popstate', function(event) {
 			if (event.target.location.hash != "#image") {
 				if (modal.style.display === 'block') {

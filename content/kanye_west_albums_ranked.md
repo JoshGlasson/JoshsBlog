@@ -229,8 +229,8 @@ I recently started listening to the Yandhi leaks. Yandhi was meant to drop befor
     <img src="https://joshlearningtocode.files.wordpress.com/2020/08/yandhi.jpg" alt="Yandhi Cover">
     <figcaption>Yandhi Cover</figcaption>
   </figure>
-
-  <blockquote class="twitter-tweet tw-align-center" data-dnt="true" data-theme="dark"><p lang="und" dir="ltr"><a href="https://t.co/PuN8QhnxNV">pic.twitter.com/PuN8QhnxNV</a></p>&mdash; ye (@kanyewest) <a href="https://twitter.com/kanyewest/status/1041895861716832256?ref_src=twsrc%5Etfw">September 18, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+  
+  <p class="tweetToEmbed" style="display: none;">1041895861716832256</p>
 </div>
 
 Yandhi had more of a Yeezus feel than Ye did, which had come out a few months prior, which obviously got me excited. Unfortunately the release date came and went, with no mention of an album again from Kanye. Later Kanye started his Sunday Service project, and JIK came out. Some Yandhi songs were reworked for JIK, and the album was officially dead. I'm not sure why, but until recently I had avoided listening to the leaks, I didn't want to listen to a bunch of low quality demo tracks recorded on someones phone, I had no idea the leaks were such high quality. I've been listening to it a lot recently, but I felt it wasn't fair to put it on the list for two reasons:
