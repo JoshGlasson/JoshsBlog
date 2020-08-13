@@ -29,13 +29,20 @@
 
 	onMount( async () => { 
 		window.jQuery = jQuery;
-		jQuery(window).bind('popstate', function() {
-			if (event.explicitOriginalTarget.nodeName != "IMG") {
+		jQuery(window).bind('popstate', function(event) {
+			if (event.target.location.hash != "#image") {
 				if (modal.style.display === 'block') {
 					closeModal();
 				};
 			};
 		});
+
+		jQuery(window).on("navigate", function(event, data){
+			if(direction == "back") {
+				closeModal();
+			};
+		});
+
 
 		// Get the modal
 		var modal = document.getElementById("myModal");
@@ -56,7 +63,9 @@
 					scrollY = window.scrollY;
 					document.body.style.top = `-${scrollY}px`;
 					document.body.style.position = 'fixed';
-					document.body.style.left = '20%';
+					if (!window.matchMedia("only screen and (max-width: 700px)").matches) {
+						document.body.style.left = '20%';
+					};
 					modal.style.display = "block";
 					navbar.hidden = true;
 					modalImg.src = this.src;
