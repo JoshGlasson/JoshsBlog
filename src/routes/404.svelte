@@ -21,6 +21,7 @@
 
 <svelte:head>
 	<title>404</title>
+	<noscript><meta http-equiv="refresh" content="5; url=/404" /></noscript>
 </svelte:head>
 
 <h1>404 - Page Not Found</h1>
