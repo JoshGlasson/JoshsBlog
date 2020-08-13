@@ -29,7 +29,7 @@
 
 	onMount( async () => { 
 		window.jQuery = jQuery;
-		window.addEventListener('popstate', function(event) {
+		jQuery(window).bind('popstate', function() {
 			if (event.explicitOriginalTarget.nodeName != "IMG") {
 				if (modal.style.display === 'block') {
 					closeModal();
