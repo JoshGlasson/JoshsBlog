@@ -17,8 +17,6 @@
 	export let tagsToFilter = [];
 	export let filterByAnyTags = true;
 
-	posts == undefined ? posts = [] : posts = posts;
-
 	onMount(() => { 
 		// Gets the tags across all posts and filters out dupes.
 		function getTags() {
@@ -162,6 +160,29 @@
 				filterByTags();
 			};
 		});
+
+		var postsToShow = 5;
+		paginate(postsToShow);	
+		function paginate(numnberOfPosts) {
+			filteredPosts = posts.slice(0, numnberOfPosts);
+		}
+
+		var loadMoreButton = document.getElementById("loadMore")
+		loadMoreButton.addEventListener("click", function(){
+			loadMore();
+		});
+
+		function loadMore() {
+			if (postsToShow == posts.length || postsToShow + postsToShow > posts.length) {
+				postsToShow = posts.length;
+				paginate(postsToShow);
+				loadMoreButton.innerText = "No More Posts to Load"
+				loadMoreButton.style.cursor = 'default';
+			} else {
+				postsToShow += postsToShow;
+				paginate(postsToShow);
+			}
+		};
 	});
 
 </script>
@@ -314,6 +335,17 @@
 	.slider.round:before {
 		border-radius: 50%;
 	} 
+
+	#loadMore {
+		background-color: inherit;
+		color: inherit;
+		cursor: pointer;
+		border: none;
+		text-align: center;
+		outline: none;
+		font-size: 15px;
+		border-bottom: none;
+	}
 </style>
 
 <svelte:head>
@@ -358,3 +390,5 @@
 		</div>
 	</div>
 {/each}
+
+<button id="loadMore">Load More Posts</button>
