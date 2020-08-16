@@ -417,4 +417,6 @@
 	<div id="caption"></div>
 </div>
 
+<br>
+
 <Signature />
