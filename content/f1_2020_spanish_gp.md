@@ -98,9 +98,9 @@ And here are the driver standings now, with Hamilton 37 points clear at the top:
 
 <div id="imageDiv">
     <figure>
-        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/spanish-gp-standings.png" alt="Current F1 Driver Standings Top 10">
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/spanish-gp-overall-standings.jpg" alt="Current F1 Driver Standings Top 10">
         <figcaption>Current F1 Driver Standings Top 10</figcaption>
-        <figcaption>Source: <a href="https://www.youtube.com/watch?v=-yHbZWfkBwU" target="_blank">Formula 1 Spanish GP Race Highlights</a></figcaption>
+        <figcaption>Source: <a href="https://twitter.com/F1" target="_blank">Official F1 Twitter</a></figcaption>
     </figure>
 </div>
 
