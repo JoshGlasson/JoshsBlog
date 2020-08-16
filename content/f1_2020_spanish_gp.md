@@ -76,6 +76,9 @@ Romain Grosjean on the penultimate lap had a close shave after hitting a curb an
 
 <div id="imageDiv">
     <figure>
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/spanish-gp-grosjean-drift-gif.gif" alt="Grosjean Drifting Gif">
+    </figure>
+    <figure>
         <img src="https://joshlearningtocode.files.wordpress.com/2020/08/spanish-gp-grosjean-drift.png" alt="Grosjean Drift">
         <figcaption>Grosjean Drift</figcaption>
         <figcaption>Source: <a href="https://www.youtube.com/watch?v=-yHbZWfkBwU" target="_blank">Formula 1 Spanish GP Race Highlights</a></figcaption>
