@@ -30,6 +30,11 @@
 		// Not used at the moment
 		const jQueryModule = await import('jquery');
 		let jQuery = jQueryModule.default;
+		
+		if(!window.location.hash) {
+			window.location = window.location + '#loaded';
+			window.location.reload();
+		}
 
 		// Checks sort date vs post date to see if theres been an update, displays updated date under original if so.
 		if(epochPostDate.getTime() != epochUpdateDate.getTime()) {	
@@ -146,7 +151,13 @@
 		async function createGallery(imageToStartOn) {
 			var options = {
 				index: imageToStartOn,
-				galleryUID: post.slug
+				galleryUID: post.slug,
+				shareButtons: [
+					{id:'twitter', label:'Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
+					{id:'pinterest', label:'Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'},
+					{id:'download', label:'Download image', url:'{{raw_image_url}}', download:true}
+				],
+				maxSpreadZoom: 3
 			}
 			await createPhotoSwipe(pswpElement, PhotoSwipeUI_Default, galleryItems, options);
 			// add listener to the gallery to bring back the navbar
@@ -156,6 +167,7 @@
 		}
 
 		async function createPhotoSwipe(pswpElement, PhotoSwipeUI_Default, galleryItems, options) {
+			console.log(options)
 			gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, galleryItems, options);
 		}
 
@@ -163,7 +175,7 @@
 		goToImageOnLoad();
 		async function goToImageOnLoad() {
 			await addImagesToGallery();
-			if (window.location.hash != "") {
+			if (window.location.hash != "#loaded" && window.location.hash != "") {
 				var imageToDisplayOnLoad = getHashValue('pid');
 				await createGallery(imageToDisplayOnLoad);
 				openGallery();

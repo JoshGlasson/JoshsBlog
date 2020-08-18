@@ -108,7 +108,7 @@
 
 		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
 			the blog data when we hover over the link or tap it on a touchscreen -->
-		<li><a rel="external" aria-current="{segment === 'blog' ? 'blog' : undefined}" href="blog">blog</a></li>
+		<li><a rel=prefetch aria-current="{segment === 'blog' ? 'blog' : undefined}" href="blog">blog</a></li>
 		<!-- svelte-ignore a11y-missing-attribute -->
 		<li><a on:click={toggle}>{dark_toggle === 'true' ? "light" : "dark"} mode</a></li>
 	</ul>
