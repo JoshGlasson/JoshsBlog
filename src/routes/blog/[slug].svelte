@@ -26,16 +26,7 @@
 	let imageurl = "https://joshglasson.com" + encodeURI(post.image.substring(1))
 
 
-	onMount( async () => { 
-		// When an image is navigated away from, bring back the navbar (takes a noticeable amount of time)
-		window.location.hash = "";
-		function hashHandler() {
-			if(location.hash === "") {
-				navbar.style.zIndex = 9999;
-			}
-		}
-		window.onhashchange = hashHandler;
-
+	onMount( async () => {
 		// Not used at the moment
 		const jQueryModule = await import('jquery');
 		let jQuery = jQueryModule.default;
@@ -43,12 +34,13 @@
 		// Get the image and create gallary with PhotoSwipe
 		var img = document.getElementsByTagName("IMG")
 
+		// Initialise variables
 		var gallery;
 		var galleryItems= [];
 		var imageIndexes = [];
 		
 		// Add images to items for gallery to display
-		function addToGallery(image) {
+		async function addToGallery(image) {
 			var itemToAdd = {
 				src: image.src,
 				title: image.alt,
@@ -57,30 +49,57 @@
 			};
 			galleryItems.push(itemToAdd);
 		}
-			
+		
+		// Get the photoswipe element
+		var pswpElement = document.querySelectorAll('.pswp')[0];
+		
 		// When an element is clicked, open the image gallery starting on that image
 		function createGallery(imageToStartOn) {
-			var pswpElement = document.querySelectorAll('.pswp')[0];
 			var options = {
-				index: imageToStartOn
+				index: imageToStartOn,
+				galleryUID: post.slug
 			}
 			gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+			// add listener to the gallery to bring back the navbar
+			gallery.listen('close', function() { 
+				navbar.style.zIndex = 9999;
+			});
 			gallery.init();
 			navbar.style.zIndex = 0;
 		}
-		
+
+		// Extracts the picture id from the hash if the user clicks on a direct link to an image
+		function getHashValue(key) {
+			var matches = location.hash.match(new RegExp(key+'=(\d+)'));
+			return matches ? matches[1] : null;
+		}
+
+		// Uses the picture id from the hash to open the gallery when the page loads if the page has the right hash
+		goToImageOnLoad();
+		async function goToImageOnLoad() {
+			await addImagesToGallery();
+			if (window.location.hash != "") {
+				console.log(window.location.hash);
+				var imageToDisplayOnLoad = getHashValue('pid');
+				console.log(imageToDisplayOnLoad);
+				createGallery(imageToDisplayOnLoad);
+			}
+		}
+
 		// Adding click event listeners to every image on the page, which will open a modal when fired. Checks that the image is not a modal first.
-		for (var i = 0; i < img.length; i++) {
-			if (!img[i].className.includes("modal-content") && !img[i].className.includes("signature-image")) {
-				addToGallery(img[i]);
-				imageIndexes.push(img[i].src);
-				img[i].addEventListener('click', function(event){
-					event.preventDefault();
-					var imageNum = imageIndexes.indexOf(this.src);
-					createGallery(imageNum);
-				});
-			}; 
-		};
+		async function addImagesToGallery() {
+			for (var i = 0; i < img.length; i++) {
+				if (!img[i].className.includes("modal-content") && !img[i].className.includes("signature-image")) {
+					await addToGallery(img[i]);
+					imageIndexes.push(img[i].src);
+					img[i].addEventListener('click', function(event){
+						event.preventDefault();
+						var imageNum = imageIndexes.indexOf(this.src);
+						createGallery(imageNum);
+					});
+				}; 
+			};
+		}
 
 		// Checks sort date vs post date to see if theres been an update, displays updated date under original if so.
 		if(epochPostDate.getTime() != epochUpdateDate.getTime()) {	
@@ -113,7 +132,7 @@
 			});
 		};
 
-		// find current theme
+		// Find current theme
 		function checkTheme() {
 			var dark_toggle = localStorage.getItem('dark_mode_toggle');
 			if (dark_toggle === 'false') {
@@ -143,7 +162,7 @@
 			};
 		}
 
-		// avoid duplication of tweets by deleting them first
+		// Avoid duplication of tweets by deleting them first
 		function cleanupTweets() {
 			var tweets = document.getElementsByClassName('twitter-tweet twitter-tweet-rendered');
 			while(tweets.length > 0){
