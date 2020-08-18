@@ -237,10 +237,6 @@
 
 	/* 100% Image Width on Smaller Screens */
 	@media only screen and (max-width: 700px){
-		.modal-content {
-			width: 100%;
-		}
-
 		.postTitle h1 {
 			font-size: 4em;
 			font-weight: 400;
