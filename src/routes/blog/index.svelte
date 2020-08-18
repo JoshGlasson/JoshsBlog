@@ -179,9 +179,7 @@
 		function paginate(numnberOfPosts) {
 			filteredPostsCopy = filtered ? filteredPosts.slice() : posts.slice();
 			filteredPosts = filteredPostsCopy.slice(0, numnberOfPosts);
-			console.log(filteredPostsCopy.length);
 			if (filteredPostsCopy.length < postsToShow) {
-				console.log("HERE");
 				loadMoreButton.innerText = "No More Posts to Load"
 				loadMoreButton.style.cursor = 'default';
 			} else {
