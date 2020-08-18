@@ -31,9 +31,13 @@
 		const jQueryModule = await import('jquery');
 		let jQuery = jQueryModule.default;
 		
-		if(!window.location.hash) {
-			window.location = window.location + '#loaded';
-			window.location.reload();
+		if (window.localStorage) {
+			if (!localStorage.getItem('firstLoad')) {
+				localStorage['firstLoad'] = true;
+				window.location.reload();
+			} else {
+				localStorage.removeItem('firstLoad');
+			}
 		}
 
 		// Checks sort date vs post date to see if theres been an update, displays updated date under original if so.
@@ -175,7 +179,7 @@
 		goToImageOnLoad();
 		async function goToImageOnLoad() {
 			await addImagesToGallery();
-			if (window.location.hash != "#loaded" && window.location.hash != "") {
+			if (window.location.hash != "") {
 				var imageToDisplayOnLoad = getHashValue('pid');
 				await createGallery(imageToDisplayOnLoad);
 				openGallery();
