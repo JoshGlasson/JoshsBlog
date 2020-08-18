@@ -18,7 +18,6 @@
 <script>
 	import { onMount } from 'svelte';
 	export let post;
-	import jQuery from 'jquery';
 
 	let epochPostDate = new Date(post.originaldate);
 	let epochUpdateDate = new Date(post.sortdate);
@@ -28,106 +27,59 @@
 
 
 	onMount( async () => { 
-		window.jQuery = jQuery;
-		
-		jQuery(window).bind('popstate', function(event) {
-			if (event.target.location.hash != "#image") {
-				if (modal.style.display === 'block') {
-					closeModal();
-				};
-			};
-		});
+		// When an image is navigated away from, bring back the navbar (takes a noticeable amount of time)
+		window.location.hash = "";
+		function hashHandler() {
+			if(location.hash === "") {
+				navbar.style.zIndex = 9999;
+			}
+		}
+		window.onhashchange = hashHandler;
 
-		jQuery(window).on("navigate", function(event, data){
-			if(direction == "back") {
-				closeModal();
-			};
-		});
+		// Not used at the moment
+		const jQueryModule = await import('jquery');
+		let jQuery = jQueryModule.default;
 
-
-		// Get the modal
-		var modal = document.getElementById("myModal");
-
-		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		// Get the image and create gallary with PhotoSwipe
 		var img = document.getElementsByTagName("IMG")
-		var modalImg = document.getElementById("img01");
-		var captionText = document.getElementById("caption");
-		var navbar = document.getElementById("navbar");
 
-		var scrollY = 0;
+		var gallery;
+		var galleryItems= [];
+		var imageIndexes = [];
+		
+		// Add images to items for gallery to display
+		function addToGallery(image) {
+			var itemToAdd = {
+				src: image.src,
+				title: image.alt,
+				w: image.width,
+				h: image.height
+			};
+			galleryItems.push(itemToAdd);
+		}
+			
+		// When an element is clicked, open the image gallery starting on that image
+		function createGallery(imageToStartOn) {
+			var pswpElement = document.querySelectorAll('.pswp')[0];
+			var options = {
+				index: imageToStartOn
+			}
+			gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+			gallery.init();
+			navbar.style.zIndex = 0;
+		}
 		
 		// Adding click event listeners to every image on the page, which will open a modal when fired. Checks that the image is not a modal first.
 		for (var i = 0; i < img.length; i++) {
 			if (!img[i].className.includes("modal-content") && !img[i].className.includes("signature-image")) {
+				addToGallery(img[i]);
+				imageIndexes.push(img[i].src);
 				img[i].addEventListener('click', function(event){
 					event.preventDefault();
-					scrollY = window.scrollY;
-					document.body.style.top = `-${scrollY}px`;
-					document.body.style.position = 'fixed';
-					if (!window.matchMedia("only screen and (max-width: 700px)").matches) {
-						document.body.style.left = '20%';
-					};
-					modal.style.display = "block";
-					navbar.hidden = true;
-					modalImg.src = this.src;
-					captionText.innerHTML = this.alt;
-					window.location.hash = "#image"
+					var imageNum = imageIndexes.indexOf(this.src);
+					createGallery(imageNum);
 				});
 			}; 
-		};
-
-		// Get the <span> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
-
-		// Event listeners to track the user swiping on the screen
-		var touchstartY = 0;
-		var touchendY = 0;
-		window.addEventListener('touchstart', function(event) {
-			if (modal.style.display === 'block') {
-				touchstartY = event.changedTouches[0].screenY;
-			}
-		}, false);
-
-		window.addEventListener('touchend', function(event) {
-			if (modal.style.display === 'block') {
-				touchendY = event.changedTouches[0].screenY;
-				handleGesture();
-			}
-		}, false); 
-
-		// Resets all of the styling that was changed for the modal
-		function closeModal() {
-			modal.style.display = 'none';
-			document.body.style.position = '';
-			document.body.style.top = '';
-			document.body.style.left = ''
-			document.body.style.transform = ''
-			navbar.hidden = false;
-			scrollPage();
-		}
-
-		function goBack() {
-			window.history.back();
-		};
-
-		function scrollPage(){
-			jQuery("html,body").animate({scrollTop: scrollY}, 1000);
-		}
-
-		// Checks if the user has swiped up or down more than one third of the screen. If so it closes the modal.
-		function handleGesture() {
-			var dif = Math.abs(touchstartY - touchendY);
-			var h = window.innerHeight/3;
-			if (dif > h) {
-				closeModal()
-				goBack();
-			}
-		}
-
-		// When the user clicks on <span> (x), close the modal
-		span.onclick = function() { 
-			closeModal();
-			goBack();
 		};
 
 		// Checks sort date vs post date to see if theres been an update, displays updated date under original if so.
@@ -142,30 +94,14 @@
 			datediv.appendChild(updatedate);
 		};
 
-		// Get the modals
-		var modals = document.getElementsByClassName("modal-content")
-		var zoomed = false;
-		
-		// Adding double click event listeners to every modal to enable zooming.
-		for (var i = 0; i < modals.length; i++) {
-			var modalImage = modals[i];
-			modalImage.addEventListener('dblclick', function(){
-				if (zoomed) {
-					modalImage.style.transform = "scale(1)"
-					zoomed = false;
-				} else {
-					modalImage.style.transform = "scale(1.5)"
-					zoomed = true;
-				};
-			});
-		};
-
+		// Wrap code snippets
 		var codeSnippets = document.getElementsByTagName("code");
 		for (var i = 0; i < codeSnippets.length; i++) {
 			var snippet = codeSnippets[i];
 			snippet.style.whiteSpace = 'pre-wrap';
 		};
 
+		// Watch for change to the class of the body, seeing if the theme has changed.
 		var body = document.body;
 		const mutationObserver = new MutationObserver(callback)
 		mutationObserver.observe(body, { attributes: true })
@@ -177,6 +113,7 @@
 			});
 		};
 
+		// find current theme
 		function checkTheme() {
 			var dark_toggle = localStorage.getItem('dark_mode_toggle');
 			if (dark_toggle === 'false') {
@@ -186,7 +123,7 @@
 			};
 		};
 
-
+		// Create tweets with current theme
 		createTweets(checkTheme());
 		function createTweets(theme) {
 			cleanupTweets();
@@ -206,7 +143,7 @@
 			};
 		}
 
-
+		// avoid duplication of tweets by deleting them first
 		function cleanupTweets() {
 			var tweets = document.getElementsByClassName('twitter-tweet twitter-tweet-rendered');
 			while(tweets.length > 0){
@@ -298,70 +235,6 @@
 		margin: 2em 0 2em 0;
 	}
 
-	/* The Modal (background) */
-	.modal {
-		display: none; /* Hidden by default */
-		position: fixed; /* Stay in place */
-		z-index: 1; /* Sit on top */
-		padding-top: 100px; /* Location of the box */
-		left: 0;
-		top: 0;
-		width: 100%; /* Full width */
-		height: 100%; /* Full height */
-		overflow: auto; /* Enable scroll if needed */
-		background-color: rgb(0,0,0); /* Fallback color */
-		background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-	}
-
-	/* Modal Content (Image) */
-	.modal-content {
-		margin: auto;
-		display: block;
-		width: 80%;
-		max-width: 700px;
-	}
-
-	/* Caption of Modal Image (Image Text) - Same Width as the Image */
-	#caption {
-		margin: auto;
-		display: block;
-		width: 80%;
-		max-width: 700px;
-		text-align: center;
-		color: #ccc;
-		padding: 10px 0;
-		height: 150px;
-	}
-
-	/* Add Animation - Zoom in the Modal */
-	.modal-content, #caption {
-		animation-name: zoom;
-		animation-duration: 0.6s;
-	}
-
-	@keyframes zoom {
-		from {transform:scale(0)}
-		to {transform:scale(1)}
-	}
-
-	/* The Close Button */
-	.close {
-		position: absolute;
-		top: 40px;
-		right: 35px;
-		color: #f1f1f1;
-		font-size: 40px;
-		font-weight: bold;
-		transition: 0.3s;
-	}
-
-	.close:hover,
-	.close:focus {
-		color: #bbb;
-		text-decoration: none;
-		cursor: pointer;
-	}
-
 	/* 100% Image Width on Smaller Screens */
 	@media only screen and (max-width: 700px){
 		.modal-content {
@@ -389,6 +262,10 @@
 	<meta property="og:image" content={imageurl}>
 	<meta property="og:description" content={post.headline}>
 	<meta property="og:url" content={posturl}>
+	<link rel="stylesheet" href="./photoswipe/photoswipe.css"> 
+	<link rel="stylesheet" href="./photoswipe/default-skin/default-skin.css"> 
+	<script src="./photoswipe/photoswipe.min.js"></script> 
+	<script src="./photoswipe/photoswipe-ui-default.min.js"></script> 
 </svelte:head>
 
 <div class='postTitle'>
@@ -404,19 +281,73 @@
 	{@html post.html}
 </div>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-	<!-- The Close Button -->
-	<span class="close">&times;</span>
-
-	<!-- Modal Content (The Image) -->
-	<img class="modal-content" id="img01" alt="modal generated">
-
-	<!-- Modal Caption (Image Text) -->
-	<div id="caption"></div>
-</div>
-
 <br>
 
 <Signature />
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

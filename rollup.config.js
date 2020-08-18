@@ -6,12 +6,16 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
+import copy from 'rollup-plugin-copy';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
-const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning);
+const onwarn = (warning, onwarn) =>
+	(warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
+	(warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
+	onwarn(warning);
 
 export default {
 	client: {
@@ -21,6 +25,14 @@ export default {
 			replace({
 				'process.browser': true,
 				'process.env.NODE_ENV': JSON.stringify(mode)
+			}),
+			copy({
+				targets: [
+				  { src: 'node_modules/photoswipe/dist/*', dest: 'static/photoswipe/' },
+				  { src: 'src/index.html', dest: 'dist/public' },
+				  { src: ['assets/fonts/arial.woff', 'assets/fonts/arial.woff2'], dest: 'dist/public/fonts' },
+				  { src: 'assets/images/**/*', dest: 'dist/public/images' }
+				]
 			}),
 			svelte({
 				dev,
@@ -32,7 +44,6 @@ export default {
 				dedupe: ['svelte']
 			}),
 			commonjs(),
-
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
 				babelHelpers: 'runtime',
@@ -69,6 +80,7 @@ export default {
 			}),
 			svelte({
 				generate: 'ssr',
+				hydratable: true,
 				dev
 			}),
 			resolve({
