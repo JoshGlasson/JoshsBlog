@@ -11,7 +11,7 @@
 	import { onMount } from 'svelte';
 
 	export let posts;
-	export let filteredPosts = posts;
+	export let filteredPosts = posts.slice();
 	export let tagFilteredPosts;
 	export let tags = [];
 	export let tagsToFilter = [];
@@ -42,6 +42,9 @@
 			};
 		};
 
+
+		var filtered = false;
+
 		// Filters the posts based on the search bar value. Normally looks at titles only, in advanced mode it looks at the headline too.
 		function filterPosts() {
 			if(searchbar[0].value !== "") {
@@ -60,7 +63,12 @@
 						};
 					};
 				};
+				filtered = true;
+			} else {
+				tagsToFilter.length > 0 ? filtered = true : filtered = false;
 			};
+			postsToShow = 5;
+			paginate(postsToShow);
 		};
 
 		// Filters by the selected tags. Can filter for posts with all of the tags or any of the tags depending on if the slider is active.
@@ -83,6 +91,9 @@
 						};
 					};
 				};
+				filtered = true;
+			} else {
+				tagsToFilter.length > 0 ? filtered = true : filtered = false;
 			};
 			filteredPosts = tagFilteredPosts;
 			filterPosts();
@@ -161,13 +172,24 @@
 			};
 		});
 
+		var loadMoreButton = document.getElementById("loadMore");
 		var postsToShow = 5;
+		var filteredPostsCopy;
 		paginate(postsToShow);	
 		function paginate(numnberOfPosts) {
-			filteredPosts = posts.slice(0, numnberOfPosts);
+			filteredPostsCopy = filtered ? filteredPosts.slice() : posts.slice();
+			filteredPosts = filteredPostsCopy.slice(0, numnberOfPosts);
+			console.log(filteredPostsCopy.length);
+			if (filteredPostsCopy.length < postsToShow) {
+				console.log("HERE");
+				loadMoreButton.innerText = "No More Posts to Load"
+				loadMoreButton.style.cursor = 'default';
+			} else {
+				loadMoreButton.innerText = "Load More Posts"
+				loadMoreButton.style.cursor = 'pointer';
+			};
 		}
 
-		var loadMoreButton = document.getElementById("loadMore")
 		loadMoreButton.addEventListener("click", function(){
 			loadMore();
 		});
