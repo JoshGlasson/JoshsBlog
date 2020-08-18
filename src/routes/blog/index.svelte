@@ -1,6 +1,8 @@
 <script context="module">
 	export function preload({ params, query }) {
-		return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
+		return this.fetch(`blog.json`)
+		.then(r => r.json())
+		.then(posts => {
 			posts.sort((a,b) => (Date.parse(a.sortdate) > Date.parse(b.sortdate)) ? 1 : ((Date.parse(b.sortdate) > Date.parse(a.sortdate)) ? -1 : 0)).reverse()
 			return { posts };
 		});
@@ -12,7 +14,7 @@
 
 	export let posts;
 	export let filteredPosts = posts.slice();
-	export let tagFilteredPosts;
+	export let tagFilteredPosts = posts.slice();
 	export let tags = [];
 	export let tagsToFilter = [];
 	export let filterByAnyTags = true;
@@ -73,7 +75,6 @@
 
 		// Filters by the selected tags. Can filter for posts with all of the tags or any of the tags depending on if the slider is active.
 		function filterByTags() {
-			tagFilteredPosts = posts;
 			if (tagsToFilter.length > 0) {
 				tagFilteredPosts = [];
 				for (var i = 0; i < posts.length; i++) {

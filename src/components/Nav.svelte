@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 
 	export let segment;
-	export let dark_toggle;
+	export let dark_toggle = true;
 
 	function setDark() {
 		window.document.body.classList.add('dark-mode')
@@ -28,7 +28,7 @@
 	
 	onMount(async () => {
 		dark_toggle = localStorage.getItem('dark_mode_toggle')
-		dark_toggle === null ? dark_toggle = 'false' : dark_toggle = dark_toggle
+		dark_toggle === null ? dark_toggle = 'true' : dark_toggle = dark_toggle
 		if (dark_toggle === 'true') {
 			setDark();
 		}
@@ -103,12 +103,12 @@
 
 <nav id="navbar">
 	<ul>
-		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
-		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a></li>
+		<li><a aria-current="{segment === 'home' ? 'home' : undefined}" href="home">home</a></li>
+		<li><a aria-current="{segment === 'about' ? 'about' : undefined}" href="about">about</a></li>
 
 		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
 			the blog data when we hover over the link or tap it on a touchscreen -->
-		<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">blog</a></li>
+		<li><a rel="external" aria-current="{segment === 'blog' ? 'blog' : undefined}" href="blog">blog</a></li>
 		<!-- svelte-ignore a11y-missing-attribute -->
 		<li><a on:click={toggle}>{dark_toggle === 'true' ? "light" : "dark"} mode</a></li>
 	</ul>

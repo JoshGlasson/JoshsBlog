@@ -31,76 +31,6 @@
 		const jQueryModule = await import('jquery');
 		let jQuery = jQueryModule.default;
 
-		// Get the image and create gallary with PhotoSwipe
-		var img = document.getElementsByTagName("IMG")
-
-		// Initialise variables
-		var gallery;
-		var galleryItems= [];
-		var imageIndexes = [];
-		
-		// Add images to items for gallery to display
-		async function addToGallery(image) {
-			var itemToAdd = {
-				src: image.src,
-				title: image.alt,
-				w: image.width,
-				h: image.height
-			};
-			galleryItems.push(itemToAdd);
-		}
-		
-		// Get the photoswipe element
-		var pswpElement = document.querySelectorAll('.pswp')[0];
-		
-		// When an element is clicked, open the image gallery starting on that image
-		function createGallery(imageToStartOn) {
-			var options = {
-				index: imageToStartOn,
-				galleryUID: post.slug
-			}
-			gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, galleryItems, options);
-			// add listener to the gallery to bring back the navbar
-			gallery.listen('close', function() { 
-				navbar.style.zIndex = 9999;
-			});
-			gallery.init();
-			navbar.style.zIndex = 0;
-		}
-
-		// Extracts the picture id from the hash if the user clicks on a direct link to an image
-		function getHashValue(key) {
-			var matches = location.hash.match(new RegExp(key+'=(\d+)'));
-			return matches ? matches[1] : null;
-		}
-
-		// Uses the picture id from the hash to open the gallery when the page loads if the page has the right hash
-		goToImageOnLoad();
-		async function goToImageOnLoad() {
-			await addImagesToGallery();
-			if (window.location.hash != "") {
-				console.log(window.location.hash);
-				var imageToDisplayOnLoad = getHashValue('pid');
-				console.log(imageToDisplayOnLoad);
-				createGallery(imageToDisplayOnLoad);
-			}
-		}
-
-		// Adding click event listeners to every image on the page, which will open a modal when fired. Checks that the image is not a modal first.
-		async function addImagesToGallery() {
-			for (var i = 0; i < img.length; i++) {
-				if (!img[i].className.includes("modal-content") && !img[i].className.includes("signature-image")) {
-					await addToGallery(img[i]);
-					imageIndexes.push(img[i].src);
-					img[i].addEventListener('click', function(event){
-						event.preventDefault();
-						var imageNum = imageIndexes.indexOf(this.src);
-						createGallery(imageNum);
-					});
-				}; 
-			};
-		}
-
 		// Checks sort date vs post date to see if theres been an update, displays updated date under original if so.
 		if(epochPostDate.getTime() != epochUpdateDate.getTime()) {	
 			var datediv = document.getElementsByClassName("date")[0]
@@ -169,6 +99,81 @@
 				tweets[0].parentNode.removeChild(tweets[0]);
 			};
 		};
+
+		// Get the images and create gallery with PhotoSwipe
+		var img = document.getElementsByTagName("IMG")
+
+		// Initialise variables
+		var gallery;
+		var galleryItems = [];
+		var imageIndexes = [];
+		
+		// Get the photoswipe element
+		var pswpElement = document.querySelectorAll('.pswp')[0];
+
+		// Extracts the picture id from the hash if the user clicks on a direct link to an image
+		function getHashValue(key) {
+			var matches = location.hash.match(new RegExp(key+'=(\d+)'));
+			return matches ? matches[1] : null;
+		}
+
+		// Adding click event listeners to every image on the page, which will open a modal when fired. Checks that the image is not a modal first.
+		async function addImagesToGallery() {
+			for (var i = 0; i < img.length; i++) {
+				if (!img[i].className.includes("modal-content") && !img[i].className.includes("signature-image")) {
+					var image = img[i];
+					if (imageIndexes.indexOf(image.src) < 0) {
+						var itemToAdd = {
+							src: image.src,
+							title: image.alt,
+							w: image.width,
+							h: image.height
+						};
+						galleryItems.push(itemToAdd);
+						imageIndexes.push(image.src);
+					}
+					img[i].addEventListener('click', async function(event){
+						event.preventDefault();
+						var imageNum = imageIndexes.indexOf(this.src);
+						await createGallery(imageNum);
+						openGallery();
+					});
+				}; 
+			};
+		}
+
+		// When an element is clicked, open the image gallery starting on that image
+		async function createGallery(imageToStartOn) {
+			var options = {
+				index: imageToStartOn,
+				galleryUID: post.slug
+			}
+			await createPhotoSwipe(pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+			// add listener to the gallery to bring back the navbar
+			gallery.listen('close', function() { 
+				navbar.style.zIndex = 9999;
+			});
+		}
+
+		async function createPhotoSwipe(pswpElement, PhotoSwipeUI_Default, galleryItems, options) {
+			gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+		}
+
+		// Uses the picture id from the hash to open the gallery when the page loads if the page has the right hash
+		goToImageOnLoad();
+		async function goToImageOnLoad() {
+			await addImagesToGallery();
+			if (window.location.hash != "") {
+				var imageToDisplayOnLoad = getHashValue('pid');
+				await createGallery(imageToDisplayOnLoad);
+				openGallery();
+			}
+		}
+
+		function openGallery() {
+			gallery.init();
+			navbar.style.zIndex = 0;
+		}
 	});
 </script>
 
@@ -277,10 +282,6 @@
 	<meta property="og:image" content={imageurl}>
 	<meta property="og:description" content={post.headline}>
 	<meta property="og:url" content={posturl}>
-	<link rel="stylesheet" href="./photoswipe/photoswipe.css"> 
-	<link rel="stylesheet" href="./photoswipe/default-skin/default-skin.css"> 
-	<script src="./photoswipe/photoswipe.min.js"></script> 
-	<script src="./photoswipe/photoswipe-ui-default.min.js"></script> 
 </svelte:head>
 
 <div class='postTitle'>

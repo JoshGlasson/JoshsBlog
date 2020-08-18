@@ -27,6 +27,10 @@
 
 <svelte:head>
 	<script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script>
+	<link rel="stylesheet" href="./photoswipe/photoswipe.css"> 
+	<link rel="stylesheet" href="./photoswipe/default-skin/default-skin.css"> 
+	<script src="./photoswipe/photoswipe.min.js"></script> 
+	<script src="./photoswipe/photoswipe-ui-default.min.js"></script> 
 </svelte:head>
 
 <Nav {segment}/>
