@@ -43,16 +43,16 @@ JIK is currently the most recent Kanye album (until DONDA drops, please!). It is
 
 <br>
 
-## 10. Ye
+## 10. Watch The Throne
 
 <div id="imageDiv">
     <figure>
-        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/ye.jpg" alt="Ye">
-        <figcaption>Ye</figcaption>
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/wtt.jpg" alt="Watch The Throne">
+        <figcaption>Watch The Throne</figcaption>
     </figure>
 </div>
 
-The first album from Wyoming, which started a newer era of Kanye.  This album had quite a different feeling from his other albums, and was the first time he really talks about being bi-polar.  Ye marked the return to more soulful samples, a shift from The Life of Pablo which came before. One of the downsides of this album was that it was only 7 tracks. This was because Kanye was producing 4 other albums, for Pusha T, Teyana Taylor, Nas and Kids See Ghosts with Kid Cudi. It was a good summer to be a Kanye fan, with lots of new music coming.
+When WTT was announced I was so excited, Jay Z and Kanye, a whole album together. It promised to be very good. And it was. Kanye made his start producing songs for Jay Z, and Jay Z had appeared on a remix of Power after the release of My Beautiful Dark Twisted Fantasy, which was what sparked this album. To me, WTT feels like the perfect transition between MBDTF and Yeezus. However I want to give a quick fuck you to Spotify on this one for the 3 minutes of silence before Illest Motherfucker Alive, it's such a good song, but it's so hard to listen to in the car because you can't skip the silence (I still love you though Spotify).
 
 <br>
 
@@ -69,7 +69,33 @@ KSG is a collaboration album between Kanye West and Kid Cudi, which automaticall
 
 <br>
 
-## 8. The Life of Pablo
+## 8. 808s & Heartbreak
+
+<div id="imageDiv">
+    <figure>
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/808s.jpg" alt="808s & Heartbreak">
+        <figcaption>808s & Heartbreak</figcaption>
+    </figure>
+</div>
+
+808s was the first album where Kanye started to try completely new ideas. The album was fuelled by some tragic events in Kanye's life. Mostly the passing of his mother Donda, who he was incredibly close to. Kanye moved away from rapping and into auto tuned singing for this album, giving it a more electronic feel. 808s was a massive influence to other artists, rather than rapping about guns and money, Kanye was singing about his feelings, which laid the groundwork for artists such as Drake, Childish Gambino and Frank Ocean.
+
+<br>
+
+## 7. Ye
+
+<div id="imageDiv">
+    <figure>
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/ye.jpg" alt="Ye">
+        <figcaption>Ye</figcaption>
+    </figure>
+</div>
+
+The first album from Wyoming, which started a newer era of Kanye.  This album had quite a different feeling from his other albums, and was the first time he really talks about being bi-polar.  Ye marked the return to more soulful samples, a shift from The Life of Pablo which came before. One of the downsides of this album was that it was only 7 tracks. This was because Kanye was producing 4 other albums, for Pusha T, Teyana Taylor, Nas and Kids See Ghosts with Kid Cudi. It was a good summer to be a Kanye fan, with lots of new music coming.
+
+<br>
+
+## 6. The Life of Pablo
 
 <div id="imageDiv">
     <figure>
@@ -88,32 +114,6 @@ TLoP came after the biggest gap between albums for Kanye, and I remember it sure
 </div>
 
  I still have the original released version downloaded on an old phone somewhere, which is always interesting to listen to. The music itself was good too, it really marked the beginning of a more Christian sound to Kanye's albums. Ultralight Beam with Chance and Father Stretch My Hands were soulful and religious, but still absolute bangers. All that being said, this album contains one of the only Kanye songs that I will always skip, Low Lights.
-
-<br>
-
-## 7. Watch The Throne
-
-<div id="imageDiv">
-    <figure>
-        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/wtt.jpg" alt="Watch The Throne">
-        <figcaption>Watch The Throne</figcaption>
-    </figure>
-</div>
-
-When WTT was announced I was so excited, Jay Z and Kanye, a whole album together. It promised to be very good. And it was. Kanye made his start producing songs for Jay Z, and Jay Z had appeared on a remix of Power after the release of My Beautiful Dark Twisted Fantasy, which was what sparked this album. To me, WTT feels like the perfect transition between MBDTF and Yeezus. However I want to give a quick fuck you to Spotify on this one for the 3 minutes of silence before Illest Motherfucker Alive, it's such a good song, but it's so hard to listen to in the car because you can't skip the silence (I still love you though Spotify).
-
-<br>
-
-## 6. 808s & Heartbreak
-
-<div id="imageDiv">
-    <figure>
-        <img src="https://joshlearningtocode.files.wordpress.com/2020/08/808s.jpg" alt="808s & Heartbreak">
-        <figcaption>808s & Heartbreak</figcaption>
-    </figure>
-</div>
-
-808s was the first album where Kanye started to try completely new ideas. The album was fuelled by some tragic events in Kanye's life. Mostly the passing of his mother Donda, who he was incredibly close to. Kanye moved away from rapping and into auto tuned singing for this album, giving it a more electronic feel. 808s was a massive influence to other artists, rather than rapping about guns and money, Kanye was singing about his feelings, which laid the groundwork for artists such as Drake, Childish Gambino and Frank Ocean.
 
 <br>
 
