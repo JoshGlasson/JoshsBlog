@@ -294,6 +294,9 @@
 
 <svelte:head>
 	<title>{post.title}</title>
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@joshglasson" />
+	<meta name="twitter:creator" content="@joshglasson" />
 	<meta property="og:title" content={post.title}>
 	<meta property="og:image" content={imageurl}>
 	<meta property="og:description" content={post.headline}>
