@@ -26,6 +26,14 @@
 </style>
 
 <svelte:head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TJ8JZX38E6"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-TJ8JZX38E6');
+	</script>
 	<script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script>
 	<link rel="stylesheet" href="./photoswipe/photoswipe.css"> 
 	<link rel="stylesheet" href="./photoswipe/default-skin/default-skin.css"> 
