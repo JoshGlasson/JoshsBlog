@@ -26,6 +26,7 @@
 </style>
 
 <svelte:head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TJ8JZX38E6"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
@@ -34,7 +35,11 @@
 
 		gtag('config', 'G-TJ8JZX38E6');
 	</script>
+
+	<!-- Twitter Widgets -->
 	<script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script>
+
+	<!-- Photoswipe Styles and Scripts -->
 	<link rel="stylesheet" href="./photoswipe/photoswipe.css"> 
 	<link rel="stylesheet" href="./photoswipe/default-skin/default-skin.css"> 
 	<script src="./photoswipe/photoswipe.min.js"></script> 
