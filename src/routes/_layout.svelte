@@ -36,6 +36,8 @@
 		gtag('config', 'G-TJ8JZX38E6');
 	</script>
 
+	<script data-ad-client="ca-pub-1501125542619304" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 	<!-- Twitter Widgets -->
 	<script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script>
 
