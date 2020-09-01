@@ -27,7 +27,7 @@
 
 <svelte:head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TJ8JZX38E6"></script>
+	<script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-TJ8JZX38E6"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
