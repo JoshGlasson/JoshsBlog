@@ -380,7 +380,9 @@ module.exports = {
 ```
 </div>
 
-We import any commands into this file, then import this file into the main `index.js`. This keeps it neater, as otherwise we would need to import each individual command into the main `index.js` file. Here is the working JS bot:
+We import any commands into this file, then import this file into the main `index.js`. This keeps it neater, as otherwise we would need to import each individual command into the main `index.js` file. We can now run the bot with `node index.js`.
+
+Here is the working JS bot:
 
 <div id="imageDiv">
   <figure>
