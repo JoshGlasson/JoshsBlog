@@ -3,7 +3,7 @@ slug: 'discord_bot'
 title: 'Creating a Simple Discord Bot.'
 headline: 'Its not self promotion if its done by a robot!'
 image: "./images/icons/discord logo.png"
-sortdate: "2020-09-02"
+sortdate: "2020-09-03"
 originaldate: "2020-09-02"
 tags: ['Software Development']
 ---
@@ -421,6 +421,222 @@ Now everything was working I added more info to my embed:
   </figure>
 </div>
 
+<br>
+
 You can find the <a href="https://github.com/JoshGlasson/Discord-Bot" target="_blank">code on my GitHub</a>
 
 And that is it for now. I find little things like this very interesting, I may revisit this and add more to it in the future, so look out for a part 2 one day!
+
+<br>
+
+<h1><em><strong>UPDATE: Thu Sep 03 2020</strong></em></h1>
+<h2><em><strong>Adding Python</strong></em></h2>
+
+<br>
+
+# Python
+
+## Register the Bot
+
+Again we need to have a bot setup and an auth token ready to use. Follow the setup process in the Ruby guide for this if you haven't done it already, and then follow the guide in the JavaScript section to add it to your server.
+
+## Project Setup
+
+Despite having PyCharm installed, I decided to stick with VSCode for the Python code. It actually works pretty well, well enough for the simple project I am going to be doing anyway! If you too want to use VSCode, I would follow <a href="https://code.visualstudio.com/docs/python/python-tutorial" target="_blank">this guide</a> to get it setup for Python.
+
+Now the IDE is setup we can start on the project. I was following <a href="https://www.devdungeon.com/content/make-discord-bot-python" target="_blank">this guide</a> to start with, but ran into all sorts of problems with python, so will try to explain exactly what I did.
+
+Firstly we need the `discord.py` library. There are some issues with this library working on the newest version of python, so use the below commands to get it working:
+
+<div id="codeSnippet">
+
+```zsh
+python3 -m pip install -U "https://github.com/Rapptz/discord.py/archive/async.zip#egg=discord.py[voice]"
+python3 -m pip install --upgrade aiohttp
+python3 -m pip install --upgrade websockets
+```
+</div>
+
+I am not sure the second and third commands are necessary, but it worked for me! Now we can get started, so in your project folder, create a file called `bot.py` and add the following code:
+
+<div id="codeSnippet">
+
+```python
+import discord
+
+TOKEN = 'PUT YOUR TOKEN HERE'
+
+client = discord.Client()
+
+@client.event
+async def on_message(message):
+    # we do not want the bot to reply to itself
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('!hello'):
+        msg = 'Hello {0.author.mention}'.format(message)
+        await client.send_message(message.channel, msg)
+
+@client.event
+async def on_ready():
+    print('Logged in as')
+    print(client.user.name)
+    print(client.user.id)
+    print('------')
+
+client.run(TOKEN)
+```
+</div>
+
+After adding your token, try to run this python file in the terminal using `python3 /path/to/file/bot.py` (or the play button in the top right in VSCode).
+
+At this point you may run into an SSLError, something like this will be in the stack trace.
+
+<div id="codeSnippet">
+
+```bash
+Cannot connect to host discordapp.com:443 ssl:True 
+[SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1056)')]
+```
+</div>
+
+If this does happen to you, navigate to your root directory, then go to `Applications/Python 3.7` and run the `Install Certificates.command` file. Now if you re-run the python script, it should work!
+
+You should be able to see your bot in your channel, and sending `!hello` should prompt it to reply and tag you in the response.
+
+<div id="imageDiv">
+  <figure>
+    <img src="https://joshlearningtocode.files.wordpress.com/2020/09/discord-bot-py-hello.png" alt="Python Bot Hello"/>
+    <figcaption>Python Bot Hello</figcaption>
+  </figure>
+</div>
+
+The bot is up and running now, so we can make some more tweaks. Instead of hardcoding my token into the `bot.py` file, I want to use `dotenv` as I have for my JavaScript bot. I installed the plugin with `python3 -m pip install python-dotenv`, and created a `.env` file with my token inside, in a key value pair format. For example `TOKEN="My token"`.
+
+To get this into my `bot.py` file, I had to add a few things at the top:
+
+<div id="codeSnippet">
+
+```python
+import discord
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+TOKEN = os.environ.get('TOKEN')
+```
+</div>
+
+Next I wanted to update my code to look for the `?` prefix, as it has in the other two projects. To do this I added another `if` block after the check that the bot is not replying to itself:
+
+<div id="codeSnippet">
+
+```python
+if message.content.startswith('?'):
+    command = message.content[1:]
+    print("Command received: " + command)
+else:
+    print("Commands should start with ?")
+    return
+```
+</div>
+
+If a message starts with `?`, then I trim the message to not include the `?` and save that into my `command` variable. If it does not start with `?` I print a log then `return`, so none of the rest of the code after this point is executed.
+
+Now I could add the `promote` command I have been working with on the other projects.
+
+<div id="codeSnippet">
+
+```python
+if command.startswith('promote'):
+  colour=random.randint(0, 0xFFFFFF)
+  embed = discord.Embed(title="Joshs Blog", colour=discord.Colour(colour), url="https://joshglasson.com", description="My personal blog about Software Development, Sports, Music, and any more of my hobbies!", timestamp=datetime.utcnow())
+  embed.set_image(url="https://joshglasson.com/logo.png")
+  embed.set_thumbnail(url="https://joshglasson.com/logo.png")
+  embed.set_author(name="Josh Glasson", url="https://joshglasson.com", icon_url="https://joshglasson.com/logo.png")
+  await client.send_message(message.channel, embed=embed)
+  print("Command executed: " + command)
+```
+</div>
+
+Once again I am picking a random colour and setting the time to now. To do this I used `random` and `datetime`, both of which have to be imported. I used the embed visualiser to get the right code for embedding, although had to tweek some bits to make it work with my bot.
+
+
+<div id="imageDiv">
+  <figure>
+    <img src="https://joshlearningtocode.files.wordpress.com/2020/09/discord-bot-python-visualizer.png" alt="Python Embed Visualiser"/>
+    <figcaption>Python Embed Visualiser</figcaption>
+  </figure>
+</div>
+
+Here is the full `bot.py` code:
+
+<div id="codeSnippet">
+
+```python
+import discord
+from datetime import datetime
+import random
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+TOKEN = os.environ.get('TOKEN')
+
+client = discord.Client()
+
+@client.event
+async def on_message(message):
+    # we do not want the bot to reply to itself
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('?'):
+        command = message.content[1:]
+        print("Command received: " + command)
+    else:
+        print("Commands should start with ?")
+        return
+
+    if command.startswith('hello'):
+        msg = 'Hello {0.author.mention}'.format(message)
+        await client.send_message(message.channel, msg)
+        print("Command executed: " + command)
+        return
+
+    if command.startswith('promote'):
+        colour=random.randint(0, 0xFFFFFF)
+        embed = discord.Embed(title="Joshs Blog", colour=discord.Colour(colour), url="https://joshglasson.com", description="My personal blog about Software Development, Sports, Music, and any more of my hobbies!", timestamp=datetime.utcnow())
+        embed.set_image(url="https://joshglasson.com/logo.png")
+        embed.set_thumbnail(url="https://joshglasson.com/logo.png")
+        embed.set_author(name="Josh Glasson", url="https://joshglasson.com", icon_url="https://joshglasson.com/logo.png")
+        await client.send_message(message.channel, embed=embed)
+        print("Command executed: " + command)
+        return
+
+    print("Command " + command + " does not match any known commands")
+
+@client.event
+async def on_ready():
+    print('Logged in as')
+    print(client.user.name)
+    print(client.user.id)
+    print('------')
+
+client.run(TOKEN)
+```
+</div>
+
+And here it is in action:
+
+<div id="imageDiv">
+  <figure>
+    <img src="https://joshlearningtocode.files.wordpress.com/2020/09/discord-bot-python.png" alt="Python Bot"/>
+    <figcaption>Python Bot</figcaption>
+  </figure>
+</div>
+
+You may have spotted the timestamp on the embed and the actual time are an hour apart. That is because I was using `datetime.now()` which was returning the time in BST, however Discord was expecting UTC and tried to convert it to BST again for me, hence it becomes an hour ahead of what it should be. I have updated the code above to use `datetime.utcnow()` which fixes this problem!
+
+As with before the <a href="https://github.com/JoshGlasson/Discord-Bot" target="_blank">code is on my GitHub</a> if you want to check it out.

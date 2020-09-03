@@ -30,6 +30,23 @@
 		// Not used at the moment
 		const jQueryModule = await import('jquery');
 		let jQuery = jQueryModule.default;
+
+		const readingTimeModule = await import ('reading-time');
+		let readingTime = readingTimeModule.default;
+
+
+		function getReadingTime() {
+			const stats = readingTime(post.html);
+			console.log(stats);
+			var datediv = document.getElementsByClassName("readTime")[0]
+			var updatedate = document.createElement("h3");
+			var italic = document.createElement("i");
+			italic.textContent = stats.text + " (" + stats.words + " words)";
+			updatedate.appendChild(italic);
+			datediv.appendChild(updatedate);
+		}
+
+		getReadingTime()
 		
 		if (window.localStorage) {
 			if (!localStorage.getItem('firstLoad')) {
@@ -212,6 +229,13 @@
 		color: lightslategray;
 	}
 
+	.readTime {
+		font-size: 0.8em;
+		font-weight: 200;
+		padding-bottom: 1em;
+		color: lightslategray;
+	}
+
 	.content :global(p) {
 		font-size: 1.2em;
 		font-weight: 300;
@@ -310,6 +334,9 @@
 
 <div class="date">
 	<h3><i>Originally posted on {date}</i></h3>
+</div>
+
+<div class="readTime">
 </div>
 
 <div class='content'>
