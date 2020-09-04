@@ -34,16 +34,28 @@
 		const readingTimeModule = await import ('reading-time');
 		let readingTime = readingTimeModule.default;
 
-
-		function getReadingTime() {
-			const stats = readingTime(post.html);
-			console.log(stats);
+		async function getReadingTime() {
+			var contentWithoutCodeSnippets = await textWithoutCodeSnippets();
+			const stats = readingTime(contentWithoutCodeSnippets);
 			var datediv = document.getElementsByClassName("readTime")[0]
 			var updatedate = document.createElement("h3");
 			var italic = document.createElement("i");
 			italic.textContent = stats.text + " (" + stats.words + " words)";
 			updatedate.appendChild(italic);
 			datediv.appendChild(updatedate);
+		}
+
+		async function textWithoutCodeSnippets() {
+			var htmlObject = jQuery(post.html);
+			var innerTextWithoutSnippets = "";
+			for (var i = 0; i < htmlObject.length; i++) {
+				if(htmlObject[i].id === 'codeSnippet') {
+					htmlObject[i].innerHTML = "";
+				} else {
+					innerTextWithoutSnippets = innerTextWithoutSnippets + htmlObject[i].textContent;
+				}
+			}
+			return innerTextWithoutSnippets;
 		}
 
 		getReadingTime()
