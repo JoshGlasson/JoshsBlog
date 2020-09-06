@@ -27,7 +27,7 @@
 
 <svelte:head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-TJ8JZX38E6"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TJ8JZX38E6"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
@@ -37,7 +37,7 @@
 	</script>
 
 	<!-- Google Adsense -->
-	<script data-ad-client="ca-pub-1501125542619304" async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script data-ad-client="ca-pub-1501125542619304" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 	<!-- Twitter Widgets -->
 	<script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script>

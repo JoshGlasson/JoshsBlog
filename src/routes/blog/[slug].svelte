@@ -27,13 +27,15 @@
 
 
 	onMount( async () => {
-		// Not used at the moment
+		// jQuery Plugin
 		const jQueryModule = await import('jquery');
 		let jQuery = jQueryModule.default;
 
+		// Reading Time Plugin
 		const readingTimeModule = await import ('reading-time');
 		let readingTime = readingTimeModule.default;
 
+		// Use Reading Time plugin to estimate reading time. Excludes code snippets and is using the post.html so anything added by JavaScript, and anything not in the content (like the title) is not included
 		async function getReadingTime() {
 			var contentWithoutCodeSnippets = await textWithoutCodeSnippets();
 			const stats = readingTime(contentWithoutCodeSnippets);
@@ -45,13 +47,12 @@
 			datediv.appendChild(updatedate);
 		}
 
+		// Converts the post.html into an htmlObject using jQuery, then excludes codeSnippets so they are not included in the word count/reading time.
 		async function textWithoutCodeSnippets() {
 			var htmlObject = jQuery(post.html);
 			var innerTextWithoutSnippets = "";
 			for (var i = 0; i < htmlObject.length; i++) {
-				if(htmlObject[i].id === 'codeSnippet') {
-					htmlObject[i].innerHTML = "";
-				} else {
+				if(htmlObject[i].id !== 'codeSnippet') {
 					innerTextWithoutSnippets = innerTextWithoutSnippets + htmlObject[i].textContent;
 				}
 			}
@@ -60,6 +61,7 @@
 
 		getReadingTime()
 		
+		// RELOAD ON FIRST VISIT TO PAGE TO FIX ISSUE WITH PHOTOSWIPE NOT DISPLAYING IMAGES ON FIRST LOAD
 		if (window.localStorage) {
 			if (!localStorage.getItem('firstLoad')) {
 				localStorage['firstLoad'] = true;
