@@ -20,9 +20,9 @@ An absolutely crazy race today, where none of the big 3 finish in the top 3, and
 
 The race started off well for championship leader Lewis Hamilton in the Mercedes, who was on pole position. He got away very quickly as the race began, and quickly opened up his lead as usual. His teammate Valterri Bottas who started in 2nd did not have as good a start, falling back to 6th. Carlos Sainz in his McLaren was one of the cars who passed Bottas, after a great qualifying session saw him start in 3rd. 
 
-Red Bull did not have a great start either, at a track where they historically struggle. Alex Albon picked up a 5 second penalty on the second lap on turn 1 after clashing with Romain Grosjean in the Haas. At some point Albon picked up damage to his car, which hampered is whole race.
+Red Bull did not have a great start either, at a track where they historically struggle. Alex Albon picked up a 5 second penalty on the second lap on turn 1 after clashing with Romain Grosjean in the Haas. At some point Albon picked up damage to his car, which hampered his whole race.
 
-Things started to change on lap 6 however, when Sebastian Vettel suffered a brake issue with his Ferrari, he reported his brake line exploding, and his brakes no longer working. He managed to hobble back to the pits, taking a detour through some polystyrene boards, and became the first retirement of the race.
+Things started to change on lap 6 however, when Sebastian Vettel suffered a brake issue with his Ferrari. He reported his brake line exploding, and his brakes no longer working. He did manage to hobble back to the pits, taking a detour through some polystyrene boards, and became the first retirement of the race.
 
 <div id="imageDiv">
     <figure>
