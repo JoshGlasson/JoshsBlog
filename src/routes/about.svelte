@@ -11,6 +11,14 @@
 
 <svelte:head>
 	<title>About</title>
+	<meta name="description" content="My personal blog about Software Development, Sports, Music, and any more of my hobbies!">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@joshglasson" />
+	<meta name="twitter:creator" content="@joshglasson" />
+	<meta property="og:title" content="Josh's Blog">
+	<meta property="og:image" content="https://joshglasson.com/logo.png">
+	<meta property="og:description" content="My personal blog about Software Development, Sports, Music, and any more of my hobbies!">
+	<meta property="og:url" content="https://joshglasson.com/about/">
 </svelte:head>
 
 <h1>About this site</h1>
