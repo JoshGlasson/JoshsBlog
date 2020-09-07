@@ -102,7 +102,7 @@ And here are the driver standings now, with Hamilton remaining 47 points ahead, 
 
 <div id="imageDiv">
     <figure>
-        <img src="https://joshlearningtocode.files.wordpress.com/2020/09/f1-2020-italian-gp-driver-standings-temp.png" alt="Current F1 Driver Standings Top 10">
+        <img src="https://joshlearningtocode.files.wordpress.com/2020/09/f1-2020-italian-gp-driver-standings.jpg" alt="Current F1 Driver Standings Top 10">
         <figcaption>Current F1 Driver Standings Top 10</figcaption>
         <figcaption>Source: <a href="https://twitter.com/F1" target="_blank">Official F1 Twitter</a></figcaption>
     </figure>
