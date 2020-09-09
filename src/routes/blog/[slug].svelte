@@ -1,5 +1,6 @@
 <script context="module">
 	import Signature from '../../components/Signature.svelte';
+	import RecentPosts from '../../components/RecentPosts.svelte';
 
 	export async function preload({ params, query }) {
 		// the `slug` parameter is available because
@@ -7,8 +8,15 @@
 		const res = await this.fetch(`blog/${params.slug}.json`);
 		const data = await res.json();
 
+		const postsData = await this.fetch(`blog.json`)
+		.then(r => r.json())
+		.then(posts => {
+			posts.sort((a,b) => (Date.parse(a.sortdate) > Date.parse(b.sortdate)) ? 1 : ((Date.parse(b.sortdate) > Date.parse(a.sortdate)) ? -1 : 0)).reverse()
+			return { posts };
+		});
+
 		if (res.status === 200) {
-			return { post: data };
+			return { post: data, posts: postsData };
 		} else {
 			this.error(res.status, data.message);
 		}
@@ -18,6 +26,7 @@
 <script>
 	import { onMount } from 'svelte';
 	export let post;
+	export let posts;
 
 	let epochPostDate = new Date(post.originaldate);
 	let epochUpdateDate = new Date(post.sortdate);
@@ -160,7 +169,7 @@
 		// Adding click event listeners to every image on the page, which will open a modal when fired. Checks that the image is not a modal first.
 		async function addImagesToGallery() {
 			for (var i = 0; i < img.length; i++) {
-				if (!img[i].className.includes("modal-content") && !img[i].className.includes("signature-image")) {
+				if (!img[i].className.includes("modal-content") && !img[i].className.includes("signature-image") && !img[i].className.includes("Thumbnail")) {
 					var image = img[i];
 					if (imageIndexes.indexOf(image.src) < 0) {
 						var itemToAdd = {
@@ -202,7 +211,6 @@
 		}
 
 		async function createPhotoSwipe(pswpElement, PhotoSwipeUI_Default, galleryItems, options) {
-			console.log(options)
 			gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, galleryItems, options);
 		}
 
@@ -360,6 +368,7 @@
 <br>
 
 <Signature />
+<RecentPosts posts={posts} currentPost={post} />
 
 
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
