@@ -15,7 +15,7 @@
 				postsArray.splice(i, 1);
 			}
 		}
-		recentPosts = postsArray.splice(0,2)
+		recentPosts = postsArray.slice().splice(0,2)
 
 		// Find posts with same 1st tag as current post
 		for (var i = 0; i < postsArray.length; i++) {
