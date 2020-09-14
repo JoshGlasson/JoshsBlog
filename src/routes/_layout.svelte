@@ -31,13 +31,7 @@
 	</script>
 
 	<!-- Google Adsense -->
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-		(adsbygoogle = window.adsbygoogle || []).push({
-			google_ad_client: "ca-pub-1501125542619304",
-			enable_page_level_ads: true
-		});
-	</script>
+	<script data-ad-client="ca-pub-1501125542619304" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 	<!-- Twitter Widgets -->
 	<script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script>
