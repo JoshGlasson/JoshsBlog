@@ -2,7 +2,7 @@
 slug: 'creating_the_blog'
 title: 'Creating This Blog.'
 headline: 'How to create a blog using Svelte'
-image: "./images/icons/svelte_logo.png"
+image: "./images/icons/svelte logo.png"
 sortdate: "2020-07-24"
 originaldate: "2020-07-24"
 tags: ['Software Development' , 'Svelte', 'HTML, CSS & JavaScript']
