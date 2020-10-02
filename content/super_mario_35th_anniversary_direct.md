@@ -2,7 +2,7 @@
 slug: 'super_mario_35th_anniversary_direct'
 title: 'Super Mario Bros. 35th Anniversary Nintendo Direct.'
 headline: 'All the announcements from the special Nintendo Direct'
-image: "./images/icons/SMB 35.png"
+image: "./images/icons_same_size/SMB 35.png"
 sortdate: "2020-09-03"
 originaldate: "2020-09-03"
 tags: ['Gaming']

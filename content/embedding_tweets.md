@@ -2,7 +2,7 @@
 slug: 'embedding_tweets'
 title: 'Embedding Tweets In Svelte Blog Posts.'
 headline: 'Reliably embed tweets in blog posts when using Svelte and Sapper'
-image: "./images/about/twitter_logo.png"
+image: "./images/icons_same_size/twitter_logo.png"
 sortdate: "2020-08-12"
 originaldate: "2020-08-12"
 tags: ['Software Development' , 'Svelte', 'HTML, CSS & JavaScript']

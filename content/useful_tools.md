@@ -2,7 +2,7 @@
 slug: 'useful_tools'
 title: 'Useful Tools.'
 headline: 'Tools I find useful as a Software Dev'
-image: "./images/icons/tools.png"
+image: "./images/icons_same_size/tools.png"
 sortdate: "2020-07-31"
 originaldate: "2020-07-30"
 tags: ['Software Development']

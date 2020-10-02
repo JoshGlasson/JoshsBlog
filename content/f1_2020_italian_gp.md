@@ -2,7 +2,7 @@
 slug: 'f1_2020_italian_gp'
 title: 'F1 Recap - Italian Grand Prix 2020.'
 headline: 'Gasly gets his first race win'
-image: "./images/icons/f1 logo 2020.png"
+image: "./images/icons_same_size/f1 logo 2020.png"
 sortdate: "2020-09-06"
 originaldate: "2020-09-06"
 tags: ['Formula 1']

@@ -2,7 +2,7 @@
 slug: "kanye_west_albums_ranked"
 title: "Ranking Every Kanye West Album."
 headline: "My ranking of all of Kanye West's released albums"
-image: "./images/icons/kanye bear.png"
+image: "./images/icons_same_size/kanye bear.png"
 sortdate: "2020-08-07"
 originaldate: "2020-08-07"
 tags: ["Music"]

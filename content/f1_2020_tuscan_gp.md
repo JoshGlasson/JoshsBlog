@@ -2,7 +2,7 @@
 slug: 'f1_2020_tuscan_gp'
 title: 'F1 Recap - Tuscan Grand Prix 2020.'
 headline: '2 Red Flags on Another Crazy Day in Italy'
-image: "./images/icons/f1 logo 2020.png"
+image: "./images/icons_same_size/f1 logo 2020.png"
 sortdate: "2020-09-13"
 originaldate: "2020-09-13"
 tags: ['Formula 1']

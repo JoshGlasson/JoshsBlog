@@ -2,7 +2,7 @@
 slug: 'f1_2020_belgian_gp'
 title: 'F1 Recap - Belgian Grand Prix 2020.'
 headline: 'Daniel Ricciardo puts in a great performance to finish 4th'
-image: "./images/icons/f1 logo 2020.png"
+image: "./images/icons_same_size/f1 logo 2020.png"
 sortdate: "2020-08-30"
 originaldate: "2020-08-30"
 tags: ['Formula 1']

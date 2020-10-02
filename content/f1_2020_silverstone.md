@@ -2,7 +2,7 @@
 slug: 'f1_2020_silverstone'
 title: 'F1 Recap - Silverstone 2020.'
 headline: 'Hamilton hangs on to victory'
-image: "./images/icons/f1 logo 2020.png"
+image: "./images/icons_same_size/f1 logo 2020.png"
 sortdate: "2020-08-03"
 originaldate: "2020-08-03"
 tags: ['Formula 1']

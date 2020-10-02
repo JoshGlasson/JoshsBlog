@@ -2,7 +2,7 @@
 slug: 'discord_bot'
 title: 'Creating a Simple Discord Bot.'
 headline: 'Its not self promotion if its done by a robot!'
-image: "./images/icons/discord logo.png"
+image: "./images/icons_same_size/discord logo.png"
 sortdate: "2020-09-03"
 originaldate: "2020-09-02"
 tags: ['Software Development']

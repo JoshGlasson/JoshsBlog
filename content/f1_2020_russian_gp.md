@@ -2,7 +2,7 @@
 slug: 'f1_2020_russian_gp'
 title: 'F1 Recap - Russian Grand Prix 2020.'
 headline: 'Hamilton Thwarted by Penalties Again'
-image: "./images/icons/f1 logo 2020.png"
+image: "./images/icons_same_size/f1 logo 2020.png"
 sortdate: "2020-09-27"
 originaldate: "2020-09-27"
 tags: ['Formula 1']

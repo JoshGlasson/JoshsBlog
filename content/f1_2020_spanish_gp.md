@@ -2,7 +2,7 @@
 slug: 'f1_2020_spanish_gp'
 title: 'F1 Recap - Spanish Grand Prix 2020.'
 headline: 'Another dominant performance from Lewis Hamilton'
-image: "./images/icons/f1 logo 2020.png"
+image: "./images/icons_same_size/f1 logo 2020.png"
 sortdate: "2020-08-16"
 originaldate: "2020-08-16"
 tags: ['Formula 1']
