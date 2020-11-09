@@ -16,9 +16,9 @@
 	<meta name="twitter:site" content="@joshglasson" />
 	<meta name="twitter:creator" content="@joshglasson" />
 	<meta property="og:title" content="Josh's Blog">
-	<meta property="og:image" content="https://joshglasson.com/logo.png">
+	<meta property="og:image" content="https://joshglasson.co.uk/logo.png">
 	<meta property="og:description" content="My personal blog about Software Development, Sports, Music, and any more of my hobbies!">
-	<meta property="og:url" content="https://joshglasson.com/about/">
+	<meta property="og:url" content="https://joshglasson.co.uk/about/">
 </svelte:head>
 
 <h1>About this site</h1>

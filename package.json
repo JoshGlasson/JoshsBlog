@@ -1,5 +1,5 @@
 {
-  "homepage": "https://joshglasson.com/",
+  "homepage": "https://joshglasson.co.uk/",
   "name": "joshsblog",
   "description": "My personal blog",
   "version": "0.0.1",
@@ -12,6 +12,7 @@
     "test": "run-p --race dev cy:run",
     "export": "sapper export --entry '/ /404'",
     "postexport": "mv __sapper__/export/404/index.html __sapper__/export/404.html && rmdir __sapper__/export/404",
+    "readyForDeploy": "npm run export && npm run postexport",
     "deploy": "npm run export && node ./scripts/gh-pages.js"
   },
   "dependencies": {
