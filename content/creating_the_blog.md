@@ -217,7 +217,7 @@ This meant that any time I pushed or merged to master, it would kick off this ac
 
 
 The end result of all this is the blog you are currently reading! It is hosted here:
-<a href="https://joshglasson.com/" target="_blank">https://joshglasson.com/</a>
+<a href="https://joshglasson.co.uk/" target="_blank">https://joshglasson.co.uk/</a>
 
 
 After seeing it live I realised that the posts were in chronological order, as in oldest at the top. That doesn't make much sense for a blog, so I flipped it round by editing the function used to retrieve the posts:
