@@ -24,4 +24,3 @@ jobs:
         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
         heroku_app_name: "ppe-blog"
         heroku_email: "josh.glasson@tesco.com"
-        appdir: __sapper__/export/
