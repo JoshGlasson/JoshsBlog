@@ -71,14 +71,14 @@
 		getReadingTime()
 		
 		// RELOAD ON FIRST VISIT TO PAGE TO FIX ISSUE WITH PHOTOSWIPE NOT DISPLAYING IMAGES ON FIRST LOAD
-		if (window.localStorage) {
-			if (!localStorage.getItem('firstLoad')) {
-				localStorage['firstLoad'] = true;
-				window.location.reload();
-			} else {
-				localStorage.removeItem('firstLoad');
-			}
-		}
+		// if (window.localStorage) {
+		// 	if (!localStorage.getItem('firstLoad')) {
+		// 		localStorage['firstLoad'] = true;
+		// 		window.location.reload();
+		// 	} else {
+		// 		localStorage.removeItem('firstLoad');
+		// 	}
+		// }
 
 		// Checks sort date vs post date to see if theres been an update, displays updated date under original if so.
 		if(epochPostDate.getTime() != epochUpdateDate.getTime()) {	
