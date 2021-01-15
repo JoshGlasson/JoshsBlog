@@ -1,5 +1,5 @@
 ---
-slug: 'embedding_tweets'
+slug: '2020-08-12-embedding_tweets'
 title: 'Embedding Tweets In Svelte Blog Posts.'
 headline: 'Reliably embed tweets in blog posts when using Svelte and Sapper'
 image: "./images/about/twitter_logo.png"

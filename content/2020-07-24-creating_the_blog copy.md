@@ -1,5 +1,5 @@
 ---
-slug: 'creating_the_blog'
+slug: '2020-07-24-creating_the_blog'
 title: 'Creating This Blog.'
 headline: 'How to create a blog using Svelte'
 image: "./images/icons/svelte logo.png"

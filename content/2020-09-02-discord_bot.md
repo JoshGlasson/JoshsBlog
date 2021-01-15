@@ -1,5 +1,5 @@
 ---
-slug: 'discord_bot'
+slug: '2020-09-02-discord_bot'
 title: 'Creating a Simple Discord Bot.'
 headline: 'Its not self promotion if its done by a robot!'
 image: "./images/icons/discord logo.png"
