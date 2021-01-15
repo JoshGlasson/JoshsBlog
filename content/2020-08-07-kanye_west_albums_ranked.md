@@ -1,5 +1,5 @@
 ---
-slug: "kanye_west_albums_ranked"
+slug: "2020-08-07-kanye_west_albums_ranked"
 title: "Ranking Every Kanye West Album."
 headline: "My ranking of all of Kanye West's released albums"
 image: "./images/icons/kanye bear.png"
