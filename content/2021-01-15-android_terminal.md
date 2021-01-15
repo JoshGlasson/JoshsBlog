@@ -134,7 +134,7 @@ Which makes it look like this:
 
 <div id="imageDiv">
     <figure>
-        <img src="https://joshlearningtocode.files.wordpress.com/2021/01/termux-touch_keyboard.png" alt="Termux Touch Keyboard">
+        <img src="https://joshlearningtocode.files.wordpress.com/2021/01/termux-touch_keyboard-e1610733933983.png" alt="Termux Touch Keyboard">
         <figcaption>Customised Touch Keyboard</figcaption>
     </figure>
 </div>
@@ -216,7 +216,7 @@ Which also worked just fine:
 
 <div id="imageDiv">
     <figure>
-        <img src="https://joshlearningtocode.files.wordpress.com/2021/01/termux-sftp.png" alt="SFTP File to Pi">
+        <img src="https://joshlearningtocode.files.wordpress.com/2021/01/termux-sftp-e1610733944684.png" alt="SFTP File to Pi">
         <figcaption>Using <code>sftp</code> to copy file to Raspberry Pi</figcaption>
     </figure>
 </div>
