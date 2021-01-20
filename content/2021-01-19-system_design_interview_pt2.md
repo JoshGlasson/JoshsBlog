@@ -245,4 +245,4 @@ One thing I haven't mentioned is the actual interview itself. The way it is usua
 
 Since then I have been looking for a better alternative, and I've settled on <a href="https://miro.com/app/dashboard/" target="_blank">Miro</a> for now as it has a lot of options, and I can use my phone for drawing which immediately syncs to the board on my laptop which I would be sharing. Still not the easiest but better than anything else I've tried so far.
 
-I have a few more things to write about but I will stick that in a <a href="/blog/2021-01-20-system_design_interview_pt3" target="_blank">Part 3</a>, as this is pretty long already.
+I have a few more things to write about but I will stick that in a <a href="blog/2021-01-20-system_design_interview_pt3" target="_blank">Part 3</a>, as this is pretty long already.
