@@ -1,3 +1,15 @@
+<script>
+	import { onMount } from 'svelte';
+
+	onMount( async () => {
+		var script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.src = 'https://pagead2.googlesyndication.com/pagead/show_ads.js';
+		script.dataAdClient = "ca-pub-1501125542619304";
+		script.async = true;
+		document.body.appendChild(script);
+	})
+</script>
 <style>
 	h1, figure {
 		text-align: center;
