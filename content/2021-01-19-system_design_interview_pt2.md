@@ -77,8 +77,8 @@ Usually the cache is fast access hardware, such as RAM. Because of this the stor
                             
 <blockquote>
 In a distributed computing environment, a dedicated caching layer enables systems and applications to run independently from the cache with their own lifecycles without the risk of affecting the cache.
-
-\- <a href="https://aws.amazon.com/caching/" target="_blank">https://aws.amazon.com/caching/</a>
+<br>
+<a href="https://aws.amazon.com/caching/" target="_blank">https://aws.amazon.com/caching/</a>
 </blockquote>
 
 For distributed systems, having the cache be Highly Available is very important, and this can be achieved by using an In-Memory engine such as <a href="https://aws.amazon.com/redis/" target="_blank">Redis</a>.
@@ -123,8 +123,8 @@ I found the below in a blog post which I think really introduces data replicatio
 
 <blockquote>
 A data replica is an exact copy of a database. Replicas are constantly, iteratively synced with one another so their contents are kept as identical as possible. They generally come in two flavours, active and passive. Active replicas support read and write access and play an (unsurprisingly) active role in serving clients. Active replicas can help with scale, resilience and location-base performance. Passive replicas are generally maintained for failover purposes; they don’t support read or write and are only synced in one direction (from the master data). The job of a passive replica is to be ready to take over from the main replica if it fails.
-
-\- <a href="https://blog.container-solutions.com/what-is-a-distributed-system" target="_blank">https://blog.container-solutions.com/what-is-a-distributed-system</a>
+<br>
+<a href="https://blog.container-solutions.com/what-is-a-distributed-system" target="_blank">https://blog.container-solutions.com/what-is-a-distributed-system</a>
 </blockquote>
 
 This is different from a backup as a backup is made less often but is kept in multiple locations to ensure it is safe in the case of an emergency.

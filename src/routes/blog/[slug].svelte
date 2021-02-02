@@ -321,6 +321,34 @@
 		margin: 2em 0 2em 0;
 	}
 
+	.content :global(blockquote) {
+		background: #f9f9f9;
+		color: black;
+		border-left: 10px solid #ccc;
+		margin: 1.5em 10px;
+		padding: 0.5em 10px;
+		quotes: "\201C""\201D""\2018""\2019";
+	}
+	.content :global(blockquote:before) {
+		color: #ccc;
+		content: open-quote "\a";
+		white-space: pre;
+		font-size: 4em;
+		line-height: 0.1em;
+		vertical-align: -0.4em;
+	}
+	.content :global(blockquote:after) {
+		color: #ccc;
+		content: "\a" close-quote;
+		white-space: pre;
+		font-size: 4em;
+		line-height: 0.1em;
+		vertical-align: -0.4em;
+	}
+	.content :global(blockquote p) {
+		display: inline;
+	}
+
 	/* 100% Image Width on Smaller Screens */
 	@media only screen and (max-width: 700px){
 		.postTitle h1 {
