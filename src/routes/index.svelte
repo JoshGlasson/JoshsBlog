@@ -3,15 +3,3 @@
         return this.redirect(302, 'home');
     }
 </script>
-
-<svelte:head>
-	<title>Josh's Blog</title>
-	<meta name="description" content="My personal blog about Software Development, Sports, Music, and any more of my hobbies!">
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:site" content="@joshglasson" />
-	<meta name="twitter:creator" content="@joshglasson" />
-	<meta property="og:title" content="Josh's Blog">
-	<meta property="og:image" content="https://joshglasson.co.uk/logo.png">
-	<meta property="og:description" content="My personal blog about Software Development, Sports, Music, and any more of my hobbies!">
-	<meta property="og:url" content="https://joshglasson.co.uk/">
-</svelte:head>
