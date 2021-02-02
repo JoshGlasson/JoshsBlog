@@ -103,7 +103,7 @@
 
 <nav id="navbar">
 	<ul>
-		<li><a aria-current="{segment === 'home' ? 'home' : undefined}" href="home">home</a></li>
+		<li><a aria-current="{segment === 'home' ? 'home' : undefined}" href="/">home</a></li>
 		<li><a aria-current="{segment === 'about' ? 'about' : undefined}" href="about">about</a></li>
 
 		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
