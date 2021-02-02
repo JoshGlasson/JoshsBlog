@@ -77,9 +77,8 @@ Usually the cache is fast access hardware, such as RAM. Because of this the stor
                             
 <blockquote>
 In a distributed computing environment, a dedicated caching layer enables systems and applications to run independently from the cache with their own lifecycles without the risk of affecting the cache.
-<br>
-<a href="https://aws.amazon.com/caching/" target="_blank">https://aws.amazon.com/caching/</a>
 </blockquote>
+Source: <a href="https://aws.amazon.com/caching/" target="_blank">https://aws.amazon.com/caching/</a>
 
 For distributed systems, having the cache be Highly Available is very important, and this can be achieved by using an In-Memory engine such as <a href="https://aws.amazon.com/redis/" target="_blank">Redis</a>.
 
@@ -123,9 +122,8 @@ I found the below in a blog post which I think really introduces data replicatio
 
 <blockquote>
 A data replica is an exact copy of a database. Replicas are constantly, iteratively synced with one another so their contents are kept as identical as possible. They generally come in two flavours, active and passive. Active replicas support read and write access and play an (unsurprisingly) active role in serving clients. Active replicas can help with scale, resilience and location-base performance. Passive replicas are generally maintained for failover purposes; they don’t support read or write and are only synced in one direction (from the master data). The job of a passive replica is to be ready to take over from the main replica if it fails.
-<br>
-<a href="https://blog.container-solutions.com/what-is-a-distributed-system" target="_blank">https://blog.container-solutions.com/what-is-a-distributed-system</a>
 </blockquote>
+Source: <a href="https://blog.container-solutions.com/what-is-a-distributed-system" target="_blank">https://blog.container-solutions.com/what-is-a-distributed-system</a>
 
 This is different from a backup as a backup is made less often but is kept in multiple locations to ensure it is safe in the case of an emergency.
 
@@ -245,4 +243,4 @@ One thing I haven't mentioned is the actual interview itself. The way it is usua
 
 Since then I have been looking for a better alternative, and I've settled on <a href="https://miro.com/app/dashboard/" target="_blank">Miro</a> for now as it has a lot of options, and I can use my phone for drawing which immediately syncs to the board on my laptop which I would be sharing. Still not the easiest but better than anything else I've tried so far.
 
-I have a few more things to write about but I will stick that in a <a href="blog/2021-01-20-system_design_interview_pt3" target="_blank">Part 3</a>, as this is pretty long already.
+I have a few more things to write about but I will stick that in a <a href="blog/2021-02-02-system_design_interview_pt3" target="_blank">Part 3</a>, as this is pretty long already.

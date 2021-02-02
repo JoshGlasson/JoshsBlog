@@ -1,10 +1,10 @@
 ---
-slug: '2021-01-20-system_design_interview_pt3'
+slug: '2021-02-02-system_design_interview_pt3'
 title: 'System Design Part 3.'
 headline: 'Even More Prep for the System Design Interview'
 image: "./images/icons/system-design.jpg"
-sortdate: "2021-01-19"
-originaldate: "2021-01-19"
+sortdate: "2021-02-02"
+originaldate: "2021-02-02"
 tags: ['Software Development']
 ---
 
@@ -14,7 +14,16 @@ Here's a few more things I wanted to cover.
 
 # Load Balancing
 
-A Load Balancer is a physical machine or virtual instance which distributes traffic to servers. It does this in order to reduce the load on each server, and subsequently reduce the time taken to respond. There are many different algorithms the load balancer could use to determine where to send the traffic, here are some of the more common ones:
+A Load Balancer is a physical machine or virtual instance which distributes traffic to servers. It does this in order to reduce the load on each server, and subsequently reduce the time taken to respond. 
+
+<div id="imageDiv">
+  <figure>
+    <img src="https://joshlearningtocode.files.wordpress.com/2021/02/loadbalancer.png" alt="Load Balancer"/>
+    <figcaption>Load Balancer</figcaption>
+  </figure>
+</div>
+
+There are many different algorithms the load balancer could use to determine where to send the traffic, here are some of the more common ones:
 
 ## Round Robin
 
@@ -70,7 +79,7 @@ DES and 3DES are not widely used anymore. Banks and other businesses may still u
 
 ## AES (Advanced Encryption Standard)
 
-AES is one of the most secure encryption types, used by governments and security agencies. AES uses ***symmetric*** key encryption, the person on the receiving end of the data will need a key to decode it.
+AES is one of the most secure encryption types, used by governments and security agencies. AES uses ***symmetric*** key encryption, the person on the receiving end of the data will need the same key to decode it that was used to encrypt it.
 
 AES encrypts data in a single block rather than as individual bits of data. The size of the block determines which AES method it uses:
 
@@ -100,26 +109,49 @@ Although E2E encryption can protect what you send, it does not hide from the ser
 
 I wanted to include this too as SHA is something I have heard of but wasn't sure what it was, and mistakenly thought it was related to encryption.
 
-SHA is used for cryptographic security to hash data, including certificate files. Every piece of data produces an irreversible and unique hash, irreversible in the sense that if you only had the hash, you could not convert it back to the original data, and unique as no two different pieces of data could produce the same hash.
+SHA is used for ***cryptographic security*** to hash data, including certificate files. Every piece of data produces an irreversible and unique hash, irreversible in the sense that if you only had the hash, you could not convert it back to the original data, and unique as no two different pieces of data could produce the same hash.
 
-The most common place you are likely to see this in action is SSL certificates. Most websites now are on HTTPS and have an SSL certificate, meaning the connection between you and the website is secure. I will go into more detail later. The SSL certificate contains a public key which can be used by the client (your web browser) to encrypt any data you are sending. The owner of the certificate has a private key which allows them to decrypt said data. This is why these certificates are so important. When the certificate is issued, it is digitally signed by the Certificate Authority (CA) you have chosen. This gives proof that the certificate has not been modified or reproduced. SHA is used to digitally sign these certificates. 
+The most common place you are likely to see this in action is SSL certificates. Most websites now are on HTTPS and have an SSL certificate, meaning the connection between you and the website is secure. I will go into more detail on this in the next section. The SSL certificate contains a public key which can be used by the client (your web browser) to encrypt any data you are sending. The owner of the certificate has a private key which allows them to decrypt said data. This is why these certificates are so important. When the certificate is issued, it is digitally signed by the Certificate Authority (CA) you have chosen. This gives proof that the certificate has not been modified or reproduced. SHA is used to digitally sign these certificates so they can be verified. 
 
 Check out <a href="https://www.thesslstore.com/blog/difference-sha-1-sha-2-sha-256-hash-algorithms/" target="_blank">this post</a> for much more in depth information on SHA.
+
+<div id="imageDiv">
+  <figure>
+    <img src="https://joshlearningtocode.files.wordpress.com/2021/02/sha256.png" alt="SHA 256"/>
+    <figcaption>SHA 256</figcaption>
+  </figure>
+</div>
 
 # HTTPS, TLS and SSL
 
 So HTTP we already know stands for Hypertext Transfer Protocol, and this is what allows data to be exchanged over the internet. Well HTTPS is the new, secure version (the S stands for secure!). HTTPS is powered by TLS (Transport Layer Security), the successor to SSL (Secure Sockets Layer). As talked about above, HTTPS ensures that any data you send to a server is encrypted, and can only be decrypted by the owner of the certificate. TLS will also authenticate the server you are connecting to and protects any data sent from being tampered with.
 
-Confusingly, the certificates are still referred to as SSL certificates, even though they are now TLS certificates. SSL and TLS are very similar, so are often talked about together as SSL/TLS. In your web browser, you may see the padlock in the url bar next to the website url, this should tell you that the connection is a secure TLS connection.
+Confusingly, the certificates are still referred to as SSL certificates, even though they are now TLS certificates. SSL and TLS are very similar, so are often talked about together as SSL/TLS. In your web browser, you should see the padlock in the url bar next to any website url which starts with https, this should tell you that the connection is a secure TLS connection.
 
-Earlier I said that your browser would use the public key in the certificate to encrypt data so only the server with the private key could read it, but that isn't actually the whole process. This is called ***asymmetrical cryptography***, and the mathematical formula linking the two keys is incredibly complex. This means it takes lots of computing resources to do the encryption and decryption. I found a good explanation of ***asymmetrical cryptography*** which you can read below, in fact the whole post the quote is taken from is very useful:
+<div id="imageDiv">
+  <figure>
+    <img src="https://joshlearningtocode.files.wordpress.com/2021/02/padlock.png" alt="SSL Certificate"/>
+    <figcaption>SSL Certificate</figcaption>
+  </figure>
+</div>
+
+Clicking more information on the above pop up lets you actually view the certificate. We can see here the SHA 256 is used with RSA:
+
+<div id="imageDiv">
+  <figure>
+    <img src="https://joshlearningtocode.files.wordpress.com/2021/02/sslcert.png" alt="SSL Certificate Details"/>
+    <figcaption>SSL Certificate Details</figcaption>
+  </figure>
+</div>
+
+Earlier I said that your browser would use the public key in the certificate to encrypt data so only the server with the private key could read it, but that isn't actually the whole process. This use of 2 different keys to encrypt and decrypt is called ***asymmetrical cryptography***, and the mathematical formula linking the two keys is incredibly complex. This means it takes lots of computing resources to do the encryption and decryption. I found a good explanation of ***asymmetrical cryptography*** which you can read below, in fact the whole post the quote is taken from is very useful:
 
 <blockquote>
 Think of the public key as information about the location of a locked mailbox with a slot on the front, and the private key as the key that unlocks the mailbox. Anyone who knows where the mailbox is can put a message in it; but for anyone else to read it, they need the private key.
 </blockquote>
 Source: <a href="https://www.csoonline.com/article/3246212/what-is-ssl-tls-and-how-this-encryption-protocol-works.html" target="_blank">https://www.csoonline.com/article/3246212/what-is-ssl-tls-and-how-this-encryption-protocol-works.html</a>
 
-Because of the computing power involved in this, asymmetrical cryptography is not used the whole time. Actually your browser and the server perform a SSL/TLS Handshake. To put it simply, the asymmetrical cryptography is used once at the start of the connection to verify that everything is as it should be, then the client and server agree on a generated shared key which is much easier to use for both, which speeds up the process but still ensures it is fast. Using this shared key is called ***symmetrical cryptography***.
+Because of the computing power involved in this, asymmetrical cryptography is not for every communication between the client and server. Actually your browser and the server perform a ***SSL/TLS Handshake***. To put it simply, the asymmetrical cryptography is used once at the start of the connection to verify that everything is as it should be, then the client and server agree on a generated shared key which is much easier to use for both, which speeds up the process but still ensures it is secure. Using this shared key is called ***symmetrical cryptography***. Here is the whole handshake process:
 
 <div id="imageDiv">
   <figure>
@@ -135,6 +167,8 @@ Cookies and Sessions are used by web browsers to store information. Cookies are 
 Cookies are text files stored on your machine and are used to keep track of persistent data across a websites pages. Sessions make use of cookies too, however the cookie is used to store a key which is then used to lookup the information on the server instead. Sessions are not stored indefinitely, and usually expire once you close the page.
 
 LocalStorage is a way of storing data locally on the clients computer, via the use of key/value pairs. LocalStorage can be accessed by JavaScript and HTML5, and is only kept locally. My blog makes use of LocalStorage to remember your choice of Light or Dark mode across visits to the site. SessionStorage is similar in using key/value pairs, but this data is only kept until the page is closed.
+
+Having it as key/value pairs means it's easy to use in other parts of the code, for example I use the theme when generating embedded tweets so that the theme of the tweet matches that of the blog.
 
 # CDN (Content Delivery Network)
 
