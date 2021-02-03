@@ -1,35 +1,11 @@
-<style>
-	h1, figure {
-		text-align: center;
-		margin: 0 auto;
-	}
-
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
-</style>
+<script context="module">
+    export async function preload(page) {
+        return this.redirect(302, 'home');
+    }
+</script>
 
 <svelte:head>
-	<title>Josh's Blog</title>
+    <title>Josh's Blog</title>
 	<meta name="description" content="My personal blog about Software Development, Sports, Music, and any more of my hobbies!">
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@joshglasson" />
@@ -38,11 +14,6 @@
 	<meta property="og:image" content="https://joshglasson.co.uk/logo.png">
 	<meta property="og:description" content="My personal blog about Software Development, Sports, Music, and any more of my hobbies!">
 	<meta property="og:url" content="https://joshglasson.co.uk/">
+	<!-- Google Adsense -->
+	<script data-ad-client="ca-pub-1501125542619304" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </svelte:head>
-
-<h1>Welcome to Josh's Blog!</h1>
-
-<figure>
-	<img alt='Me' src='./images/about/JoshCoverImage.jpg'>
-	<figcaption>A place for me to talk about Software Development and my hobbies!</figcaption>
-</figure>
