@@ -31,5 +31,25 @@
 	     and anything else it needs to hydrate the app and
 	     initialise the router -->
 	%sapper.scripts%
+
+	<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+	<script>
+		window.cookieconsent.initialise({
+			"palette": {
+				"popup": {
+				"background": "#eb6c44",
+				"text": "#ffffff"
+				},
+				"button": {
+				"background": "#f5d948"
+				}
+			},
+			"theme": "classic",
+			"position": "bottom-left",
+			"content": {
+				"href": "https://www.privacypolicygenerator.info/live.php?token=J9HWLD98f0nRTan45P6aO2LACPCFV2Fz"
+			}
+		});
+	</script>
 </body>
 </html>
