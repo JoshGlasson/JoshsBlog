@@ -38,6 +38,7 @@
 	<!-- Photoswipe Styles and Scripts -->
 	<link rel="stylesheet" href="./photoswipe/photoswipe.css"> 
 	<link rel="stylesheet" href="./photoswipe/default-skin/default-skin.css"> 
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 	<script src="./photoswipe/photoswipe.min.js"></script> 
 	<script src="./photoswipe/photoswipe-ui-default.min.js"></script> 
 </svelte:head>
