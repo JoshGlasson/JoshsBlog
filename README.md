@@ -1,7 +1,6 @@
 # Joshs Blog
 
 ![Build Sapper and Deploy to GitHub Pages](https://github.com/JoshGlasson/JoshsBlog/workflows/Build%20Sapper%20and%20Deploy%20to%20GitHub%20Pages/badge.svg)
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/43f144a4-a957-4861-9985-7a7301b15977/deploy-status)](https://app.netlify.com/sites/joshs-blog/deploys)
 
 This is the source code for my blog site.
