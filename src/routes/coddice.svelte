@@ -20,7 +20,7 @@
 
 				var dropImage = document.createElement("img")
 				dropImage.classList.add("dropImage")
-				dropImage.style.width = "50%"
+				dropImage.style.width = "100%"
 				dropImage.src = "./images/coddice/" + randomDrop + ".jpg"
 
 				box.appendChild(dropZone)
