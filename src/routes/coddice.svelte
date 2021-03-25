@@ -10,19 +10,25 @@
 
 		function randomDrop() {
 			var existingDropZone = document.querySelector('.dropLocation')
+			var existingDropImage = document.querySelector('.dropImage')
 
 			if (existingDropZone == null) {
-				var dropZone = document.createElement("h3");
+				var dropZone = document.createElement("h2");
 				dropZone.classList.add("dropLocation")
 				var randomDrop = randomLocation()
 				dropZone.innerText = randomDrop
 
 				var dropImage = document.createElement("img")
-				dropImage.src = "./images/coddice/" + randomDrop + ".png"
+				dropImage.classList.add("dropImage")
+				dropImage.style.width = "50%"
+				dropImage.src = "./images/coddice/" + randomDrop + ".jpg"
 
 				box.appendChild(dropZone)
+				box.appendChild(dropImage)
 			} else {
-				existingDropZone.innerText = randomLocation()
+				var randomDrop = randomLocation()
+				existingDropZone.innerText = randomDrop
+				existingDropImage.src = "./images/coddice/" + randomDrop + ".jpg"
 			}
 		}
 
