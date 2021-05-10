@@ -382,6 +382,10 @@
 	<h2><strong>{post.headline}</strong></h2>
 </div>
 
+<div class='postImage'>
+	<img src={post.image} alt={post.title} width="100%"/>
+</div>
+
 <div class="date">
 	<h3><i>Originally posted on {date}</i></h3>
 </div>
