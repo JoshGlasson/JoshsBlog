@@ -239,7 +239,7 @@
 	}
 
 	.postTitle h2 {
-		font-size: 2em;
+		font-size: 3em;
 		font-weight: 300;
 		padding-bottom: 0.5em;
 	}
@@ -358,7 +358,7 @@
 		}
 
 		.postTitle h2 {
-			font-size: 1.5em;
+			font-size: 2em;
 			font-weight: 250;
 			padding-bottom: 0.5em;
 			word-wrap: break-word;
