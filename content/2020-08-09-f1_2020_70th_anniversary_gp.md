@@ -5,7 +5,7 @@ headline: 'Brilliant strategy leads to Red Bull win'
 image: "./images/icons/f1 logo 2020.png"
 sortdate: "2020-08-09"
 originaldate: "2020-08-09"
-tags: ['Formula 1']
+tags: ['Formula 1', 'Sports']
 ---
 
 Max Verstappen claimed victory in the 70th Anniversary Grand Prix at Silverstone much to his surprise, proving that it might not just be a one horse race this year.
