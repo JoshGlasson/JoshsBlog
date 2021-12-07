@@ -23,18 +23,20 @@
 			var newtitle = "";
 			if(searchbar[0].value !== "") {
 				newtitle = searchbar[0].value
-				console.log(searchbar.textContent);
-				// The filters are hidden in a collapsible element activated by clicking the button.
 				var titleElement = document.getElementsByTagName("title");
 				for (var i = 0; i < titleElement.length; i++) {
-					console.log(titleElement[i]);
 					titleElement[i].innerText = newtitle;
 				};
 				var header = document.getElementById("header");
-				console.log(header);
-				console.log(header.textContent);
 				header.textContent = newtitle;
-			}	
+			} else {
+				var titleElement = document.getElementsByTagName("title");
+				for (var i = 0; i < titleElement.length; i++) {
+					titleElement[i].innerText = "New Tab Title";
+				};
+				var header = document.getElementById("header");
+				header.textContent = "New Tab Title";
+			}
 		};
 		
 	})
