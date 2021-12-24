@@ -4,14 +4,14 @@
 	export let title = "New Tab Title";
 
 	onMount( async () => { 
-		// Getting the search bar and listening for changes
-		var searchbar = document.getElementById("search");
-		searchbar.addEventListener('input', function(event){
+		// Getting the input field and listening for changes
+		var input = document.getElementById("tabtitle");
+		input.addEventListener('input', function(event){
 			updateTitle();
 		});
 
-		// Disables enter submitting the search bar as a form
-		searchbar.onkeypress = function(e) {
+		// Disables enter submitting the input field as a form
+		input.onkeypress = function(e) {
 			var key = e.charCode || e.keyCode || 0;     
 			if (key == 13) {
 				e.preventDefault();
@@ -20,9 +20,8 @@
 
 		// Updates Title Variable
 		function updateTitle() {
-			var newtitle = "";
-			if(searchbar[0].value !== "") {
-				newtitle = searchbar[0].value
+			if(input[0].value !== "") {
+				var newtitle = input[0].value
 				var titleElement = document.getElementsByTagName("title");
 				for (var i = 0; i < titleElement.length; i++) {
 					titleElement[i].innerText = newtitle;
@@ -42,9 +41,7 @@
 	})
 </script>
 
-<style>
-	
-</style>
+<style></style>
 
 <svelte:head>
     <title>{title}</title>
@@ -62,6 +59,6 @@
 
 <h1 id=header>{title}</h1>
 
-<form id="search">
+<form id="tabtitle">
 	<input type="text" placeholder="Set Tab Title">
 </form>
