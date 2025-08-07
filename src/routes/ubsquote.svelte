@@ -45,11 +45,19 @@
 				const zip = new PizZip(arrayBuffer);
 				const doc = new Docxtemplater(zip, { linebreaks: true });
 
-
+				console.log(params);
 				doc.render(params);
 
-				const out = doc.getZip().generate({ type: "blob" });
-				saveAs(out, params.name.concat(".docx"));
+				const blob = doc.getZip().generate({
+					type: "blob",
+					mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+				});
+
+				const file = new File([blob], `${params.name}.docx`, {
+					type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+				});
+
+				saveAs(file);
 			} catch (err) {
 				console.error("Error generating document:", err);
 				alert("Failed to generate document. See console for details.");
