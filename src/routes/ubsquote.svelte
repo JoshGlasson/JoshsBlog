@@ -4,7 +4,7 @@
   	import Docxtemplater from "docxtemplater";
   	import { saveAs } from "file-saver";
 
-	export let title = "Jason Quote Builder";
+	export let title = "Uppermill Building Services Quote Builder";
 
 	onMount( async () => {
 		const params = {
