@@ -91,7 +91,18 @@
 </svelte:head>
 
 <head>
-  <title>Generate Docx from Template</title>
+  <title>{title}</title>
+
+  	<style>
+		textarea {
+			height: 200px;
+			width: 300px;
+		}
+		input {
+			width: 300px;
+		}
+	</style>
+
 </head>
 
 <h1 id=header>{title}</h1>
@@ -100,6 +111,7 @@
 
 <input id="name" type="text" placeholder="Name">
 
+<br>
 <br>
 
 <textarea id="address" placeholder="Address"></textarea>
