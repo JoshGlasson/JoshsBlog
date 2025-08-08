@@ -13,6 +13,15 @@
 			message: ""
 		}
 
+		function formatDate(dateStr) {
+			if (!dateStr) return '';
+			const [year, month, day] = dateStr.split('-');
+			return `${day}-${month}-${year}`;
+		}
+
+		const today = new Date();
+    	const dateString = today.toISOString().substring(0, 10); // "YYYY-MM-DD"
+
 		var submit = document.getElementById("submit");
 		// Disables enter submitting the input field as a form
 		submit.onkeypress = function(e) {
@@ -39,6 +48,7 @@
 		}
 
 		async function generateDoc() {
+			params.date = formatDate(dateString)
 			try {
 				const response = await fetch("/template.docx");
 				const arrayBuffer = await response.arrayBuffer();
