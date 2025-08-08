@@ -93,7 +93,7 @@
 </svelte:head>
 
 <head>
-  <title>Generate Docx from Template</title>
+  <title>{title}</title>
 </head>
 
 <h1 id=header>{title}</h1>
